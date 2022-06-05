@@ -32,6 +32,16 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->group("sp", function($routes){
+    $routes->get('/', 'SuratPesanan::index');
+    $routes->get('/create', 'SuratPesanan::index'); 
+    $routes->post('/create', 'SuratPemesanan::post');
+    $routes->get('/(:alphanum)', 'SuratPemesanan::detail/$id');
+    $routes->get('/edit/(:alphanum)', 'SuratPesanan::edit/$id');
+    $routes->put('/edit/(:alphanum)', 'SuratPemesanan::edit/$id');
+    $routes->delete('/detele/(:alphanum)', 'SuratPemesanan:delte/$id');
+
+});
 
 /*
  * --------------------------------------------------------------------
