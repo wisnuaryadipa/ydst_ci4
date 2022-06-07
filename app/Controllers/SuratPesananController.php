@@ -6,7 +6,9 @@ class SuratPesanan extends BaseController
 {
     public function index()
     {
-        return view('welcome_message');
+
+        $data['test'] = 'test';
+        return render($this, 'SuratPesanan/index', $data);
     }
 
     public function create(){

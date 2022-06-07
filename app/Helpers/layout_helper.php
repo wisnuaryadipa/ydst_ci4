@@ -10,8 +10,8 @@ function render($core, $file, $data = [])	{
         $data['sessionMsg']	= $core->sessionMsg();
     }
 
-    if($core->session->get('apiData')) {
-        $data['apiData']	= $core->session->get('apiData');
-    }
+    // if($core->session->get('apiData')) {
+    //     $data['apiData']	= $core->session->get('apiData');
+    // }
     echo view('layout/index', $data);
 }
