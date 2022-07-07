@@ -8,6 +8,7 @@ use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
+use Config\Database;
 
 /**
  * Class BaseController
@@ -37,6 +38,9 @@ class BaseController extends Controller
      */
     protected $helpers = [];
 
+
+    protected $db;
+
     /**
      * Constructor.
      */
@@ -48,6 +52,7 @@ class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
+        $this->db = Database::connect();
 
         helper('layout_helper');
     }
