@@ -41,11 +41,15 @@ class BaseController extends Controller
 
     protected $db;
 
+    protected $acc_signed;
+
+
     /**
      * Constructor.
      */
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
+        helper('layout_helper');
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
 
@@ -53,7 +57,8 @@ class BaseController extends Controller
 
         // E.g.: $this->session = \Config\Services::session();
         $this->db = Database::connect();
+        $this->acc_signed = "admin";
 
-        helper('layout_helper');
+
     }
 }

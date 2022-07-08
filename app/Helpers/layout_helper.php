@@ -3,8 +3,10 @@
 function render($core, $file, $data = [])	{
 
     $data = array_merge($data, [
-        'mainPage' => $file
+        'mainPage' => $file,
+        'core' => $core
     ]);
+    
 
     if(method_exists($core,'sessionMsg')) {
         $data['sessionMsg']	= $core->sessionMsg();

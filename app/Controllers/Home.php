@@ -14,8 +14,14 @@ class Home extends BaseController
 
             $data['test'] = 'not connected';
         }
-        $data['db'] = $this->db->table('h_customer');
+        $data['db'] = 's';
+
+        $data = [
+            'acc_signed' => $this->acc_signed,
+        ];
         
         return render($this, 'SuratPesanan/index', $data);
     }
+
+    
 }
