@@ -9,7 +9,6 @@
     <li class="active">General Elements</li>
     </ol>
 </section>
-
 <!-- Main content -->
 <section class="content">
     <div class="row">
