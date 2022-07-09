@@ -42,6 +42,7 @@ class BaseController extends Controller
     protected $db;
 
     protected $acc_signed;
+    protected $data = [];
 
 
     /**
@@ -58,6 +59,11 @@ class BaseController extends Controller
         // E.g.: $this->session = \Config\Services::session();
         $this->db = Database::connect();
         $this->acc_signed = "admin";
+        $this->data = array_merge($this->data,[
+            'acc_signed' => 'admin',
+            'breadcrumb' => [],
+        ]);
+
 
 
     }

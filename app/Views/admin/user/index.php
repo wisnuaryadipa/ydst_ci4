@@ -4,10 +4,19 @@
     <small>list</small>
     </h1>
     <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="#">Master</a></li>
-    <li><a href="#">User</a></li>
-    <li class="active">Daftar User</li>
+
+        <?php 
+        $countBreadcrumb = count($breadcrumb);
+        foreach($breadcrumb as $key=>$val) { 
+            if($key == 0) {
+        ?>
+            <li><a href="#"><i class="fa fa-dashboard"></i><?= ucfirst($val) ?></a></li>
+
+        <?php } else if ($key == $countBreadcrumb - 1) { ?>
+            <li class="active"><?= ucfirst($val) ?></li>
+        <?php } else { ?>
+            <li><a href="#"><?= ucfirst($val) ?></a></li>
+        <?php }} ?>
     </ol>
 </section>
 

@@ -9,23 +9,24 @@ class UserController extends BaseController
 {
     public function index()
     {
-        $data['test'] = 'not connected';
+        $this->data['test'] = 'not connected';
+        $this->data['breadcrumb'] = ['home', 'master', 'users'];
         if($this->db){
 
-            $data['test'] = 'connected';
+            $this->data['test'] = 'connected';
         } else {
 
-            $data['test'] = 'not connected';
+            $this->data['test'] = 'not connected';
         }
-        $data['db'] = 's';
 
-        $data = [
+        $_data = [
             'parent_title' => 'Users',
             'title' => 'Daftar User',
             'acc_signed' => $this->acc_signed,
         ];
         
-        return render($this, 'admin/user/index', $data);
+        $this->data = array_merge($this->data, $_data);
+        return render($this, 'admin/user/index', $this->data);
     }
 
     public function create()

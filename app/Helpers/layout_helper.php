@@ -1,16 +1,18 @@
 <?php 
 
-function render($core, $file, $data = [])	{
+function render($core, $file, $data = [])
+{
 
     $data = array_merge($data, [
-        'mainPage' => $file,
-        'core' => $core
+        'mainPage' => $file
     ]);
     
 
     if(method_exists($core,'sessionMsg')) {
         $data['sessionMsg']	= $core->sessionMsg();
     }
+
+
 
     // if($core->session->get('apiData')) {
     //     $data['apiData']	= $core->session->get('apiData');

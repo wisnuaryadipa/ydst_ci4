@@ -6,21 +6,21 @@ class Home extends BaseController
 {
     public function index()
     {
-        $data['test'] = 'not connected';
+        $this->data['breadcrumb'] = ['home'];
+
+        $this->data['test'] = 'not connected';
         if($this->db){
 
-            $data['test'] = 'connected';
+            $this->data['test'] = 'connected';
         } else {
 
-            $data['test'] = 'not connected';
+            $this->data['test'] = 'not connected';
         }
-        $data['db'] = 's';
 
-        $data = [
-            'acc_signed' => $this->acc_signed,
-        ];
         
-        return render($this, 'SuratPesanan/index', $data);
+        $this->data = array_merge($this->data, ['db' => 'tests']);
+        $this->data['db'] = 's';
+        return render($this, 'SuratPesanan/index', $this->data);
     }
 
     
