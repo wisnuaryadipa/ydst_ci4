@@ -4,18 +4,29 @@
     <small>list</small>
     </h1>
     <ol class="breadcrumb">
-
         <?php 
+        /**
+         * 
+         * Generating dynamically breadcrumb using current URI
+         * $breadcrumb declared manualy in controller file.
+         * 
+         */
         $countBreadcrumb = count($breadcrumb);
+        $splitedURI = explode("/", $_SERVER['REQUEST_URI']);
         foreach($breadcrumb as $key=>$val) { 
+            $_sliced = array_slice($splitedURI, 0, $key+1);
+            $_URI = implode('/', $_sliced);
             if($key == 0) {
+                /** Condition on the first loop (First breadcrumb) */
         ?>
-            <li><a href="#"><i class="fa fa-dashboard"></i><?= ucfirst($val) ?></a></li>
+            <li><a href="<?= base_url() ?>"><i class="fa fa-dashboard"></i><?= ucfirst($val) ?></a></li>
 
-        <?php } else if ($key == $countBreadcrumb - 1) { ?>
+        <?php } else if ($key == $countBreadcrumb - 1) { 
+            /** Condition on the last loop (Last breadcrumb or current opened page) */
+        ?>
             <li class="active"><?= ucfirst($val) ?></li>
         <?php } else { ?>
-            <li><a href="#"><?= ucfirst($val) ?></a></li>
+            <li><a href="<?= base_url().'/'.$_URI; ?>"><?= ucfirst($val) ?></a></li>
         <?php }} ?>
     </ol>
 </section>
