@@ -120,10 +120,13 @@ nb-configuration.xml
 
 # Visual Studio Code
 .vscode/
+public/index.php
+spark
 
 /results/
 /phpunit*.xml
 /.phpunit.*.cache
+
 
 
 .env.local

@@ -32,16 +32,150 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->group('master', function($routes){
+    $routes->get('/', 'SuratPesananBosController::index');
+
+    $routes->group('users', function($routes){
+        $routes->get('/', 'master\UserController::index');
+        $routes->get('create', 'master\UserController::create'); 
+        $routes->get('edit/(:any)', 'master\UserController::edit/$1');
+        $routes->put('edit/(:alphanum)', 'master\UserController::edit/$id');
+        $routes->get('(:alphanum)', 'master\UserController::detail/$id');
+        $routes->post('create', 'master\UserController::post');
+        $routes->delete('detele/(:alphanum)', 'master\UserController:delte/$id');
+    });
+
+    $routes->group('roles', function($routes){
+        $routes->get('/', 'master\RoleController::index');
+        $routes->get('create', 'master\RoleController::create'); 
+        $routes->post('create', 'master\RoleController::post');
+        $routes->get('edit/(:alphanum)', 'master\RoleController::edit/$id');
+        $routes->put('edit/(:alphanum)', 'master\RoleController::edit/$id');
+        $routes->get('(:alphanum)', 'master\RoleController::detail/$id');
+        $routes->delete('detele/(:alphanum)', 'master\RoleController:delte/$id');
+    });
+
+    $routes->group('buku', function($routes){
+        $routes->get('/', 'SuratPesananBosController::index');
+        $routes->get('create', 'master\UserController::create'); 
+        $routes->post('create', 'SuratPemesanan::post');
+        $routes->get('(:alphanum)', 'SuratPemesanan::detail/$id');
+        $routes->get('edit/(:alphanum)', 'SuratPesanan::edit/$id');
+        $routes->put('edit/(:alphanum)', 'SuratPemesanan::edit/$id');
+        $routes->delete('detele/(:alphanum)', 'SuratPemesanan:delte/$id');
+    });
+
+    $routes->group('customer', function($routes){
+        $routes->get('/', 'SuratPesananBosController::index');
+        $routes->get('create', 'master\UserController::create'); 
+        $routes->post('create', 'SuratPemesanan::post');
+        $routes->get('(:alphanum)', 'SuratPemesanan::detail/$id');
+        $routes->get('edit/(:alphanum)', 'SuratPesanan::edit/$id');
+        $routes->put('edit/(:alphanum)', 'SuratPemesanan::edit/$id');
+        $routes->delete('detele/(:alphanum)', 'SuratPemesanan:delte/$id');
+    });
+
+    $routes->group('area', function($routes){
+        $routes->get('/', 'SuratPesananBosController::index');
+        $routes->get('create', 'master\UserController::create'); 
+        $routes->post('create', 'SuratPemesanan::post');
+        $routes->get('(:alphanum)', 'SuratPemesanan::detail/$id');
+        $routes->get('edit/(:alphanum)', 'SuratPesanan::edit/$id');
+        $routes->put('edit/(:alphanum)', 'SuratPemesanan::edit/$id');
+        $routes->delete('detele/(:alphanum)', 'SuratPemesanan:delte/$id');
+    });
+
+    $routes->group('cabang', function($routes){
+        $routes->get('/', 'SuratPesananBosController::index');
+        $routes->get('create', 'master\UserController::create'); 
+        $routes->post('create', 'SuratPemesanan::post');
+        $routes->get('(:alphanum)', 'SuratPemesanan::detail/$id');
+        $routes->get('edit/(:alphanum)', 'SuratPesanan::edit/$id');
+        $routes->put('edit/(:alphanum)', 'SuratPemesanan::edit/$id');
+        $routes->delete('detele/(:alphanum)', 'SuratPemesanan:delte/$id');
+    });
+    
+});
+
+
 $routes->group("sp", function($routes){
-    $routes->get('/', 'SuratPesanan::index');
-    $routes->get('/create', 'SuratPesanan::index'); 
-    $routes->post('/create', 'SuratPemesanan::post');
-    $routes->get('/(:alphanum)', 'SuratPemesanan::detail/$id');
-    $routes->get('/edit/(:alphanum)', 'SuratPesanan::edit/$id');
-    $routes->put('/edit/(:alphanum)', 'SuratPemesanan::edit/$id');
-    $routes->delete('/detele/(:alphanum)', 'SuratPemesanan:delte/$id');
+
+    $routes->get('/', 'SuratPesananController::index');
+
+    $routes->group('siswa', function($routes){
+        $routes->get('/', 'SuratPesananBosController::index');
+        $routes->get('create', 'master\UserController::create'); 
+        $routes->post('create', 'SuratPemesanan::post');
+        $routes->get('(:alphanum)', 'SuratPemesanan::detail/$id');
+        $routes->get('edit/(:alphanum)', 'SuratPesanan::edit/$id');
+        $routes->put('edit/(:alphanum)', 'SuratPemesanan::edit/$id');
+        $routes->delete('detele/(:alphanum)', 'SuratPemesanan:delte/$id');
+    });
+
+    $routes->group('bos', function($routes){
+        $routes->get('/', 'SuratPesananBosController::index');
+        $routes->get('create', 'master\UserController::create'); 
+        $routes->post('create', 'SuratPemesanan::post');
+        $routes->get('(:alphanum)', 'SuratPemesanan::detail/$id');
+        $routes->get('edit/(:alphanum)', 'SuratPesanan::edit/$id');
+        $routes->put('edit/(:alphanum)', 'SuratPemesanan::edit/$id');
+        $routes->delete('detele/(:alphanum)', 'SuratPemesanan:delte/$id');
+    });
+});
+
+
+$routes->group('faktur', function($routes){
+
+    $routes->get('/', 'SuratPesananController::index');
+
+    $routes->group('siswa', function($routes){
+        $routes->get('/', 'SuratPesananBosController::index');
+        $routes->get('create', 'master\UserController::create'); 
+        $routes->post('create', 'SuratPemesanan::post');
+        $routes->get('(:alphanum)', 'SuratPemesanan::detail/$id');
+        $routes->get('edit/(:alphanum)', 'SuratPesanan::edit/$id');
+        $routes->put('edit/(:alphanum)', 'SuratPemesanan::edit/$id');
+        $routes->delete('detele/(:alphanum)', 'SuratPemesanan:delte/$id');
+    });
+
+    $routes->group('bos', function($routes){
+        $routes->get('/', 'SuratPesananBosController::index');
+        $routes->get('create', 'master\UserController::create'); 
+        $routes->post('create', 'SuratPemesanan::post');
+        $routes->get('(:alphanum)', 'SuratPemesanan::detail/$id');
+        $routes->get('edit/(:alphanum)', 'SuratPesanan::edit/$id');
+        $routes->put('edit/(:alphanum)', 'SuratPemesanan::edit/$id');
+        $routes->delete('detele/(:alphanum)', 'SuratPemesanan:delte/$id');
+    });
 
 });
+
+
+$routes->group('promo', function($routes){
+
+    $routes->get('/', 'SuratPesananController::index');
+    $routes->get('create', 'master\UserController::create'); 
+    $routes->post('create', 'SuratPemesanan::post');
+    $routes->get('(:alphanum)', 'SuratPemesanan::detail/$id');
+    $routes->get('edit/(:alphanum)', 'SuratPesanan::edit/$id');
+    $routes->put('edit/(:alphanum)', 'SuratPemesanan::edit/$id');
+    $routes->delete('detele/(:alphanum)', 'SuratPemesanan:delte/$id');
+});
+
+
+$routes->group('gudang', function($routes){
+
+    $routes->get('/', 'SuratPesananController::index');
+    $routes->get('history', 'SuratPesananBosController::create'); 
+    $routes->get('stock', 'SuratPesananBosController::create'); 
+    $routes->post('create', 'SuratPemesanan::post');
+    $routes->get('(:alphanum)', 'SuratPemesanan::detail/$id');
+    $routes->get('edit/(:alphanum)', 'SuratPesanan::edit/$id');
+    $routes->put('edit/(:alphanum)', 'SuratPemesanan::edit/$id');
+    $routes->delete('detele/(:alphanum)', 'SuratPemesanan:delte/$id');
+
+});
+
 
 /*
  * --------------------------------------------------------------------
