@@ -24,7 +24,7 @@ class UserController extends BaseController
             'title' => 'Daftar User',
             'acc_signed' => $this->acc_signed,
         ];
-        
+
         $this->data = array_merge($this->data, $_data);
         return render($this, 'admin/user/index', $this->data);
     }

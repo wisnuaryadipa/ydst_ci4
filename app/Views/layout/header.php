@@ -17,6 +17,11 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="<?php echo base_url('assets');?>/css/skins/_all-skins.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    
+    <!-- jQuery 2.1.4 -->
+    <script src="<?php echo base_url('');?>/assets/plugins/jquery/jQuery-2.1.4.min.js"></script>
+    
   
 </head>
 <body class="skin-blue sidebar-mini">

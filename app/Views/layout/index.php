@@ -4,7 +4,7 @@
   <?php echo view('layout/sidebar'); ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <?php echo view('layout/breadcrumb'); ?>
+    <?= $v_breadcrumb; ?>
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
