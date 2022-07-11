@@ -17,7 +17,7 @@ function render($core, $file, $data = [], $layout = "full")
     // if($core->session->get('apiData')) {
     //     $data['apiData']	= $core->session->get('apiData');
     // }
-
+    $data['breadcrumb'] = array_filter($data['breadcrumb'], 'strlen');
     $data['v_breadcrumb'] = view('layout/breadcrumb', $data);
     echo view('layout/index', $data);
 }

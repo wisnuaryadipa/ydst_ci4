@@ -1,14 +1,3 @@
-<style>
-    .select2-selection__rendered {
-    line-height: 31px !important;
-    }
-    .select2-container .select2-selection--single {
-        height: 35px !important;
-    }
-    .select2-selection__arrow {
-        height: 34px !important;
-    }
-</style>
 
 <section class="content-header">
     <h1>
@@ -32,12 +21,22 @@
 
         <div class="box box-solid">
             <div class="box-filter">
-            <div class="box-body">
-                <div class="box-input-buku">
+                <div class="box-body">
                     <div class="content" style="min-height: 130px;">
+                        <div class="form-group">
+
+                            <div class="row">
+                                <div class="col-lg-6 col-sm-4">
+                                    <div class="box-input-child">
+                                        <strong>Nama</strong>
+                                        <input type="text" class="form-control" placeholder="Nama">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="row" style="min-height: 75px;">
                             <div class="col-lg-3 col-sm-4">
-                                <div class="box-input-buku-child">
+                                <div class="box-input-child">
                                     <strong>Cabang</strong>
                                     <select class="form-control select2">
                                         <option>Yogyakarta</option>
@@ -45,7 +44,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-3 col-sm-4">
-                                <div class="box-input-buku-child">
+                                <div class="box-input-child">
                                     <strong>Bagian</strong>
                                     <select class="form-control select2">
                                         <option>Semua</option>
@@ -53,7 +52,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-3 col-sm-4">
-                                <div class="box-input-buku-child">
+                                <div class="box-input-child">
                                     <strong>Gender</strong>
                                     <select class="form-control select2">
                                         <option>Laki-Laki</option>
@@ -62,20 +61,23 @@
                                 </div>
                             </div>
                             <div class="col-lg-3 col-sm-4">
-                                <div class="box-input-buku-child">
-                                    <strong>Nama</strong>
-                                    <input type="text" class="form-control" placeholder="Nama">
+                                <div class="box-input-child">
+                                    <strong>Diurutkan berdasarkan</strong>
+                                    <select class="form-control select2">
+                                        <option>Nama</option>
+                                        <option value="p">Cabang</option>
+                                        <option value="p">Bagian</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
                     
-                        <div class="box-input-buku-child submit pull-right" style="margin-top: 10px">
+                        <div class="box-input-child submit pull-right" style="margin-top: 10px">
                             <button class="btn btn-primary">Cari</button>
                         </div>
                     </div>
-                    
-                </div>
-            </div><!-- /.box-body -->
+                        
+                </div><!-- /.box-body -->
             </div>
         </div><!-- /.box -->
         <!-- form start -->
@@ -83,12 +85,12 @@
             <div class="box-body">
                 <table class="table-bordered table">
                     <tr>
-                        <th>ID Karyawan</th>
-                        <th>Nama Karyawan</th>
+                        <th> <div> <span>ID Karyawan</span><i class="pull-right fa fa-sort-amount-asc"></i></div> </th>
+                        <th><div> <span>Nama Karyawan</span><i class="pull-right fa fa-sort-amount-asc"></i></div></th>
                         <th>J.Kelamin</th>
                         <th>Bagian</th>
                         <th>Cabang</th>
-                        <th>Action</th>
+                        <th class="col-action">Action</th>
                     </tr>
                     <tr>
                         <td>K0001</td>
@@ -96,7 +98,7 @@
                         <td>Perempuan</td>
                         <td>Sales</td>
                         <td>YOGYA</td>
-                        <td>
+                        <td class="col-action-val">
                         
                         <button class="btn btn-warning">Edit</button>
                         <button class="btn btn-info">Detail</button>
@@ -109,7 +111,7 @@
                         <td>Laki-laki</td>
                         <td>Sales</td>
                         <td>YOGYA</td>
-                        <td>
+                        <td class="col-action-val">
                         
                         <button class="btn btn-warning">Edit</button>
                         <button class="btn btn-info">Detail</button>

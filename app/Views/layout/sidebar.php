@@ -33,8 +33,8 @@
                     <i class="fa fa-file-o"></i> <span>Users</span> <i class="fa fa-angle-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?= base_url() ?>/index2.html"><i class="fa fa-circle-o"></i>List</a></li>
-                    <li><a href="<?= base_url() ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL'] ?>/master/users"><i class="fa fa-circle-o"></i>List</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/users/create"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
                   </ul>
                 </li>
                 <li class="treeview">
@@ -42,8 +42,8 @@
                     <i class="fa fa-file-o"></i> <span>Role</span> <i class="fa fa-angle-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?= base_url() ?>/index2.html"><i class="fa fa-circle-o"></i> List</a></li>
-                    <li><a href="<?= base_url() ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/roles"><i class="fa fa-circle-o"></i> List</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/roles/create"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
                   </ul>
                 </li>
                 <li class="treeview">
@@ -51,8 +51,8 @@
                     <i class="fa fa-file-o"></i> <span>Buku</span> <i class="fa fa-angle-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?= base_url() ?>/index2.html"><i class="fa fa-circle-o"></i> List</a></li>
-                    <li><a href="<?= base_url() ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/book"><i class="fa fa-circle-o"></i> List</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/book/create.php"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
                   </ul>
                 </li>
                 <li class="treeview">
@@ -60,8 +60,8 @@
                     <i class="fa fa-file-o"></i> <span>Customer</span> <i class="fa fa-angle-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?= base_url() ?>/index2.html"><i class="fa fa-circle-o"></i>List</a></li>
-                    <li><a href="<?= base_url() ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i>List</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
                   </ul>
                 </li>
                 <li class="treeview">
@@ -69,8 +69,8 @@
                     <i class="fa fa-file-o"></i> <span>Area</span> <i class="fa fa-angle-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?= base_url() ?>/index2.html"><i class="fa fa-circle-o"></i>List</a></li>
-                    <li><a href="<?= base_url() ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i>List</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
                   </ul>
                 </li>
                 <li class="treeview">
@@ -78,8 +78,8 @@
                     <i class="fa fa-file-o"></i> <span>Cabang</span> <i class="fa fa-angle-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?= base_url() ?>/index2.html"><i class="fa fa-circle-o"></i>List</a></li>
-                    <li><a href="<?= base_url() ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i>List</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
                   </ul>
                 </li>
               </ul>
@@ -97,8 +97,8 @@
                     <i class="fa fa-file-o"></i> <span>BOS</span> <i class="fa fa-angle-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?= base_url() ?>/index2.html"><i class="fa fa-circle-o"></i> Daftar Surat Pemesanan</a></li>
-                    <li><a href="<?= base_url() ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i> Daftar Surat Pemesanan</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
                   </ul>
                 </li>
                 <li class="treeview">
@@ -106,8 +106,8 @@
                     <i class="fa fa-file-o"></i> <span>SISWA</span> <i class="fa fa-angle-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?= base_url() ?>/index2.html"><i class="fa fa-circle-o"></i> Daftar Surat Pemesanan</a></li>
-                    <li><a href="<?= base_url() ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i> Daftar Surat Pemesanan</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
                   </ul>
                 </li>
               </ul>
@@ -124,8 +124,8 @@
                     <i class="fa fa-file-o"></i> <span>BOS</span> <i class="fa fa-angle-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?= base_url() ?>/index2.html"><i class="fa fa-circle-o"></i> List</a></li>
-                    <li><a href="<?= base_url() ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i> List</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
                   </ul>
                 </li>
                 <li class="treeview">
@@ -133,8 +133,8 @@
                     <i class="fa fa-file-o"></i> <span>SISWA</span> <i class="fa fa-angle-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?= base_url() ?>/index2.html"><i class="fa fa-circle-o"></i> List</a></li>
-                    <li><a href="<?= base_url() ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i> List</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
                   </ul>
                 </li>
               </ul>
@@ -147,8 +147,8 @@
               </a>
               <ul class="treeview-menu">
                 
-                    <li><a href="<?= base_url() ?>/index2.html"><i class="fa fa-circle-o"></i> List</a></li>
-                    <li><a href="<?= base_url() ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i> List</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
               </ul>
             </li>
 
@@ -158,8 +158,8 @@
               </a>
               <ul class="treeview-menu">
                 
-                    <li><a href="<?= base_url() ?>/index2.html"><i class="fa fa-circle-o"></i>Stock</a></li>
-                    <li><a href="<?= base_url() ?>/index.html"><i class="fa fa-circle-o"></i>Histori Transaksi</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i>Stock</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i>Histori Transaksi</a></li>
               </ul>
             </li>
           </ul>

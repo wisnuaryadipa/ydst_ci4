@@ -4,9 +4,9 @@
   <?php echo view('layout/sidebar'); ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <?= $v_breadcrumb; ?>
+    <?php if ($breadcrumb){ echo $v_breadcrumb; }; ?>
     <!-- Main content -->
-    <section class="content">
+    <section class="content" style="padding-top: 0px;">
       <div class="container-fluid">
         <?php echo view($mainPage); ?>
       </div><!-- /.container-fluid -->
@@ -15,9 +15,9 @@
   <!-- /.content-wrapper -->
 
   <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
+  <!-- <aside class="control-sidebar control-sidebar-dark"> -->
     <!-- Control sidebar content goes here -->
-  </aside>
+  <!-- </aside> -->
   <!-- /.control-sidebar -->
 
 </div>

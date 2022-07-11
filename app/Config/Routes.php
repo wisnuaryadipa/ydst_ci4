@@ -21,7 +21,7 @@ $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
-$routes->setAutoRoute(true);
+$routes->setAutoRoute(false);
 
 /*
  * --------------------------------------------------------------------
@@ -38,11 +38,11 @@ $routes->group('master', function($routes){
     $routes->group('users', function($routes){
         $routes->get('/', 'master\UserController::index');
         $routes->get('create', 'master\UserController::create'); 
+        $routes->post('create', 'master\UserController::post');
         $routes->get('edit/(:any)', 'master\UserController::edit/$1');
         $routes->put('edit/(:alphanum)', 'master\UserController::edit/$id');
-        $routes->get('(:alphanum)', 'master\UserController::detail/$id');
-        $routes->post('create', 'master\UserController::post');
         $routes->delete('detele/(:alphanum)', 'master\UserController:delte/$id');
+        $routes->get('(:alphanum)', 'master\UserController::detail/$id');
     });
 
     $routes->group('roles', function($routes){

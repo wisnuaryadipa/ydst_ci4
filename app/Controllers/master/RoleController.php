@@ -8,62 +8,59 @@ use App\Controllers\BaseController;
 class RoleController extends BaseController
 {
 
-    
+    const PARENT_BREADCRUMB = ['home', 'master', 'role'];
+
     public function index()
     {
-        $data['test'] = 'not connected';
-        if($this->db){
-
-            $data['test'] = 'connected';
-        } else {
-
-            $data['test'] = 'not connected';
-        }
-        $data['db'] = 's';
-
-        $data = [
-            'parent_title' => 'Roles',
-            'title' => 'Daftar Role',
+        $this->data = [
+            ...$this->data,
+            'parent_title' => 'Role / Jabatan',
+            'title' => 'Daftar Role / Jabatan',
             'acc_signed' => $this->acc_signed,
+            'breadcrumb' => [...self::PARENT_BREADCRUMB, '']
         ];
-        
-        return render($this, 'admin/role/index', $data);
+
+        return render($this, 'admin/role/index', $this->data);
     }
 
     public function create()
     {
-        
-        $data = [
+        $this->data = [
+            ...$this->data,
             'parent_title' => 'Roles',
             'title' => 'Buat Role Baru',
             'acc_signed' => $this->acc_signed,
+            'breadcrumb' => [...self::PARENT_BREADCRUMB, 'create']
         ];
         
-        return render($this, 'admin/role/create', $data);
+        return render($this, 'admin/role/create', $this->data);
     }
 
     public function edit($id = null)
     {
-        
-        $data = [
+        $this->data = [
+            ...$this->data,
             'parent_title' => 'Roles',
             'title' => 'Edit Role',
             'acc_signed' => $this->acc_signed,
+            'breadcrumb' => [...self::PARENT_BREADCRUMB, 'edit']
+
         ];
         
-        return render($this, 'admin/role/edit', $data);
+        return render($this, 'admin/role/edit', $this->data);
     }
 
     public function detail($id = null)
     {
-        
-        $data = [
+        $this->data = [
+            ...$this->data,
             'parent_title' => 'Roles',
             'title' => 'Detail Role',
             'acc_signed' => $this->acc_signed,
+            'breadcrumb' => [...self::PARENT_BREADCRUMB, 'edit']
         ];
         
-        return render($this, 'admin/role/detail', $data);
+        return render($this, 'admin/role/detail', $this->data);
     }
 
     

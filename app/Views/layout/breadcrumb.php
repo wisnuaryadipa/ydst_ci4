@@ -1,5 +1,5 @@
 <div  style="background-color:white;">
-<ol class="breadcrumb">
+<ol class="breadcrumb" style="margin-bottom: 0px;">
   <?php 
   /**
    * 
@@ -15,14 +15,14 @@
       if($key == 0) {
           /** Condition on the first loop (First breadcrumb) */
   ?>
-      <li><a href="<?= base_url() ?>"><i class="fa fa-dashboard"></i><?= ucfirst($val) ?></a></li>
+      <li><a href="<?= $_ENV['BASE_URL']; ?>"><i class="fa fa-dashboard"></i><?= ucfirst($val) ?></a></li>
 
   <?php } else if ($key == $countBreadcrumb - 1) { 
       /** Condition on the last loop (Last breadcrumb or actual opened page) */
   ?>
       <li class="active"><?= ucfirst($val) ?></li>
   <?php } else { ?>
-      <li><a href="<?= base_url().'/'.$_URI; ?>"><?= ucfirst($val) ?></a></li>
+      <li><a href="<?= $_ENV['BASE_URL'].'/'.$_URI; ?>"><?= ucfirst($val) ?></a></li>
   <?php }} ?>
 </ol>
 </div>
