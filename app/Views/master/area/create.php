@@ -44,41 +44,56 @@
                             <input type="text" class="form-control" name="nama_user" placeholder="Alamat Area">
                             <small class="help-block"></small>
                         </div>
-                        <div class="form-group">
-                            <label for="matkul">Provinsi</label>
-                            <select name="provinsi" id="provinsi" class="form-control select2" style="width: 100%!important">
-                                <option value="" disabled selected>Prov</option>
-                            </select>
-                            <small class="help-block"></small>
-                        </div>
-                        <div class="form-group">
-                            <label for="matkul">Kabupaten</label>
-                            <select name="kabupaten" id="kabupaten" class="form-control select2" style="width: 100%!important">
-                                <option value="" disabled selected>Kab</option>
-                            </select>
-                            <small class="help-block"></small>
-                        </div>
-                        <div class="form-group">
-                            <label for="matkul">Kecamatan</label>
-                            <select name="pendidikan" id="pendidikan" class="form-control select2" style="width: 100%!important">
-                                <option value="" disabled selected>Kec</option>
-                            </select>
-                            <small class="help-block"></small>
-                        </div>
-                        <div class="form-group">
-                            <label for="nip">E-mail</label>
-                            <input autofocus="autofocus" onfocus="this.select()" type="number" id="id_user" class="form-control" name="id_user" placeholder="E-mail">
-                            <small class="help-block"></small>
+                        <div class="row">
+                            <div class="col-lg-4">
+
+                                <div class="form-group">
+                                    <label for="matkul">Provinsi</label>
+                                    <select name="provinsi" id="provinsi" class="form-control select2" style="width: 100%!important">
+                                        <option value="" disabled selected>Prov</option>
+                                    </select>
+                                    <small class="help-block"></small>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                
+                                <div class="form-group">
+                                    <label for="matkul">Kabupaten</label>
+                                    <select name="kabupaten" id="kabupaten" class="form-control select2" style="width: 100%!important">
+                                        <option value="" disabled selected>Kab</option>
+                                    </select>
+                                    <small class="help-block"></small>
+                                </div>
+                                
+                            </div>
+                            <div class="col-lg-4">
+                                
+                                <div class="form-group">
+                                    <label for="matkul">Kecamatan</label>
+                                    <select name="pendidikan" id="pendidikan" class="form-control select2" style="width: 100%!important">
+                                        <option value="" disabled selected>Kec</option>
+                                    </select>
+                                    <small class="help-block"></small>
+                                </div>
+                            </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-lg-6">
+                                
+                                <div class="form-group">
+                                    <label for="nip">E-mail</label>
+                                    <input autofocus="autofocus" onfocus="this.select()" type="number" id="id_user" class="form-control" name="id_user" placeholder="E-mail">
+                                    <small class="help-block"></small>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="matkul">No. Telp</label>
                                     <input type="text" class="form-control" name="bergabung" placeholder="No. Telp">
                                     <small class="help-block"></small>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="matkul">No. Fax.</label>
                                     <input type="text" class="form-control" name="berhenti" placeholder="No. Fax.">

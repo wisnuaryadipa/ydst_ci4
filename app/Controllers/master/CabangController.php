@@ -20,7 +20,7 @@ class CabangController extends BaseController
             'breadcrumb' => [...self::PARENT_BREADCRUMB, '']
         ];
 
-        return render($this, 'admin/cabang/index', $this->data);
+        return render($this, 'master/cabang/index', $this->data);
     }
 
     public function create()
@@ -33,7 +33,7 @@ class CabangController extends BaseController
             'breadcrumb' => [...self::PARENT_BREADCRUMB, 'create']
         ];
         
-        return render($this, 'admin/cabang/create', $this->data);
+        return render($this, 'master/cabang/create', $this->data);
     }
 
     public function edit($id = null)
@@ -47,7 +47,7 @@ class CabangController extends BaseController
 
         ];
         
-        return render($this, 'admin/cabang/edit', $this->data);
+        return render($this, 'master/cabang/edit', $this->data);
     }
 
     public function detail($id = null)
@@ -60,7 +60,7 @@ class CabangController extends BaseController
             'breadcrumb' => [...self::PARENT_BREADCRUMB, 'edit']
         ];
         
-        return render($this, 'admin/cabang/detail', $this->data);
+        return render($this, 'master/cabang/detail', $this->data);
     }
 
     

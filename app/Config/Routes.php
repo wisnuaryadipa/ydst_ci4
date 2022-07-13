@@ -58,13 +58,13 @@ $routes->group('', function($routes) {
         });
     
         $routes->group('buku', function($routes){
-            $routes->get('/', 'SuratPesananBosController::index');
-            $routes->get('create', 'master\UserController::create'); 
-            $routes->post('create', 'SuratPemesanan::post');
-            $routes->get('(:alphanum)', 'SuratPemesanan::detail/$id');
-            $routes->get('edit/(:alphanum)', 'SuratPesanan::edit/$id');
-            $routes->put('edit/(:alphanum)', 'SuratPemesanan::edit/$id');
-            $routes->delete('detele/(:alphanum)', 'SuratPemesanan:delte/$id');
+            $routes->get('/', 'master\BukuController::index');
+            $routes->get('create', 'master\BukuController::create'); 
+            $routes->post('create', 'master\BukuController::post');
+            $routes->get('(:alphanum)', 'master\BukuController::detail/$id');
+            $routes->get('edit/(:alphanum)', 'master\BukuController::edit/$id');
+            $routes->put('edit/(:alphanum)', 'master\BukuController::edit/$id');
+            $routes->delete('detele/(:alphanum)', 'master\BukuController:delte/$id');
         });
     
         $routes->group('customer', function($routes){
@@ -88,13 +88,13 @@ $routes->group('', function($routes) {
         });
     
         $routes->group('cabang', function($routes){
-            $routes->get('/', 'SuratPesananBosController::index');
-            $routes->get('create', 'master\UserController::create'); 
-            $routes->post('create', 'SuratPemesanan::post');
-            $routes->get('(:alphanum)', 'SuratPemesanan::detail/$id');
-            $routes->get('edit/(:alphanum)', 'SuratPesanan::edit/$id');
-            $routes->put('edit/(:alphanum)', 'SuratPemesanan::edit/$id');
-            $routes->delete('detele/(:alphanum)', 'SuratPemesanan:delte/$id');
+            $routes->get('/', 'master\CabangController::index');
+            $routes->get('create', 'master\CabangController::create'); 
+            $routes->post('create', 'master\CabangController::post');
+            $routes->get('(:alphanum)', 'master\CabangController::detail/$id');
+            $routes->get('edit/(:alphanum)', 'master\CabangController::edit/$id');
+            $routes->put('edit/(:alphanum)', 'master\CabangController::edit/$id');
+            $routes->delete('detele/(:alphanum)', 'master\CabangController:delte/$id');
         });
         
     });

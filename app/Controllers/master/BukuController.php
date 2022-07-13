@@ -20,7 +20,7 @@ class BukuController extends BaseController
             'breadcrumb' => [...self::PARENT_BREADCRUMB, '']
         ];
 
-        return render($this, 'admin/buku/index', $this->data);
+        return render($this, 'master/buku/index', $this->data);
     }
 
     public function create()
@@ -33,34 +33,34 @@ class BukuController extends BaseController
             'breadcrumb' => [...self::PARENT_BREADCRUMB, 'create']
         ];
         
-        return render($this, 'admin/buku/create', $this->data);
+        return render($this, 'master/buku/create', $this->data);
     }
 
     public function edit($id = null)
     {
         $this->data = [
             ...$this->data,
-            'parent_title' => ' Buku',
+            'parent_title' => 'Buku',
             'title' => 'Edit Buku',
             'acc_signed' => $this->acc_signed,
             'breadcrumb' => [...self::PARENT_BREADCRUMB, 'edit']
 
         ];
         
-        return render($this, 'admin/buku/edit', $this->data);
+        return render($this, 'master/buku/edit', $this->data);
     }
 
     public function detail($id = null)
     {
         $this->data = [
             ...$this->data,
-            'parent_title' => ' Buku',
+            'parent_title' => 'Buku',
             'title' => 'Detail Buku',
             'acc_signed' => $this->acc_signed,
             'breadcrumb' => [...self::PARENT_BREADCRUMB, 'edit']
         ];
         
-        return render($this, 'admin/buku/detail', $this->data);
+        return render($this, 'master/buku/detail', $this->data);
     }
 
     

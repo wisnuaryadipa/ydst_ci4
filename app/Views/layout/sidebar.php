@@ -51,8 +51,8 @@
                     <i class="fa fa-file-o"></i> <span>Buku</span> <i class="fa fa-angle-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/book"><i class="fa fa-circle-o"></i> List</a></li>
-                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/book/create.php"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/buku"><i class="fa fa-circle-o"></i> List</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/buku/create.php"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
                   </ul>
                 </li>
                 <li class="treeview">
