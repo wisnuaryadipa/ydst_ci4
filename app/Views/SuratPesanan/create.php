@@ -1,4 +1,7 @@
 <style>
+    #rencana-pelunasan {
+        overflow: auto;
+    }
     #rencana-pelunasan tr td input{
         width: 50px;
     }
@@ -35,6 +38,15 @@
                             <small class="help-block"></small>
                         </div>
                     </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label for="matkul">Periode Jual</label>
+                            <select name="periode" id="periode" class="form-control select2" style="width: 100%!important">
+                                <option value="" disabled selected>Semester 01 2022/2023</option>
+                            </select>
+                            <small class="help-block"></small>
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
@@ -46,15 +58,9 @@
                             <small class="help-block"></small>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="form-group">
-                            <label for="matkul">Periode Jual</label>
-                            <select name="periode" id="periode" class="form-control select2" style="width: 100%!important">
-                                <option value="" disabled selected>Semester 01 2022/2023</option>
-                            </select>
-                            <small class="help-block"></small>
-                        </div>
-                    </div>
+                </div>
+                <div class="row">
+                    
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="matkul">Sales</label>
