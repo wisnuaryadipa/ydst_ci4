@@ -60,8 +60,8 @@
                     <i class="fa fa-file-o"></i> <span>Customer</span> <i class="fa fa-angle-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i>List</a></li>
-                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/customer"><i class="fa fa-circle-o"></i>List</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>//master/customer/create"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
                   </ul>
                 </li>
                 <li class="treeview">

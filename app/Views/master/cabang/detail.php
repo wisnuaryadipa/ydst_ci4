@@ -139,14 +139,6 @@
                 </div>
 
             </div>
-
-            <div class="box-footer">
-                <div class="form-group pull-right">
-                    <button type="submit" id="submit" class="btn btn-flat bg-purple">
-                        <i class="fa fa-save"></i> Simpan
-                    </button>
-                </div>
-            </div>
         </div><!-- /.box -->
 
 

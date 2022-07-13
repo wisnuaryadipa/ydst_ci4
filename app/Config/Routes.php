@@ -68,13 +68,13 @@ $routes->group('', function($routes) {
         });
     
         $routes->group('customer', function($routes){
-            $routes->get('/', 'SuratPesananBosController::index');
-            $routes->get('create', 'master\UserController::create'); 
-            $routes->post('create', 'SuratPemesanan::post');
-            $routes->get('(:alphanum)', 'SuratPemesanan::detail/$id');
-            $routes->get('edit/(:alphanum)', 'SuratPesanan::edit/$id');
-            $routes->put('edit/(:alphanum)', 'SuratPemesanan::edit/$id');
-            $routes->delete('detele/(:alphanum)', 'SuratPemesanan:delte/$id');
+            $routes->get('/', 'master\CustomerController::index');
+            $routes->get('create', 'master\CustomerController::create'); 
+            $routes->post('create', 'master\CustomerController::post');
+            $routes->get('(:alphanum)', 'master\CustomerController::detail/$id');
+            $routes->get('edit/(:alphanum)', 'master\CustomerController::edit/$id');
+            $routes->put('edit/(:alphanum)', 'master\CustomerController::edit/$id');
+            $routes->delete('detele/(:alphanum)', 'master\CustomerController:delte/$id');
         });
     
         $routes->group('area', function($routes){

@@ -20,7 +20,7 @@ class CustomerController extends BaseController
             'breadcrumb' => [...self::PARENT_BREADCRUMB, '']
         ];
 
-        return render($this, 'admin/customer/index', $this->data);
+        return render($this, 'master/customer/index', $this->data);
     }
 
     public function create()
@@ -33,7 +33,7 @@ class CustomerController extends BaseController
             'breadcrumb' => [...self::PARENT_BREADCRUMB, 'create']
         ];
         
-        return render($this, 'admin/customer/create', $this->data);
+        return render($this, 'master/customer/create', $this->data);
     }
 
     public function edit($id = null)
@@ -47,7 +47,7 @@ class CustomerController extends BaseController
 
         ];
         
-        return render($this, 'admin/customer/edit', $this->data);
+        return render($this, 'master/customer/edit', $this->data);
     }
 
     public function detail($id = null)
@@ -60,7 +60,7 @@ class CustomerController extends BaseController
             'breadcrumb' => [...self::PARENT_BREADCRUMB, 'edit']
         ];
         
-        return render($this, 'admin/customer/detail', $this->data);
+        return render($this, 'master/customer/detail', $this->data);
     }
 
     

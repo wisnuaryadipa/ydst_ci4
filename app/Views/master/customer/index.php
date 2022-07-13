@@ -51,9 +51,17 @@
                         <div class="row" style="min-height: 75px;">
                             <div class="col-lg-3 col-sm-4">
                                 <div class="box-input-child">
-                                    <strong>Kode <?= $parent_title ?></strong>
+                                    <strong>Jenjang</strong>
                                     <select class="form-control select2">
-                                        <option>0.0.0</option>
+                                        <option>XXX</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-4">
+                                <div class="box-input-child">
+                                    <strong>Segment</strong>
+                                    <select class="form-control select2">
+                                        <option>XXX</option>
                                     </select>
                                 </div>
                             </div>
@@ -74,14 +82,18 @@
                     <tr>
                         <th> <div> <span>Kode <?= $parent_title ?></span><i class="pull-right fa fa-sort-amount-asc"></i></div> </th>
                         <th><div> <span>Nama <?= $parent_title ?></span><i class="pull-right fa fa-sort-amount-asc"></i></div></th>
-                        <th>Harga Jual</th>
-                        <th>Penulis</th>
+                        <th>Kota</th>
+                        <th>NPSN</th>
+                        <th>Jenjang</th>
+                        <th>Segmen</th>
                         <th class="col-action">Action</th>
                     </tr>
                     <tr>
                         <td>0.0.0</td>
                         <td>Matematika</td>
                         <td>42.000</td>
+                        <td>------</td>
+                        <td>------</td>
                         <td>------</td>
                         <td class="col-action-val">
                         
