@@ -30,7 +30,7 @@ class UserController extends BaseController
             'parent_title' => 'Users',
             'title' => 'Buat User Baru',
             'acc_signed' => $this->acc_signed,
-            'breadcrumb' => [...self::PARENT_BREADCRUMB, '']
+            'breadcrumb' => [...self::PARENT_BREADCRUMB, 'create']
         ];
         
         return render($this, 'admin/user/create', $this->data);
@@ -44,7 +44,7 @@ class UserController extends BaseController
             'parent_title' => 'Users',
             'title' => 'Edit User',
             'acc_signed' => $this->acc_signed,
-            'breadcrumb' => [...self::PARENT_BREADCRUMB, '']
+            'breadcrumb' => [...self::PARENT_BREADCRUMB, 'edit']
         ];
         
         return render($this, 'admin/user/edit', $this->data);
@@ -58,7 +58,7 @@ class UserController extends BaseController
             'parent_title' => 'Users',
             'title' => 'Detail User',
             'acc_signed' => $this->acc_signed,
-            'breadcrumb' => [...self::PARENT_BREADCRUMB, '']
+            'breadcrumb' => [...self::PARENT_BREADCRUMB, 'detail']
         ];
         
         return render($this, 'admin/user/detail', $this->data);

@@ -71,7 +71,7 @@
                             <a href="<?=$_ENV['BASE_URL_FULL']."/master/roles/edit/2" ?>">
                                 <div class="btn btn-warning"> Edit</div>
                             </a>
-                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/roles/detail/2" ?>">
+                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/roles/2" ?>">
                                 <div class="btn btn-info"> Detail</div>
                             </a>
                             <a href="<?=$_ENV['BASE_URL_FULL']."/master/roles/delete/2" ?>">
@@ -88,3 +88,10 @@
     </div><!--/.col (left) -->
     </div>   <!-- /.row -->
 </section><!-- /.content -->
+<script>
+
+    $(document).ready(function() {
+        $('.select2').select2();
+    });
+
+</script>

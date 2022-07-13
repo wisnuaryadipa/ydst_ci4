@@ -34,6 +34,16 @@
                             <small class="help-block"></small>
                         </div>
                         <div class="form-group">
+                            <label for="nip">Usernamer</label>
+                            <input autofocus="autofocus" type="text" id="username" class="form-control" name="username" placeholder="Usernamer">
+                            <small class="help-block"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="nip">Password</label>
+                            <input autofocus="autofocus" type="password" id="password" class="form-control" name="password" placeholder="Password">
+                            <small class="help-block"></small>
+                        </div>
+                        <div class="form-group">
                             <label for="nama_dosen">Nama User</label>
                             <input type="text" class="form-control" name="nama_user" placeholder="Nama User">
                             <small class="help-block"></small>

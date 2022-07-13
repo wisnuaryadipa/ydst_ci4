@@ -1,7 +1,7 @@
 <section class="content-header">
     <h1>
     <?= $parent_title ?>
-    <small>detail</small>
+    <small>Save</small>
     </h1>
     <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -86,8 +86,8 @@
                                             </td>
                                             <td>
                                             
-                                                <button class="btn btn-info">Detail</button>
-                                                <button class="btn btn-danger">Delete</button>
+                                                <button class="btn btn-info">Save</button>
+                                                 
                                             </td>
                                         </tr>
                                         <tr>
@@ -117,8 +117,8 @@
                                             </td>
                                             <td>
                                             
-                                            <button class="btn btn-info">Detail</button>
-                                            <button class="btn btn-danger">Delete</button>
+                                            <button class="btn btn-info">Save</button>
+                                             
                                             </td>
                                         </tr>
                                         <tr>
@@ -148,8 +148,8 @@
                                             </td>
                                             <td>
                                             
-                                            <button class="btn btn-info">Detail</button>
-                                            <button class="btn btn-danger">Delete</button>
+                                            <button class="btn btn-info">Save</button>
+                                             
                                             </td>
                                         </tr>
                                         <tr>
@@ -179,8 +179,8 @@
                                             </td>
                                             <td>
                                             
-                                            <button class="btn btn-info">Detail</button>
-                                            <button class="btn btn-danger">Delete</button>
+                                            <button class="btn btn-info">Save</button>
+                                             
                                             </td>
                                         </tr>
                                         <tr>
@@ -210,8 +210,8 @@
                                             </td>
                                             <td>
                                             
-                                            <button class="btn btn-info">Detail</button>
-                                            <button class="btn btn-danger">Delete</button>
+                                            <button class="btn btn-info">Save</button>
+                                             
                                             </td>
                                         </tr>
                                         <tr>
@@ -241,8 +241,8 @@
                                             </td>
                                             <td>
                                             
-                                            <button class="btn btn-info">Detail</button>
-                                            <button class="btn btn-danger">Delete</button>
+                                            <button class="btn btn-info">Save</button>
+                                             
                                             </td>
                                         </tr>
                                         <tr>
@@ -272,8 +272,8 @@
                                             </td>
                                             <td>
                                             
-                                            <button class="btn btn-info">Detail</button>
-                                            <button class="btn btn-danger">Delete</button>
+                                            <button class="btn btn-info">Save</button>
+                                             
                                             </td>
                                         </tr>
                                         <tr>
@@ -303,8 +303,8 @@
                                             </td>
                                             <td>
                                             
-                                            <button class="btn btn-info">Detail</button>
-                                            <button class="btn btn-danger">Delete</button>
+                                            <button class="btn btn-info">Save</button>
+                                             
                                             </td>
                                         </tr>
                                         <tr>
@@ -334,8 +334,8 @@
                                             </td>
                                             <td>
                                             
-                                            <button class="btn btn-info">Detail</button>
-                                            <button class="btn btn-danger">Delete</button>
+                                            <button class="btn btn-info">Save</button>
+                                             
                                             </td>
                                         </tr>
                                     </table>
@@ -349,14 +349,6 @@
                 </div>
                 
                 
-            </div>
-
-            <div class="box-footer">
-                <div class="form-group pull-right">
-                    <button type="submit" id="submit" class="btn btn-flat bg-purple">
-                        <i class="fa fa-save"></i> Simpan
-                    </button>
-                </div>
             </div>
         </div><!-- /.box -->
 

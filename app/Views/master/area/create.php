@@ -3,12 +3,6 @@
     <?= $parent_title ?>
     <small>list</small>
     </h1>
-    <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="#">Master</a></li>
-    <li><a href="#">User</a></li>
-    <li class="active"><?= $title ?></li>
-    </ol>
 </section>
 
 <!-- Main content -->
@@ -29,55 +23,65 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="nip">ID User</label>
-                            <input autofocus="autofocus" type="text" id="id_user" class="form-control" name="id_user" placeholder="ID User">
+                            <label for="nip">Kode <?= $parent_title ?></label>
+                            <input autofocus="autofocus" onfocus="this.select()" type="number" id="id_user" class="form-control" name="id_user" placeholder="ID <?= $parent_title ?>">
                             <small class="help-block"></small>
                         </div>
                         <div class="form-group">
-                            <label for="nama_dosen">Nama User</label>
-                            <input type="text" class="form-control" name="nama_user" placeholder="Nama User">
+                            <label for="nama_dosen">Nama <?= $parent_title ?></label>
+                            <input type="text" class="form-control" name="nama_user" placeholder="Nama <?= $parent_title ?>">
                             <small class="help-block"></small>
                         </div>
                         <div class="form-group">
-                            <label for="email">Lokasi / Area</label>
+                            <label for="email">Kepala Area</label>
                             <select name="area" id="area" class="form-control select2" style="width: 100%!important">
-                                <option value="" disabled selected>Area</option>
+                                <option value="" disabled selected>Kepala Area</option>
                             </select>
                             <small class="help-block"></small>
                         </div>
                         <div class="form-group">
-                            <label for="matkul">Bagian</label>
-                            <select name="bagian" id="bagian" class="form-control select2" style="width: 100%!important">
-                                <option value="" disabled selected>Bagian</option>
+                            <label for="matkul">Alamat Area</label>
+                            <input type="text" class="form-control" name="nama_user" placeholder="Alamat Area">
+                            <small class="help-block"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="matkul">Provinsi</label>
+                            <select name="provinsi" id="provinsi" class="form-control select2" style="width: 100%!important">
+                                <option value="" disabled selected>Prov</option>
                             </select>
                             <small class="help-block"></small>
                         </div>
                         <div class="form-group">
-                            <label for="matkul">Jabatan</label>
-                            <select name="jabatan" id="jabatan" class="form-control select2" style="width: 100%!important">
-                                <option value="" disabled selected>Jabatan</option>
+                            <label for="matkul">Kabupaten</label>
+                            <select name="kabupaten" id="kabupaten" class="form-control select2" style="width: 100%!important">
+                                <option value="" disabled selected>Kab</option>
                             </select>
                             <small class="help-block"></small>
                         </div>
                         <div class="form-group">
-                            <label for="matkul">Pendidikan</label>
+                            <label for="matkul">Kecamatan</label>
                             <select name="pendidikan" id="pendidikan" class="form-control select2" style="width: 100%!important">
-                                <option value="" disabled selected>Pendidikan</option>
+                                <option value="" disabled selected>Kec</option>
                             </select>
+                            <small class="help-block"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="nip">E-mail</label>
+                            <input autofocus="autofocus" onfocus="this.select()" type="number" id="id_user" class="form-control" name="id_user" placeholder="E-mail">
                             <small class="help-block"></small>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="matkul">Bergabung</label>
-                                    <input type="text" class="form-control datepicker" name="bergabung" placeholder="Bergabung">
+                                    <label for="matkul">No. Telp</label>
+                                    <input type="text" class="form-control" name="bergabung" placeholder="No. Telp">
                                     <small class="help-block"></small>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="matkul">Berhenti</label>
-                                    <input type="text" class="form-control datepicker" name="berhenti" placeholder="Berhenti">
+                                    <label for="matkul">No. Fax.</label>
+                                    <input type="text" class="form-control" name="berhenti" placeholder="No. Fax.">
                                     <small class="help-block"></small>
                                 </div>
                             </div>

@@ -10,13 +10,16 @@
 <section class="content">
     <div class="row">
     <!-- left column -->
-    <div class="col-md-10">
+    <div class="col-lg-10">
         <!-- general form elements -->
         <div class="box box-primary">
         <div class="box-header with-border">
             <h3 class="box-title"><?= $title ?></h3>
-            <div class="type-sp pull-right">
-            </div>
+                <div class="type-sp pull-right">
+                    <a href="<?= $_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/create" ?>">
+                        <div class="btn bg-olive btn-flat"> Tambah <?= $parent_title ?></div>
+                    </a> 
+                </div>
         </div><!-- /.box-header -->
 
         <div class="box box-solid">
@@ -28,7 +31,7 @@
                             <div class="row">
                                 <div class="col-lg-6 col-sm-4">
                                     <div class="box-input-child">
-                                        <strong>Nama</strong>
+                                        <strong>Nama <?= $parent_title ?></strong>
                                         <input type="text" class="form-control" placeholder="Nama">
                                     </div>
                                 </div>
@@ -37,36 +40,9 @@
                         <div class="row" style="min-height: 75px;">
                             <div class="col-lg-3 col-sm-4">
                                 <div class="box-input-child">
-                                    <strong>Cabang</strong>
+                                    <strong>Kode <?= $parent_title ?></strong>
                                     <select class="form-control select2">
-                                        <option>Yogyakarta</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-4">
-                                <div class="box-input-child">
-                                    <strong>Bagian</strong>
-                                    <select class="form-control select2">
-                                        <option>Semua</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-4">
-                                <div class="box-input-child">
-                                    <strong>Gender</strong>
-                                    <select class="form-control select2">
-                                        <option>Laki-Laki</option>
-                                        <option value="p">Perempuan</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-4">
-                                <div class="box-input-child">
-                                    <strong>Diurutkan berdasarkan</strong>
-                                    <select class="form-control select2">
-                                        <option>Nama</option>
-                                        <option value="p">Cabang</option>
-                                        <option value="p">Bagian</option>
+                                        <option>DIY</option>
                                     </select>
                                 </div>
                             </div>
@@ -85,37 +61,28 @@
             <div class="box-body">
                 <table class="table-bordered table">
                     <tr>
-                        <th> <div> <span>ID Karyawan</span><i class="pull-right fa fa-sort-amount-asc"></i></div> </th>
-                        <th><div> <span>Nama Karyawan</span><i class="pull-right fa fa-sort-amount-asc"></i></div></th>
-                        <th>J.Kelamin</th>
-                        <th>Bagian</th>
-                        <th>Cabang</th>
+                        <th> <div> <span>Kode <?= $parent_title ?></span><i class="pull-right fa fa-sort-amount-asc"></i></div> </th>
+                        <th><div> <span>Nama <?= $parent_title ?></span><i class="pull-right fa fa-sort-amount-asc"></i></div></th>
+                        <th>Kepala Area</th>
+                        <th>Kota</th>
                         <th class="col-action">Action</th>
                     </tr>
                     <tr>
-                        <td>K0001</td>
-                        <td>MAWAR</td>
-                        <td>Perempuan</td>
-                        <td>Sales</td>
-                        <td>YOGYA</td>
+                        <td>DIY</td>
+                        <td>Area Yogyakarta</td>
+                        <td>Ir.H.Fauzi Ramli, MM</td>
+                        <td>(0274)373961</td>
                         <td class="col-action-val">
                         
-                        <button class="btn btn-warning">Edit</button>
-                        <button class="btn btn-info">Detail</button>
-                        <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>K0002</td>
-                        <td>DIO</td>
-                        <td>Laki-laki</td>
-                        <td>Sales</td>
-                        <td>YOGYA</td>
-                        <td class="col-action-val">
-                        
-                        <button class="btn btn-warning">Edit</button>
-                        <button class="btn btn-info">Detail</button>
-                        <button class="btn btn-danger">Delete</button>
+                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/edit/2" ?>">
+                                <div class="btn btn-warning"> Edit</div>
+                            </a>
+                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/2" ?>">
+                                <div class="btn btn-info"> Detail</div>
+                            </a>
+                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/delete/2" ?>">
+                                <div class="btn btn-danger"> Delete</div>
+                            </a>
                         </td>
                     </tr>
                 </table>

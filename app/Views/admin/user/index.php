@@ -15,8 +15,9 @@
         <div class="box box-primary">
         <div class="box-header with-border">
             <h3 class="box-title"><?= $title ?></h3>
-            <div class="type-sp pull-right">
-            </div>
+                <div class="type-sp pull-right">
+                    <a href="<?= $_ENV['BASE_URL_FULL']."/master/users/create" ?>"><div class="btn bg-olive btn-flat"> Tambah User</div></a> 
+                </div>
         </div><!-- /.box-header -->
 
         <div class="box box-solid">
@@ -113,9 +114,15 @@
                         <td>YOGYA</td>
                         <td class="col-action-val">
                         
-                        <button class="btn btn-warning">Edit</button>
-                        <button class="btn btn-info">Detail</button>
-                        <button class="btn btn-danger">Delete</button>
+                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/users/edit/2" ?>">
+                                <div class="btn btn-warning"> Edit</div>
+                            </a>
+                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/users/2" ?>">
+                                <div class="btn btn-info"> Detail</div>
+                            </a>
+                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/users/delete/2" ?>">
+                                <div class="btn btn-danger"> Delete</div>
+                            </a>
                         </td>
                     </tr>
                 </table>

@@ -26,7 +26,7 @@
             <div class="box-header with-border">
                 <h3 class="box-title"><?= $title ?></h3>
                 <div class="type-sp pull-right">
-                    <a href="<?= $_ENV['BASE_URL_FULL'] ?>"><div class="btn bg-olive btn-flat">Edit User</div></a>
+                    <a href="<?= $_ENV['BASE_URL_FULL'] ?>"><div class="btn bg-olive btn-flat">Edit <?= $parent_title ?></div></a>
                 </div>
             </div><!-- /.box-header -->
 
@@ -36,62 +36,20 @@
                     
                     <div class="row">
                         <div class="col-lg-3">
-                            <strong>ID USER</strong>
+                            <strong>ID <?= $parent_title ?></strong>
                             <p>K0001</p>
                             <hr>
                         </div>
                         <div class="col-lg-6">
-                            <strong>Nama User</strong>
+                            <strong>Nama <?= $parent_title ?></strong>
                             <p>MAWAR</p>
                             <hr>
                         </div>
                         <div class="col-lg-3">
 
-                            <strong>Area</strong>
+                            <strong>Kepala Area</strong>
                             <p>----</p>
 
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <strong>Nomor Telpon</strong>
-                            <p>----</p>
-                            <hr>
-                        </div>
-                        <div class="col-lg-6">
-                            <strong>Status Nikah</strong>
-                            <p>Menikah, Tanggungan 2</p>
-                            <hr>
-                        </div>
-                        <div class="col-lg-6">
-                            <strong>Tanggal Lahir</strong>
-                            <p>--/--/----</p>
-                            <hr>
-                        </div>
-                        <div class="col-lg-6">
-                            <strong>Tempat Lahir</strong>
-                            <p>BOGOR</p>
-                            <hr>
-                        </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <strong>Pendidikan</strong>
-                            <p>----</p>
-
-                            <hr>
-                        </div>
-                        
-                        <div class="col-lg-3">
-                            <strong>Jenis Kelamin</strong>
-                            <p>Perempuan</p>
-                            <hr>
-                        </div>
-                        <div class="col-lg-3">
-                            <strong>Agama</strong>
-                            <p>----</p>
                             <hr>
                         </div>
                     </div>
@@ -99,45 +57,21 @@
                         <div class="col-lg-6">
                             <strong>Alamat</strong>
                             <p>----</p>
-
                             <hr>
                         </div>
-                        <div class="col-lg-3">
-                            <strong>Kota</strong>
-                            <p>----</p>
-
+                        <div class="col-lg-6">
+                            <strong>No. Telpn.</strong>
+                            <p>-----</p>
                             <hr>
                         </div>
-                        <div class="col-lg-3">
-                            <strong>Kode Pos</strong>
-                            <p>----</p>
-
+                        <div class="col-lg-6">
+                            <strong>No. Fax.</strong>
+                            <p>--/--/----</p>
                             <hr>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <strong>Jabatan</strong>
-                            <p>----</p>
-
-                            <hr>
-                        </div>
-                        <div class="col-lg-3">
-                            <strong>Bagian</strong>
-                            <p>----</p>
-
-                            <hr>
-                        </div>
-                        <div class="col-lg-3">
-                            <strong>Bergabung</strong>
-                            <p>----</p>
-
-                            <hr>
-                        </div>
-                        <div class="col-lg-3">
-                            <strong>Berhenti</strong>
-                            <p>----</p>
-
+                        <div class="col-lg-6">
+                            <strong>Email</strong>
+                            <p>BOGOR</p>
                             <hr>
                         </div>
                     </div>

@@ -26,7 +26,7 @@
             <div class="box-header with-border">
                 <h3 class="box-title"><?= $title ?></h3>
                 <div class="type-sp pull-right">
-                    <a href="<?= $_ENV['BASE_URL_FULL'] ?>"><div class="btn bg-olive btn-flat">Edit User</div></a>
+                    <a href="<?= $_ENV['BASE_URL_FULL'] ?>/master/users/edit/2"><div class="btn bg-olive btn-flat">Edit User</div></a>
                 </div>
             </div><!-- /.box-header -->
 
