@@ -31,7 +31,7 @@ $routes->setAutoRoute(false);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'master\UserController::index');
 $routes->group('', function($routes) {
 
     $routes->group('master', function($routes){

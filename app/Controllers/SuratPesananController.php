@@ -6,12 +6,15 @@ class SuratPesananController extends BaseController
 {
     public function index()
     {
-        $data['test'] = 'test';
-        $data = [
+        $this->data = [
+            ...$this->data,
+            'parent_title' => 'Users',
+            'title' => 'Daftar User',
             'acc_signed' => $this->acc_signed,
+            'breadcrumb' => [...self::PARENT_BREADCRUMB, '']
         ];
 
-        return render($this, 'SuratPesanan/index', $data);
+        return render($this, 'SuratPesanan/index', $this->data);
     }
 
     public function create()
