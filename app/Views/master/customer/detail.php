@@ -20,7 +20,7 @@
 <section class="content">
     <div class="row">
     <!-- left column -->
-    <div class="col-lg-8 col-md-12">
+    <div class="col-md-12 col-lg-12">
         <!-- general form elements -->
         <div class="box box-primary">
             <div class="box-header with-border">

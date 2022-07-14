@@ -34,6 +34,8 @@ $routes->setAutoRoute(false);
 $routes->get('/', 'master\UserController::index');
 $routes->group('', function($routes) {
 
+service('auth')->routes($routes);
+
     $routes->group('master', function($routes){
         $routes->get('/', 'SuratPesananBosController::index');
     
