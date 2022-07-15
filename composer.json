@@ -7,8 +7,10 @@
     "require": {
         "php": "^7.3 || ^8.0",
         "codeigniter4/framework": "^4",
-        "myth/auth": "^1.0"
+        "codeigniter4/shield": "dev-develop"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require-dev": {
         "fakerphp/faker": "^1.9",
         "mikey179/vfsstream": "^1.6",

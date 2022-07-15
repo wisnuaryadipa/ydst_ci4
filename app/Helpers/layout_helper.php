@@ -1,6 +1,6 @@
 <?php 
 
-function render($core, $file, $data = [])
+function render($core, $file, $data = [], $layout = "full")
 {
 
     $data = array_merge($data, [
@@ -17,5 +17,7 @@ function render($core, $file, $data = [])
     // if($core->session->get('apiData')) {
     //     $data['apiData']	= $core->session->get('apiData');
     // }
+    $data['breadcrumb'] = array_filter($data['breadcrumb'], 'strlen');
+    $data['v_breadcrumb'] = view('layout/breadcrumb', $data);
     echo view('layout/index', $data);
 }

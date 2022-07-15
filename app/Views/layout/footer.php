@@ -1,6 +1,4 @@
 
-    <!-- jQuery 2.1.4 -->
-<script src="<?php echo base_url('');?>/assets/plugins/jquery/jQuery-2.1.4.min.js"></script>
 <!-- Bootstrap 3.3.5 -->
 <script src="<?php echo base_url('/assets/plugins/bootstrap/js');?>/bootstrap.min.js"></script>
 <!-- FastClick -->
@@ -9,5 +7,25 @@
 <script src="<?php echo base_url('');?>/assets/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url('');?>/assets/js/demo.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        sidebarColapse();
+        $(window).resize(function() {
+            sidebarColapse();
+        });
+    });
+
+    function sidebarColapse() {
+
+        if ($(window).width() < 1400) {
+                $("body").addClass("sidebar-collapse");
+            }
+            else {
+                $("body").removeClass("sidebar-collapse");
+            }
+    }
+    </script>
 </body>
 </html>

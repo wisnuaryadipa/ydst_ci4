@@ -3,12 +3,6 @@
     <?= $parent_title ?>
     <small>list</small>
     </h1>
-    <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="#">Master</a></li>
-    <li><a href="#">User</a></li>
-    <li class="active"><?= $title ?></li>
-    </ol>
 </section>
 
 <!-- Main content -->
@@ -55,3 +49,10 @@
     </div><!--/.col (left) -->
     </div>   <!-- /.row -->
 </section><!-- /.content -->
+<script>
+
+    $(document).ready(function() {
+        $('.select2').select2();
+    });
+
+</script>

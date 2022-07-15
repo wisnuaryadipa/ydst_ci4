@@ -26,11 +26,11 @@
 
             <!-- form start -->
             <div class="box-body">
-                <div class="row">
+            <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="nip">ID User</label>
-                            <input autofocus="autofocus" onfocus="this.select()" type="number" id="id_user" class="form-control" name="id_user" placeholder="ID User">
+                            <input autofocus="autofocus" type="text" id="id_user" class="form-control" name="id_user" placeholder="ID User">
                             <small class="help-block"></small>
                         </div>
                         <div class="form-group">
@@ -70,14 +70,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="matkul">Bergabung</label>
-                                    <input type="text" class="form-control" name="bergabung" placeholder="Bergabung">
+                                    <input type="text" class="form-control datepicker" name="bergabung" placeholder="Bergabung">
                                     <small class="help-block"></small>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="matkul">Berhenti</label>
-                                    <input type="text" class="form-control" name="berhenti" placeholder="Berhenti">
+                                    <input type="text" class="form-control datepicker" name="berhenti" placeholder="Berhenti">
                                     <small class="help-block"></small>
                                 </div>
                             </div>
@@ -99,3 +99,18 @@
     </div><!--/.col (left) -->
     </div>   <!-- /.row -->
 </section><!-- /.content -->
+
+
+<script>
+
+    $(document).ready(function() {
+        $('.select2').select2();
+
+        $(".datepicker").datepicker({
+            format: 'dd-mm-yyyy',
+            autoclose: true,
+            todayHighlight: true,
+        });
+    });
+
+</script>
