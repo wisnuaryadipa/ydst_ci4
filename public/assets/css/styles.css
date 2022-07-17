@@ -109,3 +109,7 @@
   align-items: baseline;
   justify-content: space-between;
 }
+#compact-form .main-box {
+  padding-left: 0px;
+  padding-right: 0px;
+}

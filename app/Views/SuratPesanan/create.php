@@ -25,7 +25,6 @@
                                     <form action="" class="form-horizontal">
                                         <div class="box-body">
                                             <div class="row">
-                                                
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label for="matkul" class="col-sm-2 control-label">Kode SP</label>
