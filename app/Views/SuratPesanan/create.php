@@ -1,92 +1,12 @@
 <style>
-    .form-buku-init {
-        margin: 0px;
-    }
-    .btn {
-        padding: 0px 11px;
-    }
-    #pesanan-buku {
-        padding-bottom: 0px;
-    }
-    #pesanan-buku .box-primary {
-        margin-bottom: 0px;
-    }
-    #list-buku {
-        width: 100%;
-    }
-    #rencana-pelunasan {
-        height: 130px;
-        font-size: 12px;
-        overflow: auto;
-    }
-    #rencana-pelunasan th {
-        
-        vertical-align: middle;
-    }
-    #rencana-pelunasan tr td input{
-        min-width: 27px;
-        width: 27px;
-    }
-    #rencana-pelunasan tr td #inpt-setor {
-        width: 84px;
-    }
-    .no-padding {
-        padding: 0px;
-    }
-    .xs-padding-side {
-        
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-    .box-header {
-        padding: 4px 10px;
-    }
-    .col-xs-6 .no-padding-side, .no-padding-side {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-    .form-group label.control-label {
-        padding-right: 0px;
-    }
-    .form-horizontal .form-group {
-        margin-bottom: 0px;
-    }
-    .form-horizontal .control-label {
-        font-size: 12px;
-        padding-top: 4px;
-    }
-    .help-block {
-        margin-bottom: 5px;
-    }
 
-    .form-control, #btn-add {
-        padding: 0px 12px;
-        height: 25px;
-    }
-    .select2-selection__rendered {
-        line-height: 21px !important;
-    }
-    .select2-container .select2-selection--single {
-        min-height: 25px !important;
-    }
-    .select2-selection__arrow {
-        min-height: 24px !important;
-    }
-    #rencana-pelunasan th, #rencana-pelunasan td {
-        padding: 3px 0px;
-        text-align: center;
-    }
-    .content-header {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-    }
+    
 
 
 </style>
 
 <!-- Main content -->
-<section class="content" style="padding-top: 5px;">
+<section class="content" style="padding-top: 5px;" id="compact-form">
     <div class="row">
 
         <div class="box">
@@ -105,7 +25,6 @@
                                     <form action="" class="form-horizontal">
                                         <div class="box-body">
                                             <div class="row">
-                                                
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label for="matkul" class="col-sm-2 control-label">Kode SP</label>
