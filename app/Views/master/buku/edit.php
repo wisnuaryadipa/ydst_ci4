@@ -6,7 +6,7 @@
 </section>
 
 <!-- Main content -->
-<section class="content">
+<section class="content" id="compact-form">
     <div class="row">
     <!-- left column -->
     <div class="col-md-8 col-xl-12">
@@ -19,32 +19,43 @@
             </div><!-- /.box-header -->
 
             <!-- form start -->
-            <div class="box-body">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="nip">Kode <?= $parent_title ?></label>
-                            <input autofocus="autofocus" onfocus="this.select()" type="number" id="id_user" class="form-control" name="id_user" placeholder="ID <?= $parent_title ?>">
-                            <small class="help-block"></small>
-                        </div>
-                        <div class="form-group">
-                            <label for="nama_dosen">Nama <?= $parent_title ?></label>
-                            <input type="text" class="form-control" name="nama_user" placeholder="Nama <?= $parent_title ?>">
-                            <small class="help-block"></small>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Penulis <?= $parent_title ?></label>
-                            <input type="text" class="form-control" name="nama_user" placeholder="Penulis <?= $parent_title ?>">
-                            <small class="help-block"></small>
-                        </div>
-                        <div class="form-group">
-                            <label for="matkul">Harga <?= $parent_title ?></label>
-                            <input type="text" class="form-control" name="nama_user" placeholder="Harga <?= $parent_title ?>">
-                            <small class="help-block"></small>
+            <form action="" class="form-horizontal">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label  class="col-md-2" for="nip">Kode <?= $parent_title ?></label>
+                                <div class="col-md-8">
+                                    <input autofocus="autofocus" onfocus="this.select()" type="number" id="id_user" class="form-control" name="id_user" placeholder="ID <?= $parent_title ?>">
+                                    <small class="help-block"></small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label  class="col-md-2" for="nama_dosen">Nama <?= $parent_title ?></label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="nama_user" placeholder="Nama <?= $parent_title ?>">
+                                    <small class="help-block"></small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label  class="col-md-2" for="email">Penulis <?= $parent_title ?></label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="nama_user" placeholder="Penulis <?= $parent_title ?>">
+                                    <small class="help-block"></small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label  class="col-md-2" for="matkul">Harga <?= $parent_title ?></label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="nama_user" placeholder="Harga <?= $parent_title ?>">
+                                    <small class="help-block"></small>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
+            
             <div class="box-footer">
                 
                 <div class="form-group pull-right">
