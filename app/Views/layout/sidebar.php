@@ -52,7 +52,7 @@
                   </a>
                   <ul class="treeview-menu">
                     <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/buku"><i class="fa fa-circle-o"></i> List</a></li>
-                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/buku/create.php"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/buku/create"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
                   </ul>
                 </li>
                 <li class="treeview">
