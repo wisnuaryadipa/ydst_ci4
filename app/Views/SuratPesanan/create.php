@@ -197,6 +197,32 @@
                                     </div>
                                 </div>
                             </div>
+                        
+                            <div class="box-footer">
+                                <div class="form-group pull-right">
+                                    <div type="submit" id="submit" class="btn btn-flat btn-primary disabled">
+                                         New
+                                    </div>
+                                    <div type="submit" id="submit" class="btn btn-flat btn-primary">
+                                         Open
+                                    </div>
+                                    <div type="submit" id="submit" class="btn btn-flat btn-primary disabled">
+                                         Edit
+                                    </div>
+                                    <div type="submit" id="submit" class="btn btn-flat btn-primary disabled">
+                                         Delete
+                                    </div>
+                                    <div type="submit" id="submit" class="btn btn-flat btn-primary">
+                                         Save
+                                    </div>
+                                    <div type="submit" id="submit" class="btn btn-flat btn-primary disabled">
+                                         Process
+                                    </div>
+                                    <div type="submit" id="submit" class="btn btn-flat btn-primary disabled">
+                                         Preview
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
                         <!-- general form elements -->
@@ -226,11 +252,10 @@
                                         <div class="box-header with-border">
                                             <h3 class="box-title">Pesanan Buku</h3>
                                             <div class="type-sp pull-right">
-                                                <div class="btn bg-aqua-active" id="tambah-buku">Tambah Buku</div>
+                                                <div class="btn btn-flat  bg-aqua-active" id="tambah-buku">Tambah Buku</div>
                                             </div>
                                         </div><!-- /.box-header -->
-                                        <div class="box-body" id="rencana-pelunasan">
-                                            
+                                        <div class="box-body">
                                             <form action="" class="form-horizontal">
                                                 <div class="form-group" id="list-buku">
                                                     <div class="row form-buku-init">
@@ -268,14 +293,7 @@
                 
             </div>
             
-            <div class="box-footer">
-                
-                <div class="form-group pull-right">
-                    <button type="submit" id="submit" class="btn btn-flat bg-purple">
-                        <i class="fa fa-save"></i> Simpan
-                    </button>
-                </div>
-            </div>
+            
         </div>
         
     </div>   <!-- /.row -->
