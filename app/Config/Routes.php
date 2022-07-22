@@ -34,7 +34,9 @@ $routes->setAutoRoute(false);
 $routes->get('/', 'master\UserController::index');
 $routes->group('', function($routes) {
 
-service('auth')->routes($routes);
+service('auth')->routes($routes, ['except' => ['login', 'register']]);
+
+    $routes->get('login', 'Auth\LoginController::loginView');
 
     $routes->group('master', function($routes){
         $routes->get('/', 'SuratPesananBosController::index');
