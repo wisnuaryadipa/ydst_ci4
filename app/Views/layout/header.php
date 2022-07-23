@@ -49,4 +49,3 @@
 
   
 </head>
-<body class="skin-blue sidebar-mini sidebar-mini-md layout-fixed">

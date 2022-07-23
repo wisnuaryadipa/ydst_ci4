@@ -1,4 +1,5 @@
 <?php echo view('layout/header'); ?>
+<body class="skin-blue sidebar-mini sidebar-mini-md layout-fixed">
 <div class="wrapper">
   <?php echo view('layout/navbar'); ?>
   <?php echo view('layout/sidebar'); ?>
