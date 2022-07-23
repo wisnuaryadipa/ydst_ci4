@@ -19,5 +19,12 @@ function render($core, $file, $data = [], $layout = "full")
     // }
     $data['breadcrumb'] = array_filter($data['breadcrumb'], 'strlen');
     $data['v_breadcrumb'] = view('layout/breadcrumb', $data);
-    echo view('layout/index', $data);
+
+    if ($layout == "full") {
+        echo view('layout/index', $data);
+    } else if ($layout == "blank") {
+        echo view('layout/index2', $data);
+    } else {
+        echo view('layout/index', $data);
+    }
 }

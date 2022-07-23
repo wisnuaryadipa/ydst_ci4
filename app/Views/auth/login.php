@@ -7,11 +7,7 @@
 	<meta name="description" content="The small framework with powerful features">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" type="image/png" href="/favicon.jpeg"/>
-	
-	<!-- Bootstrap 4.4.1 Login-->
-	<link rel="stylesheet" href="<?php echo base_url().'/assets/bootstrap/login/bootstrap.css'?>">
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="<?php echo base_url().'/assets/font-awesome/css/font-awesome.min.css'?>">
+
 	
 	<style>
         .bd-placeholder-img {
