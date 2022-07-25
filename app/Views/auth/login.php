@@ -59,12 +59,23 @@
     </div>
 	<div class="card">
         <div class="card-body">
-		<?php if(session()->getFlashdata('msg')):?>
-            <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
-         <?php endif;?>
+            <?php if (session('error') !== null) : ?>
+                <div class="alert alert-danger" role="alert"><?= session('error') ?></div>
+            <?php elseif (session('errors') !== null) : ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php if (is_array(session('errors'))) : ?>
+                        <?php foreach (session('errors') as $error) : ?>
+                            <?= $error ?>
+                            <br>
+                        <?php endforeach ?>
+                    <?php else : ?>
+                        <?= session('errors') ?>
+                    <?php endif ?>
+                </div>
+            <?php endif ?>
             <div class="form-group">
                 <div class="input-group">
-                    <div class="input-group-prepend">
+                    <div class="input-group-addon">
                         <div class="input-group-text">
                             <i class="fa fa-user"></i>
                         </div>
@@ -74,7 +85,7 @@
 			</div>
 			<div class="form-group">
                 <div class="input-group">
-                    <div class="input-group-prepend">
+                    <div class="input-group-addon">
                         <div class="input-group-text">
                             <i class="fa fa-lock"></i>
                         </div>

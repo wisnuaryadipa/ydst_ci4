@@ -34,7 +34,7 @@ $routes->setAutoRoute(false);
 $routes->get('/', 'master\UserController::index');
 $routes->group('', function($routes) {
 
-service('auth')->routes($routes, ['except' => ['login', 'register']]);
+service('auth')->routes($routes, ['except' => ['login']]);
 
     $routes->get('login', 'Auth\LoginController::loginView');
 

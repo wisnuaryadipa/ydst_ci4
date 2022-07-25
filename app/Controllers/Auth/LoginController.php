@@ -27,7 +27,6 @@ class LoginController extends BaseController
             'acc_signed' => $this->acc_signed,
             'breadcrumb' => [...self::PARENT_BREADCRUMB, '']
         ];
-
         return render($this, setting('Auth.views')['login'], $this->data, "blank");
     }
 
