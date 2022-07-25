@@ -49,7 +49,7 @@
 
 <body>
 <div class="form-signin">
-	<form action="/administrator/auth" method="post">
+	<form action="<?= url_to('login') ?>" method="post">
     <div class="mb-4 text-center">
         <div class=" mb-3">
             <img width="310px" src="/assets/images/logo.png"/>
@@ -80,10 +80,10 @@
                             <i class="fa fa-user"></i>
                         </div>
                     </div>
-                    <input type="text" autocomplete="off" name="username" class="form-control" autofocus onfocus="this.select()" placeholder="Username">
+                    <input type="text" autocomplete="off" name="email" class="form-control" autofocus onfocus="this.select()" placeholder="Username">
                 </div>
-			</div>
-			<div class="form-group">
+            </div>
+            <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-addon">
                         <div class="input-group-text">
@@ -93,7 +93,8 @@
                     <input name="password" type="password" class="form-control" placeholder="Password">
                 </div>
             </div>
-			<button class="btn btn-primary btn-block" type="submit">Login</button>
+            <button class="btn btn-primary btn-block" type="submit">Login</button>
+            
         </div>
     </div>
 	<p class="mt-3 mb-3 text-muted text-center">&copy; <?= date('Y') ?> Yudhistira </p>

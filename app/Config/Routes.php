@@ -37,6 +37,7 @@ $routes->group('', function($routes) {
 service('auth')->routes($routes, ['except' => ['login']]);
 
     $routes->get('login', 'Auth\LoginController::loginView');
+    $routes->post('login', 'Auth\LoginController::loginAction');
 
     $routes->group('master', function($routes){
         $routes->get('/', 'SuratPesananBosController::index');
