@@ -31,13 +31,14 @@ $routes->setAutoRoute(false);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'master\UserController::index');
-$routes->group('', function($routes) {
 
-service('auth')->routes($routes, ['except' => ['login']]);
+$routes->get('login', 'Auth\LoginController::loginView');
+$routes->post('login', 'Auth\LoginController::loginAction');
+$routes->group('', ['filter' => 'auth'] ,function($routes) {
+    
+    $routes->get('/', 'master\UserController::index');
 
-    $routes->get('login', 'Auth\LoginController::loginView');
-    $routes->post('login', 'Auth\LoginController::loginAction');
+    service('auth')->routes($routes, ['except' => ['login']]);
 
     $routes->group('master', function($routes){
         $routes->get('/', 'SuratPesananBosController::index');
