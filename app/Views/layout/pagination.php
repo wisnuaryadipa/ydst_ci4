@@ -1,5 +1,5 @@
 <div class="btn-group">
-    <button type="button" class="btn btn-default"><i class="fa fa-arrow-left"></i></button>
+    <a href="<?= $pager->getFirst() ?>"></a><button type="button" class="btn btn-default"><i class="fa fa-arrow-left"></i></button>
     <button type="button" class="btn btn-default">1</button>
     <button type="button" class="btn btn-default">2</button>
     <button type="button" class="btn bg-navy">3</button>

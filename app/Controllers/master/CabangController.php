@@ -4,6 +4,7 @@ namespace App\Controllers\master;
 
 
 use App\Controllers\BaseController;
+use App\Models\CabangModel;
 
 class CabangController extends BaseController
 {
@@ -12,6 +13,10 @@ class CabangController extends BaseController
 
     public function index()
     {
+        $cabangModel = new CabangModel();
+        $page = $this->request->getVar('page_') ?: '1';
+        $perPage = 2;
+        $totalPage = $cabangModel->countAll();
         $this->data = [
             ...$this->data,
             'parent_title' => 'Cabang',
@@ -19,6 +24,15 @@ class CabangController extends BaseController
             'acc_signed' => $this->acc_signed,
             'breadcrumb' => [...self::PARENT_BREADCRUMB, '']
         ];
+
+
+        
+        $pager = service('pager');
+        $pager->setPath('master/cabang', 'group1'); // Additionally you could define path for every group.
+        $pager->makeLinks($page, $perPage, $totalPage, 'default_full', 2, '');
+
+        $this->data['list_cabang'] = $cabangModel->paginate($perPage, '', $page);
+        $this->data['pager'] = $cabangModel->pager;
 
         return render($this, 'master/cabang/index', $this->data);
     }
@@ -36,6 +50,34 @@ class CabangController extends BaseController
         return render($this, 'master/cabang/create', $this->data);
     }
 
+    public function actionCreate()
+    {
+        $data = [
+            "branch_code" => $this->request->getPost('branch_code'),
+            'branch_name' => $this->request->getPost('branch_name'),
+            'address' => $this->request->getPost('address'),
+            'phone_no' => $this->request->getPost('phone_no'),
+            'contact_person' => $this->request->getPost('contact_person'),
+            'fax_no' => $this->request->getPost('fax_no'),
+            'warehouse_head' => $this->request->getPost('warehouse_head'),
+            'city' => $this->request->getPost('city'),
+            'email_address' => $this->request->getPost('email_address'),
+            'area_code' => $this->request->getPost('area_code'),
+            'active' => $this->request->getPost('active'),
+            'ans_code' => $this->request->getPost('ans_code'),
+            'branch_head' => $this->request->getPost('branch_head'),
+            'region' => $this->request->getPost('region'),
+            'warehouse_code' => $this->request->getPost('warehouse_code'),
+        ];
+        
+        $cabangModel = new CabangModel();
+
+        $saved = $cabangModel->insert($data);
+
+        return redirect()->to('/master/cabang');
+
+    }
+
     public function edit($id = null)
     {
         $this->data = [
@@ -46,9 +88,42 @@ class CabangController extends BaseController
             'breadcrumb' => [...self::PARENT_BREADCRUMB, 'edit']
 
         ];
+
+        $cabangModel = new CabangModel();
+        $this->data['branch_code'] = $id;
+        $this->data['cabang'] = $cabangModel->where('branch_code', $id)->first();
         
         return render($this, 'master/cabang/edit', $this->data);
     }
+
+    public function actionEdit($id = null)
+    {
+        $data = [
+            "branch_code" => $this->request->getPost('branch_code'),
+            'branch_name' => $this->request->getPost('branch_name'),
+            'address' => $this->request->getPost('address'),
+            'phone_no' => $this->request->getPost('phone_no'),
+            'contact_person' => $this->request->getPost('contact_person'),
+            'fax_no' => $this->request->getPost('fax_no'),
+            'warehouse_head' => $this->request->getPost('warehouse_head'),
+            'city' => $this->request->getPost('city'),
+            'email_address' => $this->request->getPost('email_address'),
+            'area_code' => $this->request->getPost('area_code'),
+            'active' => $this->request->getPost('active'),
+            'ans_code' => $this->request->getPost('ans_code'),
+            'branch_head' => $this->request->getPost('branch_head'),
+            'region' => $this->request->getPost('region'),
+            'warehouse_code' => $this->request->getPost('warehouse_code'),
+        ];
+        
+        $cabangModel = new CabangModel();
+
+        $saved = $cabangModel->save($data);
+
+        return redirect()->to('/master/cabang/'.$id);
+
+    }
+
 
     public function detail($id = null)
     {
@@ -60,6 +135,10 @@ class CabangController extends BaseController
             'breadcrumb' => [...self::PARENT_BREADCRUMB, 'edit']
         ];
         
+        $cabangModel = new CabangModel();
+        $this->data['branch_code'] = $id;
+        $this->data['cabang'] = $cabangModel->where('branch_code', $id)->first();
+
         return render($this, 'master/cabang/detail', $this->data);
     }
 

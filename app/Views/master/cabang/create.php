@@ -12,6 +12,7 @@
     <div class="col-xs-12 col-md-12 col-lg-10">
         <!-- general form elements -->
         <div class="box box-primary">
+            <form action="<?= url_to('master/cabang/create') ?>" class="form-horizontal" method="post">
             <div class="box-header with-border">
                 <h3 class="box-title"><?= $title ?></h3>
                 <div class="type-sp pull-right">
@@ -19,7 +20,6 @@
             </div><!-- /.box-header -->
 
             <!-- form start -->
-            <form action="" class="form-horizontal">
                 <div class="box-body">
                     <div class="row">
                         <div class="col-md-12">
@@ -29,7 +29,7 @@
                                     <div class="form-group">
                                         <label class="col-lg-6 col-xs-4 control-label" for="nip">Kode <?= $parent_title ?></label>
                                         <div class="col-lg-6 col-xs-8">
-                                            <input autofocus="autofocus" onfocus="this.select()" type="number" id="id_user" class="form-control" name="id_user" placeholder="ID <?= $parent_title ?>">
+                                            <input autofocus="autofocus" onfocus="this.select()" type="text" id="kode_cabang" class="form-control" name="branch_code" placeholder="ID <?= $parent_title ?>">
                                             <small class="help-block"></small>
                                         </div>
                                     </div>
@@ -38,7 +38,7 @@
                                     <div class="form-group">
                                         <label  class="col-lg-3 col-xs-3 control-label" for="nip">Kode ANS</label>
                                         <div class="col-lg-6 col-xs-8">
-                                            <input autofocus="autofocus" onfocus="this.select()" type="number" id="id_user" class="form-control" name="id_user" placeholder="Kode ANS">
+                                            <input autofocus="autofocus" onfocus="this.select()" type="text" id="kode_ans" class="form-control" name="ans_code" placeholder="Kode ANS">
                                             <small class="help-block"></small>
                                         </div>
                                     </div>
@@ -47,7 +47,7 @@
                                     <div class="form-group">
                                         <label  class="col-lg-2 col-xs-2 control-label" for="matkul">Kode Area</label>
                                         <div class="col-lg-8 col-xs-8">
-                                            <select name="jabatan" id="jabatan" class="form-control select2" style="width: 100%!important">
+                                            <select name="area_code" id="jabatan" class="form-control select2" style="width: 100%!important">
                                                 <option value="" disabled selected>DIY</option>
                                             </select>
                                             <small class="help-block"></small>
@@ -58,7 +58,7 @@
                             <div class="form-group">
                                 <label  class="col-lg-2 col-xs-2 control-label" for="nama_dosen">Nama <?= $parent_title ?></label>
                                 <div class="col-xs-8">
-                                    <input type="text" class="form-control" name="nama_user" placeholder="Nama <?= $parent_title ?>">
+                                    <input type="text" class="form-control" name="branch_name" placeholder="Nama <?= $parent_title ?>">
                                     <small class="help-block"></small>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
                             <div class="form-group">
                                 <label  class="col-lg-2 col-xs-2 control-label" for="matkul">Kepala Cabang</label>
                                 <div class="col-xs-8">
-                                    <select name="jabatan" id="jabatan" class="form-control select2" style="width: 100%!important">
+                                    <select name="branch_head" id="jabatan" class="form-control select2" style="width: 100%!important">
                                         <option value="" disabled selected>-----</option>
                                     </select>
                                     <small class="help-block"></small>
@@ -75,7 +75,7 @@
                             <div class="form-group">
                                 <label  class="col-lg-2 col-xs-2 control-label" for="email">Alamat <?= $parent_title ?></label>
                                 <div class="col-xs-8">
-                                    <input type="text" class="form-control" name="nama_user" placeholder="Alamat <?= $parent_title ?>">
+                                    <input type="text" class="form-control" name="address" placeholder="Alamat <?= $parent_title ?>">
                                     <small class="help-block"></small>
                                 </div>
                             </div>
@@ -125,7 +125,7 @@
                                     <div class="form-group">
                                         <label  class="col-xs-2 control-label" for="nip">E-mail</label>
                                         <div class="col-xs-6">
-                                            <input autofocus="autofocus" onfocus="this.select()" type="number" id="id_user" class="form-control" name="id_user" placeholder="E-mail">
+                                            <input autofocus="autofocus" onfocus="this.select()" type="text" id="email_address" class="form-control" name="email_address" placeholder="E-mail">
                                             <small class="help-block"></small>
                                         </div>
                                     </div>
@@ -137,7 +137,7 @@
                                     <div class="form-group">
                                         <label  class="col-xs-6 control-label" for="matkul">No. Telp</label>
                                         <div class="col-xs-6">
-                                            <input type="text" class="form-control" name="bergabung" placeholder="No. Telp">
+                                            <input type="text" class="form-control" name="phone_no" placeholder="No. Telp">
                                             <small class="help-block"></small>
                                         </div>
                                     </div>
@@ -146,7 +146,7 @@
                                     <div class="form-group">
                                         <label  class="col-xs-3 control-label" for="matkul">No. Fax.</label>
                                         <div class="col-xs-6">
-                                            <input type="text" class="form-control" name="berhenti" placeholder="No. Fax.">
+                                            <input type="text" class="form-control" name="fax_no" placeholder="No. Fax.">
                                             <small class="help-block"></small>
                                         </div>
                                     </div>
@@ -156,7 +156,7 @@
                             <div class="form-group">
                                 <label  class="col-xs-2 control-label" for="matkul">Kepala Gudang</label>
                                 <div class="col-xs-8">
-                                    <select name="jabatan" id="jabatan" class="form-control select2" style="width: 100%!important">
+                                    <select name="warehouse_head" id="warehouse_head" class="form-control select2" style="width: 100%!important">
                                         <option value="" disabled selected>-----</option>
                                     </select>
                                     <small class="help-block"></small>
@@ -165,16 +165,16 @@
                         </div>
                     </div>
                 </div>
-            </form>
             
             <div class="box-footer">
                 
-                <div class="form-group pull-right">
+                <div class="form-group pull-right" style="margin-right: 0px">
                     <button type="submit" id="submit" class="btn btn-flat bg-purple">
                         <i class="fa fa-save"></i> Simpan
                     </button>
                 </div>
             </div>
+            </form>
         </div><!-- /.box -->
 
 

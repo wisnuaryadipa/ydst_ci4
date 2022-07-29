@@ -46,7 +46,7 @@ $routes->group('', ['filter' => 'auth'] ,function($routes) {
         $routes->group('users', function($routes){
             $routes->get('/', 'master\UserController::index');
             $routes->get('create', 'master\UserController::create'); 
-            $routes->post('create', 'master\UserController::post');
+            $routes->post('create', 'master\UserController::actionCreate');
             $routes->get('edit/(:any)', 'master\UserController::edit/$1');
             $routes->put('edit/(:alphanum)', 'master\UserController::edit/$id');
             $routes->delete('detele/(:alphanum)', 'master\UserController:delete/$id');
@@ -96,11 +96,11 @@ $routes->group('', ['filter' => 'auth'] ,function($routes) {
         $routes->group('cabang', function($routes){
             $routes->get('/', 'master\CabangController::index');
             $routes->get('create', 'master\CabangController::create'); 
-            $routes->post('create', 'master\CabangController::post');
-            $routes->get('(:alphanum)', 'master\CabangController::detail/$id');
-            $routes->get('edit/(:alphanum)', 'master\CabangController::edit/$id');
-            $routes->put('edit/(:alphanum)', 'master\CabangController::edit/$id');
-            $routes->delete('detele/(:alphanum)', 'master\CabangController:delete/$id');
+            $routes->post('create', 'master\CabangController::actionCreate');
+            $routes->get('(:alphanum)', 'master\CabangController::detail/$1');
+            $routes->get('edit/(:alphanum)', 'master\CabangController::edit/$1');
+            $routes->put('edit/(:alphanum)', 'master\CabangController::actionEdit/$1');
+            $routes->delete('detele/(:alphanum)', 'master\CabangController:delete/$1');
         });
         
     });

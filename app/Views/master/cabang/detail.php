@@ -26,7 +26,7 @@
             <div class="box-header with-border">
                 <h3 class="box-title"><?= $title ?></h3>
                 <div class="type-sp pull-right">
-                    <a href="<?= $_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/edit/2 "?>">
+                    <a href="<?= $_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/edit/".$branch_code?>">
                         <div class="btn bg-olive btn-flat">Edit <?= $parent_title ?></div>
                     </a>
                 </div>
@@ -43,39 +43,39 @@
 
                                 <div class="form-group">
                                     <label for="nip">Kode <?= $parent_title ?></label>
-                                    <p>------</p>
+                                    <p><?= $cabang->branch_code ?></p>
                                     <hr>
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <label for="nip">Kode ANS</label>
-                                    <p>------</p>
+                                    <p><?= $cabang->ans_code ?></p>
                                     <hr>
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <label for="matkul">Kode Area</label>
-                                    <p>------</p>
+                                    <p><?= $cabang->area_code ?></p>
                                     <hr>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="nama_dosen">Nama <?= $parent_title ?></label>
-                                    <p>------</p>
+                                    <p><?= $cabang->branch_name ?></p>
                                     <hr>
                         </div>
                         
                         <div class="form-group">
                             <label for="matkul">Kepala Cabang</label>
-                                    <p>------</p>
+                                    <p><?= $cabang->branch_head ?></p>
                                     <hr>
                         </div>
                         <div class="form-group">
                             <label for="email">Alamat <?= $parent_title ?></label>
-                                    <p>------</p>
+                                    <p><?= $cabang->address ?></p>
                                     <hr>
                         </div>
                         <div class="row">
@@ -83,7 +83,7 @@
 
                                 <div class="form-group">
                                     <label for="matkul">Provinsi</label>
-                                    <p>------</p>
+                                    <p><?= $cabang->branch_code ?></p>
                                     <hr>
                                 </div>
                             </div>
@@ -91,7 +91,7 @@
                                 
                                 <div class="form-group">
                                     <label for="matkul">Kabupaten</label>
-                                    <p>------</p>
+                                    <p><?= $cabang->branch_code ?></p>
                                     <hr>
                                 </div>
                                 
@@ -100,7 +100,7 @@
                                 
                                 <div class="form-group">
                                     <label for="matkul">Kecamatan</label>
-                                    <p>------</p>
+                                    <p><?= $cabang->branch_code ?></p>
                                     <hr>
                                 </div>
                             </div>
@@ -110,21 +110,21 @@
                                 
                                 <div class="form-group">
                                     <label for="nip">E-mail</label>
-                                    <p>------</p>
+                                    <p><?= $cabang->email_address ?></p>
                                     <hr>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="matkul">No. Telp</label>
-                                    <p>------</p>
+                                    <p><?= $cabang->phone_no ?></p>
                                     <hr>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="matkul">No. Fax.</label>
-                                    <p>------</p>
+                                    <p><?= $cabang->fax_no ?></p>
                                     <hr>
                                 </div>
                             </div>
@@ -132,7 +132,7 @@
                         
                         <div class="form-group">
                             <label for="matkul">Kepala Gudang</label>
-                                    <p>------</p>
+                                    <p><?= $cabang->warehouse_head ?></p>
                                     <hr>
                         </div>
                     </div>
