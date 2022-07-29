@@ -55,16 +55,16 @@
                     <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "create") : ?>active<?php endif ?>"><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/roles/create"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
                   </ul>
                 </li>
-                <li class="treeview <?php if($uri->setSilent()->getSegment(2) == "area") : ?>active menu-open<?php endif ?>">
+                <li class="treeview <?php if($uri->setSilent()->getSegment(2) == "cabang") : ?>active menu-open<?php endif ?>">
                   <a href="#">
                     <i class="fa fa-file-o"></i> <span>Cabang</span> <i class="fa fa-angle-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
                     <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "index") : ?>active<?php endif ?>">
-                      <a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/roles"><i class="fa fa-circle-o"></i> List</a>
+                      <a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/cabang"><i class="fa fa-circle-o"></i> List</a>
                     </li>
-                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "index") : ?>active<?php endif ?>">
-                      <a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/roles/create"><i class="fa fa-circle-o"></i> Buat Baru</a>
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "create") : ?>active<?php endif ?>">
+                      <a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/cabang/create"><i class="fa fa-circle-o"></i> Buat Baru</a>
                     </li>
                   </ul>
                 </li>
