@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace App\master\Models;
 
 use CodeIgniter\Model;
 
 class CabangModel extends Model
 {
 
-    protected $table            = 'm_cabang';
+    protected $table            = 'm_buku';
     protected $useAutoIncrement = false;
     protected $returnType = 'object';
     protected $primaryKey       = 'branch_code';

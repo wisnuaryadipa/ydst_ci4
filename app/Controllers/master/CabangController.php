@@ -52,6 +52,12 @@ class CabangController extends BaseController
 
     public function actionCreate()
     {
+        $rules = $this->getValidationRules();
+
+        if (! $this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+        
         $data = [
             "branch_code" => $this->request->getPost('branch_code'),
             'branch_name' => $this->request->getPost('branch_name'),
@@ -98,6 +104,12 @@ class CabangController extends BaseController
 
     public function actionEdit($id = null)
     {
+        $rules = $this->getValidationRules();
+
+        if (! $this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
         $data = [
             "branch_code" => $this->request->getPost('branch_code'),
             'branch_name' => $this->request->getPost('branch_name'),
@@ -142,5 +154,10 @@ class CabangController extends BaseController
         return render($this, 'master/cabang/detail', $this->data);
     }
 
-    
+    function getValidationRules() 
+    {
+        return [
+            'email_address'    => 'required|max_length[254]|valid_email',
+        ];
+    }
 }

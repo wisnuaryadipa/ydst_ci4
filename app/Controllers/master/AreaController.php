@@ -36,6 +36,13 @@ class AreaController extends BaseController
         return render($this, 'master/area/create', $this->data);
     }
 
+    public function actionCreate()
+    {
+        $data = [
+
+        ];
+    }
+
     public function edit($id = null)
     {
         $this->data = [
