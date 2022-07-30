@@ -19,7 +19,7 @@ class UserController extends BaseController
             'acc_signed' => $this->acc_signed,
             'breadcrumb' => [...self::PARENT_BREADCRUMB, '']
         ];
-
+        
         return render($this, 'admin/user/index', $this->data);
     }
 

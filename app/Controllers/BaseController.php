@@ -64,6 +64,7 @@ class BaseController extends Controller
         $this->data = array_merge($this->data,[
             'acc_signed' => 'admin',
             'breadcrumb' => [],
+            'uri' => $this->request->uri,
         ]);
 
 

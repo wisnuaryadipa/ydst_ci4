@@ -22,152 +22,282 @@
             </li>
 
             
-            <li class="treeview">
+            <li class="treeview <?php if($uri->setSilent()->getSegment(1) == "master") : ?>active menu-open<?php endif ?>">
               <a href="#">
                 <i class="fa fa-file-o"></i> <span>Master</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 
-                <li class="treeview">
+                <li class="treeview <?php if($uri->setSilent()->getSegment(2) == "users") : ?>active menu-open<?php endif ?>">
                   <a href="#">
                     <i class="fa fa-file-o"></i> <span>Users</span> <i class="fa fa-angle-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?= $_ENV['BASE_URL_FULL'] ?>/master/users"><i class="fa fa-circle-o"></i>List</a></li>
-                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/users/create"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "index") : ?>active<?php endif ?>"><a href="<?= $_ENV['BASE_URL_FULL'] ?>/master/users"><i class="fa fa-circle-o"></i>List</a></li>
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "create") : ?>active<?php endif ?>"><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/users/create"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
                   </ul>
                 </li>
-                <li class="treeview">
+                <li class="treeview <?php if($uri->setSilent()->getSegment(2) == "roles") : ?>active menu-open<?php endif ?>">
                   <a href="#">
                     <i class="fa fa-file-o"></i> <span>Role</span> <i class="fa fa-angle-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/roles"><i class="fa fa-circle-o"></i> List</a></li>
-                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/roles/create"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "index") : ?>active<?php endif ?>"><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/roles"><i class="fa fa-circle-o"></i> List</a></li>
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "create") : ?>active<?php endif ?>"><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/roles/create"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
                   </ul>
                 </li>
-                <li class="treeview">
-                  <a href="#">
-                    <i class="fa fa-file-o"></i> <span>Buku</span> <i class="fa fa-angle-left pull-right"></i>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/buku"><i class="fa fa-circle-o"></i> List</a></li>
-                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/buku/create.php"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
-                  </ul>
-                </li>
-                <li class="treeview">
-                  <a href="#">
-                    <i class="fa fa-file-o"></i> <span>Customer</span> <i class="fa fa-angle-left pull-right"></i>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/customer"><i class="fa fa-circle-o"></i>List</a></li>
-                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>//master/customer/create"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
-                  </ul>
-                </li>
-                <li class="treeview">
+                <li class="treeview <?php if($uri->setSilent()->getSegment(2) == "area") : ?>active menu-open<?php endif ?>">
                   <a href="#">
                     <i class="fa fa-file-o"></i> <span>Area</span> <i class="fa fa-angle-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/area"><i class="fa fa-circle-o"></i>List</a></li>
-                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/area/create"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "index") : ?>active<?php endif ?>"><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/area"><i class="fa fa-circle-o"></i> List</a></li>
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "create") : ?>active<?php endif ?>"><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/area/create"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
                   </ul>
                 </li>
-                <li class="treeview">
+                <li class="treeview <?php if($uri->setSilent()->getSegment(2) == "cabang") : ?>active menu-open<?php endif ?>">
                   <a href="#">
                     <i class="fa fa-file-o"></i> <span>Cabang</span> <i class="fa fa-angle-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/cabang"><i class="fa fa-circle-o"></i>List</a></li>
-                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/cabang/create"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "index") : ?>active<?php endif ?>">
+                      <a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/cabang"><i class="fa fa-circle-o"></i> List</a>
+                    </li>
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "create") : ?>active<?php endif ?>">
+                      <a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/cabang/create"><i class="fa fa-circle-o"></i> Buat Baru</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="treeview <?php if($uri->setSilent()->getSegment(2) == "buku") : ?>active menu-open<?php endif ?>">
+                  <a href="#">
+                    <i class="fa fa-file-o"></i> <span>Buku</span> <i class="fa fa-angle-left pull-right"></i>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "index") : ?>active<?php endif ?>">
+                      <a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/buku"><i class="fa fa-circle-o"></i> List</a>
+                    </li>
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "create") : ?>active<?php endif ?>">
+                      <a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/buku/create"><i class="fa fa-circle-o"></i> Buat Baru</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="treeview <?php if($uri->setSilent()->getSegment(2) == "karyawan") : ?>active menu-open<?php endif ?>">
+                  <a href="#">
+                    <i class="fa fa-file-o"></i> <span>Karyawan</span> <i class="fa fa-angle-left pull-right"></i>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "index") : ?>active<?php endif ?>">
+                      <a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/karyawan"><i class="fa fa-circle-o"></i> List</a>
+                    </li>
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "create") : ?>active<?php endif ?>">
+                      <a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/karyawan/create"><i class="fa fa-circle-o"></i> Buat Baru</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="treeview <?php if($uri->setSilent()->getSegment(2) == "customer") : ?>active menu-open<?php endif ?>">
+                  <a href="#">
+                    <i class="fa fa-file-o"></i> <span>Customer</span> <i class="fa fa-angle-left pull-right"></i>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "index") : ?>active<?php endif ?>">
+                      <a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/customer"><i class="fa fa-circle-o"></i>List</a>
+                    </li>
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "create") : ?>active<?php endif ?>">
+                      <a href="<?= $_ENV['BASE_URL_FULL']; ?>//master/customer/create"><i class="fa fa-circle-o"></i> Buat Baru</a>
+                    </li>
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "rekonsiliasi") : ?>active<?php endif ?>">
+                      <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i>Rekonsiliasi Sistem vs Dapodik</a>
+                    </li>
                   </ul>
                 </li>
               </ul>
             </li>
 
 
-            <li class="treeview">
+            <li class="treeview <?php if($uri->setSilent()->getSegment(1) == "operasional") : ?>active menu-open<?php endif ?>">
               <a href="#">
                 <i class="fa fa-file-o"></i> <span>Operasional</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="treeview">
-                  <a href="#">
-                    <i class="fa fa-file-o"></i> <span>Surat Pemesanan</span> <i class="fa fa-angle-left pull-right"></i>
-                  </a>
-                  <ul class="treeview-menu">
-                    
-                    <li class="treeview">
-                      <a href="#">
-                        <i class="fa fa-file-o"></i> <span>BOS</span> <i class="fa fa-angle-left pull-right"></i>
-                      </a>
-                      <ul class="treeview-menu">
-                        <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i> Daftar Surat Pemesanan</a></li>
-                        <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
-                      </ul>
-                    </li>
-                    <li class="treeview">
-                      <a href="#">
-                        <i class="fa fa-file-o"></i> <span>SISWA</span> <i class="fa fa-angle-left pull-right"></i>
-                      </a>
-                      <ul class="treeview-menu">
-                        <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/operasional/sp/siswa"><i class="fa fa-circle-o"></i> Daftar Surat Pemesanan</a></li>
-                        <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/operasional/sp/siswa/create"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
-                      </ul>
-                    </li>
-                  </ul>
+                <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "area-cover") : ?>active<?php endif ?>">
+                  <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i>Area Cover</a>
                 </li>
-
-                <li class="treeview">
-                  <a href="#">
-                    <i class="fa fa-file-o"></i> <span>Faktur</span> <i class="fa fa-angle-left pull-right"></i>
-                  </a>
-                  <ul class="treeview-menu">
-                    
-                    <li class="treeview">
-                      <a href="#">
-                        <i class="fa fa-file-o"></i> <span>BOS</span> <i class="fa fa-angle-left pull-right"></i>
-                      </a>
-                      <ul class="treeview-menu">
-                        <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i> List</a></li>
-                        <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
-                      </ul>
-                    </li>
-                    <li class="treeview">
-                      <a href="#">
-                        <i class="fa fa-file-o"></i> <span>SISWA</span> <i class="fa fa-angle-left pull-right"></i>
-                      </a>
-                      <ul class="treeview-menu">
-                        <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/operasional/sp/siswa"><i class="fa fa-circle-o"></i> List</a></li>
-                        <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/operasional/sp/siswa/create"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
-                      </ul>
-                    </li>
-                  </ul>
+                <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "target") : ?>active<?php endif ?>">
+                  <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i>Target</a>
                 </li>
-                <li class="treeview">
+                
+                <li class="treeview <?php if($uri->setSilent()->getSegment(2) == "promo") : ?>active menu-open<?php endif ?>">
                   <a href="#">
                     <i class="fa fa-file-o"></i> <span>Promo</span> <i class="fa fa-angle-left pull-right"></i>
                   </a>
                   <ul class="treeview-menu">
                     
-                        <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i> List</a></li>
-                        <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a></li>
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "rencana") : ?>active<?php endif ?>">
+                      <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i> Rencana Promosi</a>
+                    </li>
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "kirim") : ?>active<?php endif ?>">
+                      <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> Kirim Promosi</a>
+                    </li>
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "retur") : ?>active<?php endif ?>">
+                      <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> Retur Promosi</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="treeview <?php if($uri->setSilent()->getSegment(2) == "ntbnkb") : ?>active menu-open<?php endif ?>">
+                  <a href="#">
+                    <i class="fa fa-file-o"></i> <span>NTB/NKB</span> <i class="fa fa-angle-left pull-right"></i>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "terima") : ?>active<?php endif ?>">
+                      <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i>Terima Buku</a>
+                    </li>
+                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "kirim") : ?>active<?php endif ?>">
+                      <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i>Kirim Buku</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="treeview <?php if($uri->setSilent()->getSegment(2) == "surat-pesanan") : ?>active menu-open<?php endif ?>">
+                  <a href="#">
+                    <i class="fa fa-file-o"></i> <span>Surat Pemesanan</span> <i class="fa fa-angle-left pull-right"></i>
+                  </a>
+                  <ul class="treeview-menu">
+                    
+                    <li class="treeview <?php if($uri->setSilent()->getSegment(3) == "bos") : ?>active menu-open<?php endif ?>">
+                      <a href="#">
+                        <i class="fa fa-file-o"></i> <span>BOS</span> <i class="fa fa-angle-left pull-right"></i>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li class="<?php if( $uri->setSilent()->getSegment(4, 'index') == "index") : ?>active<?php endif ?>">
+                          <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i>List</a>
+                        </li>
+                        <li class="<?php if( $uri->setSilent()->getSegment(4, 'index') == "create") : ?>active<?php endif ?>">
+                          <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="treeview <?php if($uri->setSilent()->getSegment(3) == "siswa") : ?>active menu-open<?php endif ?>">
+                      <a href="#">
+                        <i class="fa fa-file-o"></i> <span>SISWA</span> <i class="fa fa-angle-left pull-right"></i>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li class="<?php if( $uri->setSilent()->getSegment(4, 'index') == "index") : ?>active<?php endif ?>">
+                          <a href="<?= $_ENV['BASE_URL_FULL']; ?>/operasional/sp/siswa"><i class="fa fa-circle-o"></i>List</a>
+                        </li>
+                        <li class="<?php if( $uri->setSilent()->getSegment(4, 'index') == "create") : ?>active<?php endif ?>">
+                          <a href="<?= $_ENV['BASE_URL_FULL']; ?>/operasional/sp/siswa/create"><i class="fa fa-circle-o"></i> Buat Baru</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="">
+                      <a href="#">
+                        <i class="fa fa-file-o"></i> <span>Batal SP</span> <i class="fa fa-angle-left pull-right"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="treeview <?php if($uri->setSilent()->getSegment(2) == "faktur") : ?>active menu-open<?php endif ?>">
+                  <a href="#">
+                    <i class="fa fa-file-o"></i> <span>Faktur</span> <i class="fa fa-angle-left pull-right"></i>
+                  </a>
+                  <ul class="treeview-menu">
+                    
+                    <li class="treeview <?php if($uri->setSilent()->getSegment(3) == "bos") : ?>active menu-open<?php endif ?>">
+                      <a href="#">
+                        <i class="fa fa-file-o"></i> <span>BOS</span> <i class="fa fa-angle-left pull-right"></i>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li class="<?php if( $uri->setSilent()->getSegment(4, 'index') == "index") : ?>active<?php endif ?>">
+                          <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i> List</a>
+                        </li>
+                        <li class="<?php if( $uri->setSilent()->getSegment(4, 'index') == "create") : ?>active<?php endif ?>">
+                          <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> Buat Baru</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="treeview <?php if($uri->setSilent()->getSegment(3) == "siswa") : ?>active menu-open<?php endif ?>">
+                      <a href="#">
+                        <i class="fa fa-file-o"></i> <span>SISWA</span> <i class="fa fa-angle-left pull-right"></i>
+                      </a>
+                      <ul class="treeview-menu">
+                        <li class="<?php if( $uri->setSilent()->getSegment(4, 'index') == "index") : ?>active<?php endif ?>">
+                          <a href="<?= $_ENV['BASE_URL_FULL']; ?>/operasional/sp/siswa"><i class="fa fa-circle-o"></i> List</a>
+                        </li>
+                        <li class="<?php if( $uri->setSilent()->getSegment(4, 'index') == "create") : ?>active<?php endif ?>">
+                          <a href="<?= $_ENV['BASE_URL_FULL']; ?>/operasional/sp/siswa/create"><i class="fa fa-circle-o"></i> Buat Baru</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="">
+                      <a href="#">
+                        <i class="fa fa-circle-o"></i> <span>Retur Faktur</span> </i>
+                      </a>
+                    </li>
+                    <li class="">
+                      <a href="#">
+                        <i class="fa fa-circle-o"></i> <span>Batal Faktur</span> </i>
+                      </a>
+                    </li>
                   </ul>
                 </li>
               </ul>
             </li>
             
-
+            <li class="treeview <?php if($uri->setSilent()->getSegment(1) == "akunting") : ?>active menu-open<?php endif ?>">
+              <a href="#">
+                <i class="fa fa-file-o"></i> <span>Akunting</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                  <li class="treeview <?php if($uri->setSilent()->getSegment(2) == "pemasukan-kas") : ?>active menu-open<?php endif ?>">
+                    <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html">
+                      <i class="fa fa-circle-o"></i><span>Pemasukan Kas</span><i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                          <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "reguler") : ?>active<?php endif ?>">
+                            <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i> Reguler</a>
+                          </li>
+                          <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "doc") : ?>active<?php endif ?>">
+                            <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> DOC</a>
+                          </li>
+                          <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "dmc") : ?>active<?php endif ?>">
+                            <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> DMC</a>
+                          </li>
+                          <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "umr") : ?>active<?php endif ?>">
+                            <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> UMR</a>
+                          </li>
+                    </ul>
+                  </li>
+                  <li class="treeview <?php if($uri->setSilent()->getSegment(2) == "pengeluaran-kas") : ?>active menu-open<?php endif ?>">
+                    <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html">
+                      <i class="fa fa-circle-o"></i><span>Pengeluaran  Kas</span><i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                      
+                          <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "reguler") : ?>active<?php endif ?>">
+                            <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i> Kas Besar</a>
+                          </li>
+                          <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "doc") : ?>active<?php endif ?>">
+                            <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> DOC</a>
+                          </li>
+                          <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "dmc") : ?>active<?php endif ?>">
+                            <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> DMC</a>
+                          </li>
+                          <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "umr") : ?>active<?php endif ?>">
+                            <a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i> UMR</a>
+                          </li>
+                    </ul>
+                  </li>
+              </ul>
+            </li>
             
 
-            <li class="treeview">
+            <li class="treeview <?php if($uri->setSilent()->getSegment(2) == "gudang") : ?>active menu-open<?php endif ?>">
               <a href="#">
                 <i class="fa fa-file-o"></i> <span>Gudang</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 
-                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i>Stock</a></li>
-                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i>Histori Transaksi</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index2.html"><i class="fa fa-circle-o"></i>Nota Kirim Cabang</a></li>
+                    <li><a href="<?= $_ENV['BASE_URL_FULL']; ?>/index.html"><i class="fa fa-circle-o"></i>Nota Terima Cabang</a></li>
               </ul>
             </li>
           </ul>

@@ -21,7 +21,7 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="<?php echo base_url('assets');?>/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                  <span class="hidden-xs"><?= $acc_signed ?></span>
+                  <span class="hidden-xs"><?= auth()->user()->email ?></span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->

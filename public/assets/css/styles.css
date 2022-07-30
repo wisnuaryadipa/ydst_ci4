@@ -47,6 +47,12 @@
   font-size: 12px;
   overflow: auto;
 }
+#compact-form #pesanan-buku .box-body {
+  min-height: 150px;
+  height: 186px;
+  font-size: 12px;
+  overflow: auto;
+}
 #compact-form #rencana-pelunasan th {
   
   vertical-align: middle;
