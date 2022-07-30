@@ -38,9 +38,30 @@ class AreaController extends BaseController
 
     public function actionCreate()
     {
-        $data = [
+        $rules = $this->getValidationRules();
 
+        if (! $this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+        
+        $data = [
+            "area_code" => $this->request->getPost('area_code'),
+            'area_name' => $this->request->getPost('area_name'),
+            'area_head' => $this->request->getPost('area_head'),
+            'address' => $this->request->getPost('address'),
+            'city' => $this->request->getPost('city'),
+            'fax_no' => $this->request->getPost('fax_no'),
+            'phone_no' => $this->request->getPost('phone_no'),
+            'fax_no' => $this->request->getPost('fax_no'),
+            'email_address' => $this->request->getPost('email_address'),
         ];
+        
+        $areaModel = new AreaModel();
+
+        $saved = $areaModel->insert($data);
+
+        return redirect()->to('/master/area');
+
     }
 
     public function edit($id = null)
@@ -57,6 +78,34 @@ class AreaController extends BaseController
         return render($this, 'master/area/edit', $this->data);
     }
 
+    public function actionEdit($id = null)
+    {
+        $rules = $this->getValidationRules();
+
+        if (! $this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        $data = [
+            "area_code" => $this->request->getPost('area_code'),
+            'area_name' => $this->request->getPost('area_name'),
+            'area_head' => $this->request->getPost('area_head'),
+            'address' => $this->request->getPost('address'),
+            'city' => $this->request->getPost('city'),
+            'fax_no' => $this->request->getPost('fax_no'),
+            'phone_no' => $this->request->getPost('phone_no'),
+            'fax_no' => $this->request->getPost('fax_no'),
+            'email_address' => $this->request->getPost('email_address'),
+        ];
+        
+        $areaModel = new AreaModel();
+
+        $saved = $areaModel->save($data);
+
+        return redirect()->to('/master/area/'.$id);
+
+    }
+
     public function detail($id = null)
     {
         $this->data = [
@@ -68,6 +117,13 @@ class AreaController extends BaseController
         ];
         
         return render($this, 'master/area/detail', $this->data);
+    }
+
+    function getValidationRules() 
+    {
+        return [
+            'email_address'    => 'required|max_length[254]|valid_email',
+        ];
     }
 
     
