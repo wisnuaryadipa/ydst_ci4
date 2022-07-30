@@ -4,29 +4,34 @@ namespace App\master\Models;
 
 use CodeIgniter\Model;
 
-class CabangModel extends Model
+class EmployeeModel extends Model
 {
 
     protected $table            = 'm_employee';
     protected $useAutoIncrement = false;
     protected $returnType = 'object';
-    protected $primaryKey       = 'branch_code';
+    protected $primaryKey       = 'empl_code';
     protected $allowedFields  = [
-        'branch_code',
-        'branch_name',
+        'empl_code',
+        'empl_name',
         'address',
-        'phone_no',
-        'contact_person',
-        'fax_no',
-        'warehouse_head',
         'city',
-        'email_address',
-        'area_code',
+        'sex_id',
+        'stat_id',
+        'religion_id',
+        'zip_code',
+        'marital_id',
+        'grade_id',
+        'dept_id',
+        'salary',
+        'join_date',
+        'resign_date',
+        'branch_code',
+        'birth_code',
+        'photo',
+        'phone_no',
+        'edu_background',
         'active',
-        'ans_code',
-        'branch_head',
-        'region',
-        'warehouse_code',
     ];
 
 
