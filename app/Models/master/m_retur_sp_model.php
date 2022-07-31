@@ -9,9 +9,9 @@ class MReturSpModel extends Model
 
     protected $table            = 'm_retur_sp';
     protected $useAutoIncrement = false;
-    protected $returnType = 'object';
+    protected $returnType       = 'object';
     protected $primaryKey       = 'retur_code';
-    protected $allowedFields  = [
+    protected $allowedFields    = [
         'retur_code',
         'branch_code',
         'sp_code',

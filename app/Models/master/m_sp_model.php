@@ -9,9 +9,9 @@ class MSpModel extends Model
 
     protected $table            = 'm_sp';
     protected $useAutoIncrement = false;
-    protected $returnType = 'object';
+    protected $returnType       = 'object';
     protected $primaryKey       = 'branch_code';
-    protected $allowedFields  = [
+    protected $allowedFields    = [
         'branch_code',
         'sales_code',
         'cust_code',

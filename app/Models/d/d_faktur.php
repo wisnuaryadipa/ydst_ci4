@@ -9,9 +9,9 @@ class DFakturModel extends Model
 
     protected $table            = 'd_faktur';
     protected $useAutoIncrement = false;
-    protected $returnType = 'object';
+    protected $returnType       = 'object';
     protected $primaryKey       = 'faktur_code';
-    protected $allowedFields  = [
+    protected $allowedFields    = [
         'faktur_code',
         'branch_code',
         'book_code',

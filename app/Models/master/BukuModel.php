@@ -1,6 +1,6 @@
 <?php
 
-namespace App\master\Models;
+namespace App\Models\master;
 
 use CodeIgniter\Model;
 
@@ -9,9 +9,9 @@ class BukuModel extends Model
 
     protected $table            = 'm_buku';
     protected $useAutoIncrement = false;
-    protected $returnType = 'object';
+    protected $returnType       = 'object';
     protected $primaryKey       = 'book_code';
-    protected $allowedFields  = [
+    protected $allowedFields    = [
         'book_code',
         'book_title',
         'Pages',

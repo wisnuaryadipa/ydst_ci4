@@ -59,13 +59,16 @@ class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
-        $this->db = Database::connect();
-        $this->acc_signed = "admin";
-        $this->data = array_merge($this->data,[
-            'acc_signed' => 'admin',
-            'breadcrumb' => [],
-            'uri' => $this->request->uri,
-        ]);
+        $this->db           = Database::connect();
+        $this->acc_signed   = "admin";
+        $this->data         = array_merge(
+            $this->data,
+            [
+                'acc_signed'    => 'admin',
+                'breadcrumb'    => [],
+                'uri'           => $this->request->uri,
+            ]
+        );
 
 
 

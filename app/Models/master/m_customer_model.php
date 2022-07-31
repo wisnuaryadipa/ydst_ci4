@@ -1,35 +1,36 @@
 <?php
 
-namespace App\master\Models;
+namespace App\Models\master;
 
 use CodeIgniter\Model;
 
 class MCustomerModel extends Model
 {
 
-    protected $table            = 'm_faktur';
-    protected $useAutoIncrement = false;
-    protected $returnType = 'object';
-    protected $primaryKey       = 'book_code';
-    protected $allowedFields  = [
-        'branch_code',
-        'sales_code',
+    protected $table                = 'm_customer';
+    protected $useAutoIncrement     = false;
+    protected $returnType           = 'object';
+    protected $primaryKey           = 'cust_code';
+    protected $allowedFields        = [
         'cust_code',
-        'period_code',
-        'sp_code',
-        'trans_date',
-        'status',
-        'empl_code',
-        'sp_note',
-        'printed',
-        'edit_date',
-        'exp_date',
-        'user_id',
-        'pay_month',
-        'dana',
-        'tipe',
-        'draft',
-        'approved',
+        'cust_name',
+        'address',
+        'phone_no',
+        'fax_no',
+        'contact_person',
+        'province',
+        'city',
+        'camat_kode',
+        'ans_code',
+        'branch_code',
+        'school_grade',
+        'npsn',
+        'reg_date',
+        'npwp',
+        'active',
+        'reason_deactivated',
+        'school_email',
+        'cp_email',
     ];
 
 

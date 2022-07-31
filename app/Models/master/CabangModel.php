@@ -9,9 +9,9 @@ class CabangModel extends Model
 
     protected $table            = 'm_cabang';
     protected $useAutoIncrement = false;
-    protected $returnType = 'object';
+    protected $returnType       = 'object';
     protected $primaryKey       = 'branch_code';
-    protected $allowedFields  = [
+    protected $allowedFields    = [
         'branch_code',
         'branch_name',
         'address',

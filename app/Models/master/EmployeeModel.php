@@ -9,9 +9,9 @@ class EmployeeModel extends Model
 
     protected $table            = 'm_employee';
     protected $useAutoIncrement = false;
-    protected $returnType = 'object';
+    protected $returnType       = 'object';
     protected $primaryKey       = 'empl_code';
-    protected $allowedFields  = [
+    protected $allowedFields    = [
         'empl_code',
         'empl_name',
         'address',

@@ -9,9 +9,9 @@ class dReturSpModel extends Model
 
     protected $table            = 'd_retur_sp';
     protected $useAutoIncrement = false;
-    protected $returnType = 'object';
+    protected $returnType       = 'object';
     protected $primaryKey       = 'retur_code';
-    protected $allowedFields  = [
+    protected $allowedFields    = [
         'retur_code',
         'branch_code',
         'book_code',

@@ -11,9 +11,9 @@ class AreaModel extends Model
 
     protected $table            = 'm_area';
     protected $useAutoIncrement = false;
-    protected $returnType = 'object';
+    protected $returnType       = 'object';
     protected $primaryKey       = 'area_code';
-    protected $allowedFields  = [
+    protected $allowedFields    = [
         'area_code',
         'area_name',
         'area_head',

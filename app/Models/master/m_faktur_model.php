@@ -9,9 +9,9 @@ class MFakturModel extends Model
 
     protected $table            = 'm_faktur';
     protected $useAutoIncrement = false;
-    protected $returnType = 'object';
+    protected $returnType       = 'object';
     protected $primaryKey       = 'faktur_code';
-    protected $allowedFields  = [
+    protected $allowedFields    = [
         'faktur_code',
         'branch_code',
         'period_code',

@@ -13,26 +13,21 @@ class CabangController extends BaseController
 
     public function index()
     {
-        $cabangModel = new CabangModel();
-        $page = $this->request->getVar('page_') ?: '1';
-        $perPage = 2;
-        $totalPage = $cabangModel->countAll();
-        $this->data = [
+        $cabangModel    = new CabangModel();
+        $page           = $this->request->getVar('page_') ?: '1';
+        $perPage        = 2;
+        $totalPage      = $cabangModel->countAll();
+        
+        $this->data     = [
             ...$this->data,
-            'parent_title' => 'Cabang',
-            'title' => 'Daftar Cabang',
-            'acc_signed' => $this->acc_signed,
-            'breadcrumb' => [...self::PARENT_BREADCRUMB, '']
+            'parent_title'  => 'Cabang',
+            'title'         => 'Daftar Cabang',
+            'acc_signed'    => $this->acc_signed,
+            'breadcrumb'    => [...self::PARENT_BREADCRUMB, '']
         ];
 
-
-        
-        $pager = service('pager');
-        $pager->setPath('master/cabang', 'group1'); // Additionally you could define path for every group.
-        $pager->makeLinks($page, $perPage, $totalPage, 'default_full', 2, '');
-
-        $this->data['list_cabang'] = $cabangModel->paginate($perPage, '', $page);
-        $this->data['pager'] = $cabangModel->pager;
+        $this->data['list_cabang']  = $cabangModel->paginate($perPage, '', $page);
+        $this->data['pager']        = $cabangModel->pager;
 
         return render($this, 'master/cabang/index', $this->data);
     }
@@ -41,10 +36,10 @@ class CabangController extends BaseController
     {
         $this->data = [
             ...$this->data,
-            'parent_title' => 'Cabang',
-            'title' => 'Buat Cabang Baru',
-            'acc_signed' => $this->acc_signed,
-            'breadcrumb' => [...self::PARENT_BREADCRUMB, 'create']
+            'parent_title'  => 'Cabang',
+            'title'         => 'Buat Cabang Baru',
+            'acc_signed'    => $this->acc_signed,
+            'breadcrumb'    => [...self::PARENT_BREADCRUMB, 'create']
         ];
         
         return render($this, 'master/cabang/create', $this->data);
@@ -55,25 +50,31 @@ class CabangController extends BaseController
         $rules = $this->getValidationRules();
 
         if (! $this->validate($rules)) {
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            return redirect()
+            ->back()
+            ->withInput()
+            ->with(
+                'errors', 
+                $this->validator->getErrors()
+            );
         }
         
         $data = [
-            "branch_code" => $this->request->getPost('branch_code'),
-            'branch_name' => $this->request->getPost('branch_name'),
-            'address' => $this->request->getPost('address'),
-            'phone_no' => $this->request->getPost('phone_no'),
-            'contact_person' => $this->request->getPost('contact_person'),
-            'fax_no' => $this->request->getPost('fax_no'),
-            'warehouse_head' => $this->request->getPost('warehouse_head'),
-            'city' => $this->request->getPost('city'),
-            'email_address' => $this->request->getPost('email_address'),
-            'area_code' => $this->request->getPost('area_code'),
-            'active' => $this->request->getPost('active'),
-            'ans_code' => $this->request->getPost('ans_code'),
-            'branch_head' => $this->request->getPost('branch_head'),
-            'region' => $this->request->getPost('region'),
-            'warehouse_code' => $this->request->getPost('warehouse_code'),
+            "branch_code"       => $this->request->getPost('branch_code'),
+            'branch_name'       => $this->request->getPost('branch_name'),
+            'address'           => $this->request->getPost('address'),
+            'phone_no'          => $this->request->getPost('phone_no'),
+            'contact_person'    => $this->request->getPost('contact_person'),
+            'fax_no'            => $this->request->getPost('fax_no'),
+            'warehouse_head'    => $this->request->getPost('warehouse_head'),
+            'city'              => $this->request->getPost('city'),
+            'email_address'     => $this->request->getPost('email_address'),
+            'area_code'         => $this->request->getPost('area_code'),
+            'active'            => $this->request->getPost('active'),
+            'ans_code'          => $this->request->getPost('ans_code'),
+            'branch_head'       => $this->request->getPost('branch_head'),
+            'region'            => $this->request->getPost('region'),
+            'warehouse_code'    => $this->request->getPost('warehouse_code'),
         ];
         
         $cabangModel = new CabangModel();
@@ -111,21 +112,21 @@ class CabangController extends BaseController
         }
 
         $data = [
-            "branch_code" => $this->request->getPost('branch_code'),
-            'branch_name' => $this->request->getPost('branch_name'),
-            'address' => $this->request->getPost('address'),
-            'phone_no' => $this->request->getPost('phone_no'),
-            'contact_person' => $this->request->getPost('contact_person'),
-            'fax_no' => $this->request->getPost('fax_no'),
-            'warehouse_head' => $this->request->getPost('warehouse_head'),
-            'city' => $this->request->getPost('city'),
-            'email_address' => $this->request->getPost('email_address'),
-            'area_code' => $this->request->getPost('area_code'),
-            'active' => $this->request->getPost('active'),
-            'ans_code' => $this->request->getPost('ans_code'),
-            'branch_head' => $this->request->getPost('branch_head'),
-            'region' => $this->request->getPost('region'),
-            'warehouse_code' => $this->request->getPost('warehouse_code'),
+            "branch_code"       => $this->request->getPost('branch_code'),
+            'branch_name'       => $this->request->getPost('branch_name'),
+            'address'           => $this->request->getPost('address'),
+            'phone_no'          => $this->request->getPost('phone_no'),
+            'contact_person'    => $this->request->getPost('contact_person'),
+            'fax_no'            => $this->request->getPost('fax_no'),
+            'warehouse_head'    => $this->request->getPost('warehouse_head'),
+            'city'              => $this->request->getPost('city'),
+            'email_address'     => $this->request->getPost('email_address'),
+            'area_code'         => $this->request->getPost('area_code'),
+            'active'            => $this->request->getPost('active'),
+            'ans_code'          => $this->request->getPost('ans_code'),
+            'branch_head'       => $this->request->getPost('branch_head'),
+            'region'            => $this->request->getPost('region'),
+            'warehouse_code'    => $this->request->getPost('warehouse_code'),
         ];
         
         $cabangModel = new CabangModel();
@@ -139,17 +140,17 @@ class CabangController extends BaseController
 
     public function detail($id = null)
     {
-        $this->data = [
+        $cabangModel    = new CabangModel();
+        $this->data     = [
             ...$this->data,
-            'parent_title' => 'Cabang',
-            'title' => 'Detail Cabang',
-            'acc_signed' => $this->acc_signed,
-            'breadcrumb' => [...self::PARENT_BREADCRUMB, 'edit']
+            'parent_title'  => 'Cabang',
+            'title'         => 'Detail Cabang',
+            'acc_signed'    => $this->acc_signed,
+            'breadcrumb'    => [...self::PARENT_BREADCRUMB, 'edit']
         ];
         
-        $cabangModel = new CabangModel();
-        $this->data['branch_code'] = $id;
-        $this->data['cabang'] = $cabangModel->where('branch_code', $id)->first();
+        $this->data['branch_code']  = $id;
+        $this->data['cabang']       = $cabangModel->where('branch_code', $id)->first();
 
         return render($this, 'master/cabang/detail', $this->data);
     }
