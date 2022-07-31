@@ -4,7 +4,7 @@ namespace App\Controllers\master;
 
 
 use App\Controllers\BaseController;
-use App\Models\CabangModel;
+use App\Models\master\CabangModel;
 
 class CabangController extends BaseController
 {

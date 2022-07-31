@@ -26,7 +26,7 @@
             <div class="box-header with-border">
                 <h3 class="box-title"><?= $title ?></h3>
                 <div class="type-sp pull-right">
-                    <a href="<?= $_ENV['BASE_URL_FULL'] ?>"><div class="btn bg-olive btn-flat">Edit <?= $parent_title ?></div></a>
+                    <a href="<?= $_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/edit/".$area_code?>"><div class="btn bg-olive btn-flat">Edit <?= $parent_title ?></div></a>
                 </div>
             </div><!-- /.box-header -->
 
@@ -37,18 +37,18 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <strong>ID <?= $parent_title ?></strong>
-                            <p>K0001</p>
+                            <p><?= $area->area_code ?></p>
                             <hr>
                         </div>
                         <div class="col-lg-6">
                             <strong>Nama <?= $parent_title ?></strong>
-                            <p>MAWAR</p>
+                            <p><?= $area->area_name ?></p>
                             <hr>
                         </div>
                         <div class="col-lg-3">
 
                             <strong>Kepala Area</strong>
-                            <p>----</p>
+                            <p><?= $area->area_head ?></p>
 
                             <hr>
                         </div>
@@ -56,22 +56,22 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <strong>Alamat</strong>
-                            <p>----</p>
+                            <p><?= $area->address ?></p>
                             <hr>
                         </div>
                         <div class="col-lg-6">
                             <strong>No. Telpn.</strong>
-                            <p>-----</p>
+                            <p><?= $area->phone_no ?>-</p>
                             <hr>
                         </div>
                         <div class="col-lg-6">
                             <strong>No. Fax.</strong>
-                            <p>--/--/----</p>
+                            <p><?= $area->fax_no ?></p>
                             <hr>
                         </div>
                         <div class="col-lg-6">
                             <strong>Email</strong>
-                            <p>BOGOR</p>
+                            <p><?= $area->email_address ?></p>
                             <hr>
                         </div>
                     </div>

@@ -63,32 +63,36 @@
                     <tr>
                         <th> <div> <span>Kode <?= $parent_title ?></span><i class="pull-right fa fa-sort-amount-asc"></i></div> </th>
                         <th><div> <span>Nama <?= $parent_title ?></span><i class="pull-right fa fa-sort-amount-asc"></i></div></th>
-                        <th>Kepala Area</th>
+                        <th><div> <span>Kepala Area</span><i class="pull-right fa fa-sort-amount-asc"></i></div></th>
                         <th>Kota</th>
                         <th class="col-action">Action</th>
                     </tr>
+                    <?php
+                    foreach ($list_area as $row) :
+                    ?>
                     <tr>
-                        <td>DIY</td>
-                        <td>Area Yogyakarta</td>
-                        <td>Ir.H.Fauzi Ramli, MM</td>
-                        <td>(0274)373961</td>
+                        <td><?= $row->area_code ?></td>
+                        <td><?= $row->area_name ?></td>
+                        <td><?= $row->area_head ?></td>
+                        <td><?= $row->city ?></td>
                         <td class="col-action-val">
                         
-                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/edit/2" ?>">
+                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/edit/".$row->area_code ?>">
                                 <div class="btn btn-warning"> Edit</div>
                             </a>
-                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/2" ?>">
+                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/".$row->area_code ?>">
                                 <div class="btn btn-info"> Detail</div>
                             </a>
-                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/delete/2" ?>">
+                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/delete/".$row->area_code ?>">
                                 <div class="btn btn-danger"> Delete</div>
                             </a>
                         </td>
                     </tr>
+                    <?php endforeach; ?>
                 </table>
                 <div class="box-body">
                     <div class="pull-right">
-                        <?= view('layout/pagination') ?>
+                        <?= $pager->links('', 'default_full'); ?>
                     </div>
                 </div>
             </div>

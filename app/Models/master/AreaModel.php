@@ -1,7 +1,9 @@
 <?php
 
-namespace App\master\Models;
+namespace App\Models\master;
 
+use CodeIgniter\Database\Database;
+use CodeIgniter\Database\Exceptions\DataException;
 use CodeIgniter\Model;
 
 class AreaModel extends Model

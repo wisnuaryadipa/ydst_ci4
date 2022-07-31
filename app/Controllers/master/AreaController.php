@@ -4,6 +4,7 @@ namespace App\Controllers\master;
 
 
 use App\Controllers\BaseController;
+use App\Models\master\AreaModel;
 
 class AreaController extends BaseController
 {
@@ -12,6 +13,9 @@ class AreaController extends BaseController
 
     public function index()
     {
+        $areaModel = new AreaModel();
+        $page = $this->request->getVar('page_') ?: '1';
+        $perPage = 2;
         $this->data = [
             ...$this->data,
             'parent_title' => 'Area',
@@ -19,6 +23,9 @@ class AreaController extends BaseController
             'acc_signed' => $this->acc_signed,
             'breadcrumb' => [...self::PARENT_BREADCRUMB, '']
         ];
+
+        $this->data['list_area'] = $areaModel->paginate($perPage, '', $page);
+        $this->data['pager'] = $areaModel->pager;
 
         return render($this, 'master/area/index', $this->data);
     }
@@ -38,6 +45,7 @@ class AreaController extends BaseController
 
     public function actionCreate()
     {
+        $areaModel = new AreaModel();
         $rules = $this->getValidationRules();
 
         if (! $this->validate($rules)) {
@@ -52,11 +60,9 @@ class AreaController extends BaseController
             'city' => $this->request->getPost('city'),
             'fax_no' => $this->request->getPost('fax_no'),
             'phone_no' => $this->request->getPost('phone_no'),
-            'fax_no' => $this->request->getPost('fax_no'),
             'email_address' => $this->request->getPost('email_address'),
         ];
         
-        $areaModel = new AreaModel();
 
         $saved = $areaModel->insert($data);
 
@@ -74,6 +80,10 @@ class AreaController extends BaseController
             'breadcrumb' => [...self::PARENT_BREADCRUMB, 'edit']
 
         ];
+
+        $areaModel = new AreaModel();
+        $this->data['area_code'] = $id;
+        $this->data['area'] = $areaModel->where('area_code', $id)->first();
         
         return render($this, 'master/area/edit', $this->data);
     }
@@ -94,7 +104,6 @@ class AreaController extends BaseController
             'city' => $this->request->getPost('city'),
             'fax_no' => $this->request->getPost('fax_no'),
             'phone_no' => $this->request->getPost('phone_no'),
-            'fax_no' => $this->request->getPost('fax_no'),
             'email_address' => $this->request->getPost('email_address'),
         ];
         
@@ -108,6 +117,7 @@ class AreaController extends BaseController
 
     public function detail($id = null)
     {
+        $areaModel = new AreaModel();
         $this->data = [
             ...$this->data,
             'parent_title' => 'Area',
@@ -116,6 +126,8 @@ class AreaController extends BaseController
             'breadcrumb' => [...self::PARENT_BREADCRUMB, 'edit']
         ];
         
+        $this->data['area_code'] = $id;
+        $this->data['area'] = $areaModel->where('area_code', $id)->first();
         return render($this, 'master/area/detail', $this->data);
     }
 

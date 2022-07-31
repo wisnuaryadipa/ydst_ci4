@@ -12,7 +12,7 @@
     <div class="col-xs-12 col-md-12 col-lg-10">
         <!-- general form elements -->
         <div class="box box-primary">
-            <form action="<?= url_to('master/cabang/create') ?>" class="form-horizontal" method="post">
+            <form action="<?= url_to('master/area/create') ?>" class="form-horizontal" method="post">
             <div class="box-header with-border">
                 <h3 class="box-title"><?= $title ?></h3>
                 <div class="type-sp pull-right">
@@ -21,6 +21,20 @@
 
             <!-- form start -->
                 <div class="box-body">
+            <?php if (session('error') !== null) : ?>
+                <div class="alert alert-danger" role="alert"><?= session('error') ?></div>
+            <?php elseif (session('errors') !== null) : ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php if (is_array(session('errors'))) : ?>
+                        <?php foreach (session('errors') as $error) : ?>
+                            <?= $error ?>
+                            <br>
+                        <?php endforeach ?>
+                    <?php else : ?>
+                        <?= session('errors') ?>
+                    <?php endif ?>
+                </div>
+            <?php endif ?>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">

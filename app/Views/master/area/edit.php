@@ -12,7 +12,8 @@
     <div class="col-xs-12 col-md-12 col-lg-10">
         <!-- general form elements -->
         <div class="box box-primary">
-            <form action="<?= url_to('master/cabang/create') ?>" class="form-horizontal" method="post">
+            <form action="<?= base_url('master/area/edit/'.$area_code) ?>" class="form-horizontal" method="post">
+            <input type="hidden" name="_method" value="PUT" />
             <div class="box-header with-border">
                 <h3 class="box-title"><?= $title ?></h3>
                 <div class="type-sp pull-right">
@@ -21,19 +22,33 @@
 
             <!-- form start -->
                 <div class="box-body">
+            <?php if (session('error') !== null) : ?>
+                <div class="alert alert-danger" role="alert"><?= session('error') ?></div>
+            <?php elseif (session('errors') !== null) : ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php if (is_array(session('errors'))) : ?>
+                        <?php foreach (session('errors') as $error) : ?>
+                            <?= $error ?>
+                            <br>
+                        <?php endforeach ?>
+                    <?php else : ?>
+                        <?= session('errors') ?>
+                    <?php endif ?>
+                </div>
+            <?php endif ?>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="area_code" class="col-md-2 control-label">Kode <?= $parent_title ?></label>
                                 <div class="col-sm-10">
-                                    <input autofocus="autofocus" onfocus="this.select()" type="text" id="area_code" class="form-control" name="area_code" placeholder="Kode <?= $parent_title ?>" value="<?= $cabang->area_code ?>">
+                                    <input autofocus="autofocus" onfocus="this.select()" type="text" id="area_code" class="form-control" name="area_code" placeholder="Kode <?= $parent_title ?>" value="<?= $area->area_code ?>">
                                     <small class="help-block"></small>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="area_name" class="col-md-2 control-label">Nama <?= $parent_title ?></label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="area_name" name="area_name" placeholder="Nama <?= $parent_title ?>" value="<?= $cabang->area_name ?>">
+                                    <input type="text" class="form-control" id="area_name" name="area_name" placeholder="Nama <?= $parent_title ?>" value="<?= $area->area_name ?>">
                                     <small class="help-block"></small>
                                 </div>
                             </div>
@@ -51,7 +66,7 @@
                             <div class="form-group">
                                 <label for="address" class="col-md-2 control-label">Alamat Area</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="address" name="address" placeholder="Alamat Area" value="<?= $cabang->address ?>">
+                                    <input type="text" class="form-control" id="address" name="address" placeholder="Alamat Area" value="<?= $area->address ?>">
                                     <small class="help-block"></small>
                                 </div>
                             </div>
@@ -101,7 +116,7 @@
                                     <div class="form-group">
                                         <label for="email_address" class="col-md-2 control-label">E-mail</label>
                                         <div class="col-sm-10">
-                                            <input autofocus="autofocus" onfocus="this.select()" type="text" id="email_address" class="form-control" name="email_address" placeholder="E-mail" value="<?= $cabang->email_address ?>">
+                                            <input autofocus="autofocus" onfocus="this.select()" type="text" id="email_address" class="form-control" name="email_address" placeholder="E-mail" value="<?= $area->email_address ?>">
                                             <small class="help-block"></small>
                                         </div>
                                     </div>
@@ -113,7 +128,7 @@
                                         <div class="form-group">
                                             <label for="phone_no" class="col-md-4 control-label">No. Telp</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="phone_no" name="phone_no" placeholder="No. Telp" value="<?= $cabang->phone_no ?>">
+                                                <input type="text" class="form-control" id="phone_no" name="phone_no" placeholder="No. Telp" value="<?= $area->phone_no ?>">
                                                 <small class="help-block"></small>
                                             </div>
                                         </div>
@@ -122,7 +137,7 @@
                                         <div class="form-group">
                                             <label for="fax_no" class="col-md-2 control-label">No. Fax.</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="fax_no" name="fax_no" placeholder="No. Fax." value="<?= $cabang->fax_no ?>">
+                                                <input type="text" class="form-control" id="fax_no" name="fax_no" placeholder="No. Fax." value="<?= $area->fax_no ?>">
                                                 <small class="help-block"></small>
                                             </div>
                                         </div>
