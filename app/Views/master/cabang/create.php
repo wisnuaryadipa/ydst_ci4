@@ -43,7 +43,7 @@
                                     <div class="form-group">
                                         <label class="col-lg-6 col-xs-4 control-label" for="nip">Kode <?= $parent_title ?></label>
                                         <div class="col-lg-6 col-xs-8">
-                                            <input autofocus="autofocus" onfocus="this.select()" type="text" id="kode_cabang" class="form-control" name="branch_code" placeholder="ID <?= $parent_title ?>">
+                                            <input autofocus="autofocus" onfocus="this.select()" type="text" id="branch_code" class="form-control" name="branch_code" placeholder="ID <?= $parent_title ?>">
                                             <small class="help-block"></small>
                                         </div>
                                     </div>
@@ -52,7 +52,7 @@
                                     <div class="form-group">
                                         <label  class="col-lg-3 col-xs-3 control-label" for="nip">Kode ANS</label>
                                         <div class="col-lg-6 col-xs-8">
-                                            <input autofocus="autofocus" onfocus="this.select()" type="text" id="kode_ans" class="form-control" name="ans_code" placeholder="Kode ANS">
+                                            <input autofocus="autofocus" onfocus="this.select()" type="text" id="ans_code" class="form-control" name="ans_code" placeholder="Kode ANS">
                                             <small class="help-block"></small>
                                         </div>
                                     </div>
@@ -61,8 +61,10 @@
                                     <div class="form-group">
                                         <label  class="col-lg-2 col-xs-2 control-label" for="matkul">Kode Area</label>
                                         <div class="col-lg-8 col-xs-8">
-                                            <select name="area_code" id="jabatan" class="form-control select2" style="width: 100%!important">
-                                                <option value="" disabled selected>DIY</option>
+                                            <select name="area_code" id="area_code" class="form-control select2" style="width: 100%!important">
+                                                <?php foreach($area_list as $area) : ?>
+                                                    <option value="<?= $area->area_code ?>"><?= $area->area_name ?></option>
+                                                <?php endforeach ?>
                                             </select>
                                             <small class="help-block"></small>
                                         </div>
@@ -80,7 +82,7 @@
                             <div class="form-group">
                                 <label  class="col-lg-2 col-xs-2 control-label" for="matkul">Kepala Cabang</label>
                                 <div class="col-xs-8">
-                                    <select name="branch_head" id="jabatan" class="form-control select2" style="width: 100%!important">
+                                    <select name="branch_head" id="branch_head" class="form-control select2" style="width: 100%!important">
                                         <option value="" disabled selected>-----</option>
                                     </select>
                                     <small class="help-block"></small>
@@ -99,7 +101,7 @@
                                     <div class="form-group">
                                         <label for="matkul" class="col-xs-2 control-label">Provinsi</label>
                                         <div class="col-sm-6">
-                                            <select name="provinsi" id="provinsi" class="form-control select2" style="width: 100%!important">
+                                            <select name="province" id="province" class="form-control select2" style="width: 100%!important">
                                                 <option value="" disabled selected>Prov</option>
                                             </select>
                                             <small class="help-block"></small>
@@ -125,7 +127,7 @@
                                     <div class="form-group">
                                         <label for="matkul" class="col-xs-2 control-label">Kecamatan</label>
                                         <div class="col-sm-6">
-                                            <select name="pendidikan" id="pendidikan" class="form-control select2" style="width: 100%!important">
+                                            <select name="kecamatan" id="kecamatan" class="form-control select2" style="width: 100%!important">
                                                 <option value="" disabled selected>Kec</option>
                                             </select>
                                             <small class="help-block"></small>
@@ -181,7 +183,6 @@
                 </div>
             
             <div class="box-footer">
-                
                 <div class="form-group pull-right" style="margin-right: 0px">
                     <button type="submit" id="submit" class="btn btn-flat bg-purple">
                         <i class="fa fa-save"></i> Simpan

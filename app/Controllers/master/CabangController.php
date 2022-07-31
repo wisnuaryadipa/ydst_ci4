@@ -5,6 +5,7 @@ namespace App\Controllers\master;
 
 use App\Controllers\BaseController;
 use App\Models\master\CabangModel;
+use App\Models\master\AreaModel;
 
 class CabangController extends BaseController
 {
@@ -17,7 +18,7 @@ class CabangController extends BaseController
         $page           = $this->request->getVar('page_') ?: '1';
         $perPage        = 2;
         $totalPage      = $cabangModel->countAll();
-        
+
         $this->data     = [
             ...$this->data,
             'parent_title'  => 'Cabang',
@@ -34,6 +35,7 @@ class CabangController extends BaseController
 
     public function create()
     {
+        $areaModel = new AreaModel();
         $this->data = [
             ...$this->data,
             'parent_title'  => 'Cabang',
@@ -42,12 +44,14 @@ class CabangController extends BaseController
             'breadcrumb'    => [...self::PARENT_BREADCRUMB, 'create']
         ];
         
+        $this->data['area_list'] = $areaModel->getAll();
         return render($this, 'master/cabang/create', $this->data);
     }
 
     public function actionCreate()
     {
-        $rules = $this->getValidationRules();
+        $cabangModel    = new CabangModel();
+        $rules          = $this->getValidationRules();
 
         if (! $this->validate($rules)) {
             return redirect()
@@ -77,7 +81,6 @@ class CabangController extends BaseController
             'warehouse_code'    => $this->request->getPost('warehouse_code'),
         ];
         
-        $cabangModel = new CabangModel();
 
         $saved = $cabangModel->insert($data);
 
@@ -87,24 +90,27 @@ class CabangController extends BaseController
 
     public function edit($id = null)
     {
+        $areaModel = new AreaModel();
+        $cabangModel = new CabangModel();
         $this->data = [
             ...$this->data,
-            'parent_title' => 'Cabang',
-            'title' => 'Edit Cabang',
-            'acc_signed' => $this->acc_signed,
-            'breadcrumb' => [...self::PARENT_BREADCRUMB, 'edit']
+            'parent_title'  => 'Cabang',
+            'title'         => 'Edit Cabang',
+            'acc_signed'    => $this->acc_signed,
+            'breadcrumb'    => [...self::PARENT_BREADCRUMB, 'edit']
 
         ];
 
-        $cabangModel = new CabangModel();
-        $this->data['branch_code'] = $id;
-        $this->data['cabang'] = $cabangModel->where('branch_code', $id)->first();
+        $this->data['area_list'] = $areaModel->getAll();
+        $this->data['branch_code']  = $id;
+        $this->data['cabang']       = $cabangModel->where('branch_code', $id)->first();
         
         return render($this, 'master/cabang/edit', $this->data);
     }
 
     public function actionEdit($id = null)
     {
+        $cabangModel = new CabangModel();
         $rules = $this->getValidationRules();
 
         if (! $this->validate($rules)) {
@@ -129,7 +135,6 @@ class CabangController extends BaseController
             'warehouse_code'    => $this->request->getPost('warehouse_code'),
         ];
         
-        $cabangModel = new CabangModel();
 
         $saved = $cabangModel->save($data);
 

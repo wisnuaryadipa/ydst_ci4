@@ -63,8 +63,11 @@
                                         <label  class="col-lg-2 col-xs-2 control-label" for="matkul">Kode Area</label>
                                         <div class="col-lg-8 col-xs-8">
                                             <select name="area_code" id="jabatan" class="form-control select2" style="width: 100%!important" value="<?= $cabang->branch_code ?>">
-                                                <option value="" disabled selected>DIY</option>
-                                            </select>
+                                               
+                                                <?php foreach($area_list as $area) : ?>
+                                                    <option value="<?= $area->area_code ?>" <?php if($cabang->area_code == $area->area_code){ echo "selected";} ?>><?= $area->area_name ?></option>
+                                                <?php endforeach ?>
+                                                </select>
                                             <small class="help-block"></small>
                                         </div>
                                     </div>

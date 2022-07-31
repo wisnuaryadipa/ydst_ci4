@@ -14,10 +14,10 @@ class UserController extends BaseController
     {
         $this->data = [
             ...$this->data,
-            'parent_title' => 'Users',
-            'title' => 'Daftar User',
-            'acc_signed' => $this->acc_signed,
-            'breadcrumb' => [...self::PARENT_BREADCRUMB, '']
+            'parent_title'  => 'Users',
+            'title'         => 'Daftar User',
+            'acc_signed'    => $this->acc_signed,
+            'breadcrumb'    => [...self::PARENT_BREADCRUMB, '']
         ];
         
         return render($this, 'admin/user/index', $this->data);
@@ -27,10 +27,10 @@ class UserController extends BaseController
     {
         $this->data = [
             ...$this->data,
-            'parent_title' => 'Users',
-            'title' => 'Buat User Baru',
-            'acc_signed' => $this->acc_signed,
-            'breadcrumb' => [...self::PARENT_BREADCRUMB, 'create']
+            'parent_title'  => 'Users',
+            'title'         => 'Buat User Baru',
+            'acc_signed'    => $this->acc_signed,
+            'breadcrumb'    => [...self::PARENT_BREADCRUMB, 'create']
         ];
         
         return render($this, 'admin/user/create', $this->data);
@@ -41,10 +41,10 @@ class UserController extends BaseController
         
         $this->data = [
             ...$this->data,
-            'parent_title' => 'Users',
-            'title' => 'Edit User',
-            'acc_signed' => $this->acc_signed,
-            'breadcrumb' => [...self::PARENT_BREADCRUMB, 'edit']
+            'parent_title'  => 'Users',
+            'title'         => 'Edit User',
+            'acc_signed'    => $this->acc_signed,
+            'breadcrumb'    => [...self::PARENT_BREADCRUMB, 'edit']
         ];
         
         return render($this, 'admin/user/edit', $this->data);
@@ -55,10 +55,10 @@ class UserController extends BaseController
         
         $this->data = [
             ...$this->data,
-            'parent_title' => 'Users',
-            'title' => 'Detail User',
-            'acc_signed' => $this->acc_signed,
-            'breadcrumb' => [...self::PARENT_BREADCRUMB, 'detail']
+            'parent_title'  => 'Users',
+            'title'         => 'Detail User',
+            'acc_signed'    => $this->acc_signed,
+            'breadcrumb'    => [...self::PARENT_BREADCRUMB, 'detail']
         ];
         
         return render($this, 'admin/user/detail', $this->data);

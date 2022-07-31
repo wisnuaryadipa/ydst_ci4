@@ -25,4 +25,10 @@ class AreaModel extends Model
     ];
 
 
+    public function getAll()
+    {
+        return $this->findAll();
+    }
+
+
 }
