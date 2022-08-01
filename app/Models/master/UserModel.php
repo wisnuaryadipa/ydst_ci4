@@ -1,6 +1,6 @@
 <?php
 
-namespace CodeIgniter\Shield\Models;
+namespace App\Models\master;
 
 use CodeIgniter\Database\Database;
 use CodeIgniter\Database\Exceptions\DataException;
@@ -13,7 +13,6 @@ use InvalidArgumentException;
 
 class UserModel extends Model
 {
-    use CheckQueryReturnTrait;
 
     protected $table          = 'users';
     protected $primaryKey     = 'id';

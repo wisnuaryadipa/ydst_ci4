@@ -166,4 +166,5 @@ class CabangController extends BaseController
             'email_address'    => 'required|max_length[254]|valid_email',
         ];
     }
+    
 }

@@ -63,6 +63,12 @@ class UserController extends BaseController
         
         return render($this, 'admin/user/detail', $this->data);
     }
+    
+    function getValidationRules() 
+    {
+        return [
+        ];
+    }
 
     
 }

@@ -147,6 +147,12 @@ class CustomerController extends BaseController
         
         return render($this, 'master/customer/detail', $this->data);
     }
+    
+    function getValidationRules() 
+    {
+        return [
+        ];
+    }
 
     
 }

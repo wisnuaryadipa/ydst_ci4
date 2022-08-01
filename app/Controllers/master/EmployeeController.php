@@ -7,6 +7,7 @@ use App\Controllers\BaseController;
 use App\Models\master\CabangModel;
 use App\Models\master\AreaModel;
 use App\Models\master\UserModel;
+use App\Models\master\EmployeeModel;
 
 class EmployeeController extends BaseController
 {
@@ -19,7 +20,7 @@ class EmployeeController extends BaseController
         $MUser          = new UserModel();
         $page           = $this->request->getVar('page_') ?: '1';
         $perPage        = 2;
-        $totalPage      = $cabangModel->countAll();
+        $totalPage      = $employeeModel->countAll();
         $this->data     = [
             ...$this->data,
             'parent_title'  => 'Employee',
@@ -27,10 +28,10 @@ class EmployeeController extends BaseController
             'acc_signed'    => $this->acc_signed,
             'breadcrumb'    => [...self::PARENT_BREADCRUMB, '']
         ];
-        $this->data['unemployedUsers'] = $MUser->getUnemployeedUsers();
-        $this->data['employees']    = $employeeModel->paginate($perPage, '', $page);
-        $this->data['pager']        = $employeeModel->pager;
-
+        $this->data['unemployedUsers']  = $MUser->getUnemployeedUsers();
+        $this->data['employees']        = $employeeModel->paginate($perPage, '', $page);
+        $this->data['pager']            = $employeeModel->pager;
+        d($MUser->getUnemployeedUsers());
         return render($this, 'master/employee/index', $this->data);
     }
 

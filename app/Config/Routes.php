@@ -66,10 +66,10 @@ $routes->group('', ['filter' => 'auth'] ,function($routes) {
         $routes->group('buku', function($routes){
             $routes->get('/', 'master\BukuController::index');
             $routes->get('create', 'master\BukuController::create'); 
-            $routes->post('create', 'master\BukuController::post');
+            $routes->post('create', 'master\BukuController::actionCreate');
             $routes->get('(:alphanum)', 'master\BukuController::detail/$1');
             $routes->get('edit/(:alphanum)', 'master\BukuController::edit/$1');
-            $routes->put('edit/(:alphanum)', 'master\BukuController::edit/$1');
+            $routes->put('edit/(:alphanum)', 'master\BukuController::actionEdit/$1');
             $routes->delete('detele/(:alphanum)', 'master\BukuController:delete/$1');
         });
     
@@ -101,6 +101,16 @@ $routes->group('', ['filter' => 'auth'] ,function($routes) {
             $routes->get('edit/(:alphanum)', 'master\CabangController::edit/$1');
             $routes->put('edit/(:alphanum)', 'master\CabangController::actionEdit/$1');
             $routes->delete('detele/(:alphanum)', 'master\CabangController:delete/$1');
+        });
+    
+        $routes->group('employee', function($routes){
+            $routes->get('/', 'master\EmployeeController::index');
+            $routes->get('create', 'master\EmployeeController::create'); 
+            $routes->post('create', 'master\EmployeeController::actionCreate');
+            $routes->get('(:alphanum)', 'master\EmployeeController::detail/$1');
+            $routes->get('edit/(:alphanum)', 'master\EmployeeController::edit/$1');
+            $routes->put('edit/(:alphanum)', 'master\EmployeeController::actionEdit/$1');
+            $routes->delete('detele/(:alphanum)', 'master\EmployeeController:delete/$1');
         });
         
     });

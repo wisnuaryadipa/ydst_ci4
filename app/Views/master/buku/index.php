@@ -88,13 +88,13 @@
                         <td><?= $row->writer ?></td>
                         <td class="col-action-val">
                         
-                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/edit/".$row->branch_code ?>">
+                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/edit/".$row->book_code ?>">
                                 <div class="btn btn-warning"> Edit</div>
                             </a>
-                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/".$row->branch_code ?>">
+                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/".$row->book_code ?>">
                                 <div class="btn btn-info"> Detail</div>
                             </a>
-                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/delete/".$row->branch_code ?>">
+                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/delete/".$row->book_code ?>">
                                 <div class="btn btn-danger"> Delete</div>
                             </a>
                         </td>

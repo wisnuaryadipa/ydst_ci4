@@ -84,7 +84,7 @@ class BukuController extends BaseController
         return render($this, 'master/buku/edit', $this->data);
     }
 
-    public function editAction()
+    public function actionEdit()
     {
         $bukuModel  = new BukuModel();
         $rules      = $this->getValidationRules();
@@ -129,4 +129,10 @@ class BukuController extends BaseController
     }
 
     
+    function getValidationRules() 
+    {
+        return [
+            'book_code'    => 'required',
+        ];
+    }
 }
