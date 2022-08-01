@@ -77,23 +77,30 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-4 col-md-6">
+                            <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
-                                    <label class="col-md-3 col-lg-6" for="matkul">Tingkat</label>
-                                    <div class="col-xs-8 col-lg-6">
+                                    <label class="col-md-3 col-lg-4" for="matkul">Tingkat</label>
+                                    <div class="col-xs-8 col-lg-8">
                                         <select name="school_grade" id="school_grade" class="form-control select2" style="width: 100%!important">
-                                            <option value="" disabled selected>Tingkat</option>
+                                            <?php foreach($list_tingkat as $key => $tingkat) : ?>
+                                                <option value="<?= $key ?>"><?= $tingkat ?></option>
+                                            <?php endforeach ?>
                                         </select>
                                         <small class="help-block"></small>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-6">
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
-                                    <label class="col-md-3 col-lg-5" for="matkul">Jenis / Status</label>
-                                    <div class="col-xs-8 col-lg-7">
+                                    <label class="col-md-3 col-lg-4" for="matkul">Jenis / Status</label>
+                                    <div class="col-xs-8 col-lg-5">
                                         <select name="pendidikan" id="pendidikan" class="form-control select2" style="width: 100%!important">
-                                            <option value="" disabled selected>Jenis / Status</option>
+                                            <?php foreach($list_status as $key => $status) : ?>
+                                                <option value="<?= $key ?>" ><?= $status ?></option>
+                                            <?php endforeach ?>
+                                            
                                         </select>
                                         <small class="help-block"></small>
                                     </div>
@@ -126,7 +133,7 @@
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class="col-md-2" for="matkul">Nama Customer</label>
-                                    <div class="col-xs-8">
+                                    <div class="col-xs-6">
                                         <input type="text" class="form-control" name="cust_name" placeholder="Nama <?= $parent_title ?>">
                                         <small class="help-block"></small>
                                     </div>
@@ -138,7 +145,7 @@
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class="col-xs-2" for="matkul">NPSN</label>
-                                    <div class="col-xs-8">
+                                    <div class="col-xs-4">
                                         <input type="text" class="form-control" name="npsn" placeholder="NPSN">
                                         <small class="help-block"></small>
                                     </div>
@@ -147,7 +154,7 @@
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class="col-xs-2" for="matkul">NPWP / KTP</label>
-                                    <div class="col-xs-8">
+                                    <div class="col-xs-5">
                                         <input type="text" class="form-control" name="npwp" placeholder="NPWP / KTP">
                                         <small class="help-block"></small>
                                     </div>
@@ -158,7 +165,7 @@
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class="col-xs-2" for="matkul">Alamat</label>
-                                    <div class="col-xs-8">
+                                    <div class="col-xs-7">
                                         <input type="text" class="form-control" name="address" placeholder="Alamat">
                                         <small class="help-block"></small>
                                     </div>
@@ -171,7 +178,9 @@
                                     <label class="col-md-3 col-lg-4 " for="matkul">Peringkat Sekolah</label>
                                     <div class="col-md-6">
                                         <select name="peringkat_sekolah" id="peringkat_sekolah" class="form-control select2" style="width: 100%!important">
-                                            <option value="" disabled selected>Peringkat Sekolah</option>
+                                            <?php foreach($list_peringkat as $key => $peringkat): ?>
+                                                <option value="<?= $key ?>" ><?= $peringkat ?></option>
+                                            <?php endforeach ?>
                                         </select>
                                         <small class="help-block"></small>
                                     </div>
@@ -206,7 +215,9 @@
                                     <label class="col-lg-2" for="matkul">Cabang</label>
                                     <div class="col-lg-4">
                                         <select name="branch_code" id="branch_code" class="form-control select2" style="width: 100%!important">
-                                            <option value="" disabled selected>DIY</option>
+                                            <?php foreach($list_cabang as $key => $cabang): ?>
+                                            <option value="<?= $key ?>"><?= $cabang->branch_name ?></option>
+                                            <?php endforeach ?>
                                         </select>
                                         <small class="help-block"></small>
                                     </div>
@@ -223,10 +234,13 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
+
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="col-lg-3" for="matkul">Jumlah Siswa</label>
-                                    <div class="col-lg-5">
+                                    <label class="col-lg-4" for="matkul">Jumlah Siswa</label>
+                                    <div class="col-lg-3">
                                         <input type="text" class="form-control" name="count_siswa" placeholder="Jumlah Siswa">
                                         <small class="help-block"></small>
                                     </div>
@@ -243,9 +257,11 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="col-lg-3" for="matkul">Sumber Dana</label>
+                                    <label class="col-lg-4" for="matkul">Sumber Dana</label>
                                     <div class="col-lg-5">
                                         <input type="text" class="form-control" name="nama_user" placeholder="Sumber Dana">
                                         <small class="help-block"></small>

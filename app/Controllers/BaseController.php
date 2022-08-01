@@ -51,6 +51,7 @@ class BaseController extends Controller
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
         helper('layout_helper');
+        helper('static_data_helper');
         $this->helpers = array_merge($this->helpers, ['auth', 'setting']);
 
         // Do Not Edit This Line
@@ -64,9 +65,9 @@ class BaseController extends Controller
         $this->data         = array_merge(
             $this->data,
             [
-                'acc_signed'    => 'admin',
-                'breadcrumb'    => [],
-                'uri'           => $this->request->uri,
+                'acc_signed'        => 'admin',
+                'breadcrumb'        => [],
+                'uri'               => $this->request->uri
             ]
         );
 

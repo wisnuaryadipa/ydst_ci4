@@ -103,7 +103,7 @@ $routes->group('', ['filter' => 'auth'] ,function($routes) {
             $routes->delete('detele/(:alphanum)', 'master\CabangController:delete/$1');
         });
     
-        $routes->group('employee', function($routes){
+        $routes->group('karyawan', function($routes){
             $routes->get('/', 'master\EmployeeController::index');
             $routes->get('create', 'master\EmployeeController::create'); 
             $routes->post('create', 'master\EmployeeController::actionCreate');

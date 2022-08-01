@@ -12,7 +12,7 @@ use App\Models\master\EmployeeModel;
 class EmployeeController extends BaseController
 {
 
-    const PARENT_BREADCRUMB = ['home', 'master', 'employee'];
+    const PARENT_BREADCRUMB = ['home', 'master', 'karyawan'];
 
     public function index()
     {
@@ -23,8 +23,8 @@ class EmployeeController extends BaseController
         $totalPage      = $employeeModel->countAll();
         $this->data     = [
             ...$this->data,
-            'parent_title'  => 'Employee',
-            'title'         => 'Daftar Employee',
+            'parent_title'  => 'Karyawan',
+            'title'         => 'Daftar Karyawan',
             'acc_signed'    => $this->acc_signed,
             'breadcrumb'    => [...self::PARENT_BREADCRUMB, '']
         ];
@@ -40,14 +40,14 @@ class EmployeeController extends BaseController
         $areaModel = new AreaModel();
         $this->data = [
             ...$this->data,
-            'parent_title'  => 'Employee',
-            'title'         => 'Buat Employee Baru',
+            'parent_title'  => 'Karyawan',
+            'title'         => 'Buat Karyawan Baru',
             'acc_signed'    => $this->acc_signed,
             'breadcrumb'    => [...self::PARENT_BREADCRUMB, 'create']
         ];
         
         $this->data['area_list'] = $areaModel->getAll();
-        return render($this, 'master/employee/create', $this->data);
+        return render($this, 'master/karyawan/create', $this->data);
     }
 
     public function actionCreate()
@@ -91,7 +91,7 @@ class EmployeeController extends BaseController
 
         $saved = $employeeModel->insert($data);
 
-        return redirect()->to('/master/employee');
+        return redirect()->to('/master/karyawan');
 
     }
 
@@ -101,8 +101,8 @@ class EmployeeController extends BaseController
         $employeeModel = new EmployeeModel();
         $this->data = [
             ...$this->data,
-            'parent_title'  => 'Employee',
-            'title'         => 'Edit Employee',
+            'parent_title'  => 'Karyawan',
+            'title'         => 'Edit Karyawan',
             'acc_signed'    => $this->acc_signed,
             'breadcrumb'    => [...self::PARENT_BREADCRUMB, 'edit']
 
@@ -112,7 +112,7 @@ class EmployeeController extends BaseController
         $this->data['employeeId']   = $id;
         $this->data['employees']    = $employeeModel->where('empl_code', $id)->first();
         
-        return render($this, 'master/cabang/edit', $this->data);
+        return render($this, 'master/karyawan/edit', $this->data);
     }
 
     public function actionEdit($id = null)
@@ -150,7 +150,7 @@ class EmployeeController extends BaseController
 
         $saved = $employeeModel->save($data);
 
-        return redirect()->to('/master/employee/'.$id);
+        return redirect()->to('/master/karyawan/'.$id);
 
     }
 
@@ -160,8 +160,8 @@ class EmployeeController extends BaseController
         $cabangModel    = new CabangModel();
         $this->data     = [
             ...$this->data,
-            'parent_title'  => 'Employee',
-            'title'         => 'Detail Employee',
+            'parent_title'  => 'Karyawan',
+            'title'         => 'Detail Karyawan',
             'acc_signed'    => $this->acc_signed,
             'breadcrumb'    => [...self::PARENT_BREADCRUMB, 'edit']
         ];
@@ -169,7 +169,7 @@ class EmployeeController extends BaseController
         $this->data['employee_id']      = $id;
         $this->data['employees']        = $employeeModel->where('empl_code', $id)->first();
 
-        return render($this, 'master/cabang/detail', $this->data);
+        return render($this, 'master/karyawan/detail', $this->data);
     }
 
     function getValidationRules() 

@@ -5,6 +5,7 @@ namespace App\Controllers\master;
 
 use App\Controllers\BaseController;
 use App\Models\master\MCustomerModel;
+use App\Models\master\CabangModel;
 
 class CustomerController extends BaseController
 {
@@ -13,6 +14,11 @@ class CustomerController extends BaseController
 
     public function index()
     {
+        $MCustomer      = new MCustomerModel();
+        $page           = $this->request->getVar('page_') ?: '1';
+        $perPage        = 2;
+        $totalPage      = $MCustomer->countAll();
+
         $this->data = [
             ...$this->data,
             'parent_title'  => 'Customer',
@@ -21,11 +27,16 @@ class CustomerController extends BaseController
             'breadcrumb'    => [...self::PARENT_BREADCRUMB, '']
         ];
 
+        $this->data['list_customer']  = $MCustomer->paginate($perPage, '', $page);
+        $this->data['pager']        = $MCustomer->pager;
+
         return render($this, 'master/customer/index', $this->data);
     }
 
     public function create()
     {
+        $MCabang        = new CabangModel();
+        helper('static_data_helper');
         $this->data = [
             ...$this->data,
             'parent_title'  => 'Customer',
@@ -33,6 +44,11 @@ class CustomerController extends BaseController
             'acc_signed'    => $this->acc_signed,
             'breadcrumb'    => [...self::PARENT_BREADCRUMB, 'create']
         ];
+
+        $this->data['list_tingkat']     = tingkatCustomer();
+        $this->data['list_status']      = statusCustomer();
+        $this->data['list_peringkat']   = peringkatSekolah();
+        $this->data['list_cabang']           = $MCabang->getAll();
         
         return render($this, 'master/customer/create', $this->data);
     }

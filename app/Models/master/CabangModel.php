@@ -29,5 +29,7 @@ class CabangModel extends Model
         'warehouse_code',
     ];
 
-
+    public function getAll() {
+        return $this->findAll();
+    }
 }
