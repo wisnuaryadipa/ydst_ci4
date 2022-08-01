@@ -13,6 +13,10 @@ class BukuController extends BaseController
 
     public function index()
     {
+        $bukuModel  = new BukuModel();
+        $page       = $this->request->getVar('page_') ?: '1';
+        $perPage    = 2;
+
         $this->data = [
             ...$this->data,
             'parent_title'  => 'Buku',
@@ -21,6 +25,8 @@ class BukuController extends BaseController
             'breadcrumb'    => [...self::PARENT_BREADCRUMB, '']
         ];
 
+        $this->data['list_buku']    = $bukuModel->paginate($perPage, '', $page);
+        $this->data['pager']        = $bukuModel->pager;
         return render($this, 'master/buku/index', $this->data);
     }
 
