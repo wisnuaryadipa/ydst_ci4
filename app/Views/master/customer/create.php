@@ -1,9 +1,4 @@
-<section class="content-header">
-    <h1>
-    <?= $parent_title ?>
-    <small>list</small>
-    </h1>
-</section>
+
 
 <!-- Main content -->
 <section class="content" id="compact-form">
@@ -12,7 +7,6 @@
     <div class="col-xs-12 col-md-12 col-lg-10">
         <!-- general form elements -->
         <div class="box box-primary">
-            <form action="<?= url_to('master/customer/create') ?>" class="form-horizontal" method="post">
                 <div class="box-header with-border">
                     <h3 class="box-title"><?= $title ?></h3>
                     <div class="type-sp pull-right">
@@ -20,7 +14,7 @@
                 </div><!-- /.box-header -->
 
                 <!-- form start -->
-                <form action="" class="form-horizontal">
+                <form action="<?= url_to('master/customer/create') ?>" class="form-horizontal" method="post">
                     <?php if (session('error') !== null) : ?>
                         <div class="alert alert-danger" role="alert"><?= session('error') ?></div>
                     <?php elseif (session('errors') !== null) : ?>
@@ -53,9 +47,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="matkul" class="col-md-2">Kabupaten</label>
+                                    <label for="matkul" class="col-md-2">Kota</label>
                                     <div class="col-sm-6">
-                                        <select name="kabupaten" id="kabupaten" class="form-control select2" style="width: 100%!important">
+                                        <select name="city" id="city" class="form-control select2" style="width: 100%!important">
                                             <option value="" disabled selected>Kab</option>
                                         </select>
                                         <small class="help-block"></small>
@@ -68,7 +62,7 @@
                                 <div class="form-group">
                                     <label for="matkul" class="col-md-2">Kecamatan</label>
                                     <div class="col-sm-6">
-                                        <select name="kecamatan" id="kecamatan" class="form-control select2" style="width: 100%!important">
+                                        <select name="camat_kode" id="camat_kode" class="form-control select2" style="width: 100%!important">
                                             <option value="" disabled selected>Kec</option>
                                         </select>
                                         <small class="help-block"></small>
@@ -81,7 +75,7 @@
                                 <div class="form-group">
                                     <label class="col-md-3 col-lg-4" for="matkul">Tingkat</label>
                                     <div class="col-xs-8 col-lg-8">
-                                        <select name="school_grade" id="school_grade" class="form-control select2" style="width: 100%!important">
+                                        <select name="" id="" class="form-control select2" style="width: 100%!important">
                                             <?php foreach($list_tingkat as $key => $tingkat) : ?>
                                                 <option value="<?= $key ?>"><?= $tingkat ?></option>
                                             <?php endforeach ?>
@@ -96,7 +90,7 @@
                                 <div class="form-group">
                                     <label class="col-md-3 col-lg-4" for="matkul">Jenis / Status</label>
                                     <div class="col-xs-8 col-lg-5">
-                                        <select name="pendidikan" id="pendidikan" class="form-control select2" style="width: 100%!important">
+                                        <select name="" id="" class="form-control select2" style="width: 100%!important">
                                             <?php foreach($list_status as $key => $status) : ?>
                                                 <option value="<?= $key ?>" ><?= $status ?></option>
                                             <?php endforeach ?>
@@ -122,7 +116,7 @@
                                 <div class="form-group">
                                     <label class="col-md-3 col-lg-5" for="matkul">Urut</label>
                                     <div class="col-xs-8 col-lg-7">
-                                        <input type="text" class="form-control" name="urut" placeholder="Urut">
+                                        <input type="text" class="form-control" name="" placeholder="Urut">
                                         <small class="help-block"></small>
                                     </div>
                                 </div>
@@ -177,7 +171,7 @@
                                 <div class="form-group">
                                     <label class="col-md-3 col-lg-4 " for="matkul">Peringkat Sekolah</label>
                                     <div class="col-md-6">
-                                        <select name="peringkat_sekolah" id="peringkat_sekolah" class="form-control select2" style="width: 100%!important">
+                                        <select name="school_grade" id="school_grade" class="form-control select2" style="width: 100%!important">
                                             <?php foreach($list_peringkat as $key => $peringkat): ?>
                                                 <option value="<?= $key ?>" ><?= $peringkat ?></option>
                                             <?php endforeach ?>
@@ -241,7 +235,7 @@
                                 <div class="form-group">
                                     <label class="col-lg-4" for="matkul">Jumlah Siswa</label>
                                     <div class="col-lg-3">
-                                        <input type="text" class="form-control" name="count_siswa" placeholder="Jumlah Siswa">
+                                        <input type="text" class="form-control" name="" placeholder="Jumlah Siswa">
                                         <small class="help-block"></small>
                                     </div>
                                 </div>
@@ -252,7 +246,7 @@
                                 <div class="form-group">
                                     <label class="col-lg-4" for="matkul">Kompetitor</label>
                                     <div class="col-lg-8">
-                                        <input type="text" class="form-control" name="competitor" placeholder="Kompetitor">
+                                        <input type="text" class="form-control" name="" placeholder="Kompetitor">
                                         <small class="help-block"></small>
                                     </div>
                                 </div>
@@ -263,7 +257,7 @@
                                 <div class="form-group">
                                     <label class="col-lg-4" for="matkul">Sumber Dana</label>
                                     <div class="col-lg-5">
-                                        <input type="text" class="form-control" name="nama_user" placeholder="Sumber Dana">
+                                        <input type="text" class="form-control" name="" placeholder="Sumber Dana">
                                         <small class="help-block"></small>
                                     </div>
                                 </div>
@@ -274,31 +268,30 @@
                                 <div class="form-group">
                                     <label class="col-xs-2" for="matkul">Catatan</label>
                                     <div class="col-xs-8">
-                                        <textfield type="text" class="form-control" name="notes" placeholder="Catatan">
+                                        <textfield type="text" class="form-control" name="" placeholder="Catatan">
                                         <small class="help-block"></small>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                
-                </form>
-                
-                <div class="box-footer">
                     
-                    <div class="form-group pull-right">
-                        <button type="submit" id="submit" class="btn btn-flat bg-purple">
-                            <i class="fa fa-save"></i> Simpan
-                        </button>
+                    <div class="box-footer">
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <button type="submit" id="submit" class="btn btn-flat bg-purple pull-right">
+                                    <i class="fa fa-save"></i> Simpan
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
         
-            </form>
+                </form>
             
-        </div><!-- /.box -->
+            </div><!-- /.box -->
 
 
-    </div><!--/.col (left) -->
+        </div><!--/.col (left) -->
     </div>   <!-- /.row -->
 </section><!-- /.content -->
 

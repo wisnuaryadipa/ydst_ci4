@@ -26,7 +26,7 @@
             <div class="box-header with-border">
                 <h3 class="box-title"><?= $title ?></h3>
                 <div class="type-sp pull-right">
-                    <a href="<?= $_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/edit/2 "?>">
+                    <a href="<?= $_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/edit/".$book->book_code?>">
                         <div class="btn bg-olive btn-flat">Edit <?= $parent_title ?></div>
                     </a>
                 </div>

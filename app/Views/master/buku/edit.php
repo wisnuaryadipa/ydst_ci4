@@ -20,7 +20,8 @@
             </div><!-- /.box-header -->
 
             <!-- form start -->
-            <form action="<?= base_url('master/buku/edit/'.$book_code) ?>" class="form-horizontal" method="post">
+            <form action="<?= base_url('master/buku/edit/'.$book->book_code) ?>" class="form-horizontal" method="post">
+                <input type="hidden" name="_method" value="PUT" />
                 <div class="box-body">
                     <?php if (session('error') !== null) : ?>
                         <div class="alert alert-danger" role="alert"><?= session('error') ?></div>
@@ -41,21 +42,21 @@
                             <div class="form-group">
                                 <label  class="col-md-2" for="nip">Kode <?= $parent_title ?></label>
                                 <div class="col-md-8">
-                                    <input autofocus="autofocus" onfocus="this.select()" type="number" id="book_code" class="form-control" name="book_code" placeholder="ID <?= $parent_title ?>" value="<?= $cabang->book_code ?>">
+                                    <input autofocus="autofocus" onfocus="this.select()" type="text" id="book_code" class="form-control" name="book_code" placeholder="ID <?= $parent_title ?>" value="<?= $book->book_code ?>">
                                     <small class="help-block"></small>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label  class="col-md-2" for="nama_dosen">Nama <?= $parent_title ?></label>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" name="book_title" placeholder="Nama <?= $parent_title ?>" value="<?= $cabang->book_title ?>">
+                                    <input type="text" class="form-control" name="book_title" placeholder="Nama <?= $parent_title ?>" value="<?= $book->book_title ?>">
                                     <small class="help-block"></small>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label  class="col-md-2" for="email">Penulis <?= $parent_title ?></label>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" name="writer" placeholder="Penulis <?= $parent_title ?>" value="<?= $cabang->writer ?>">
+                                    <input type="text" class="form-control" name="writer" placeholder="Penulis <?= $parent_title ?>" value="<?= $book->writer ?>">
                                     <small class="help-block"></small>
                                 </div>
                             </div>
@@ -71,11 +72,12 @@
                 </div>
                 
                 <div class="box-footer">
-                    
-                    <div class="form-group pull-right">
-                        <button type="submit" id="submit" class="btn btn-flat bg-purple">
-                            <i class="fa fa-save"></i> Simpan
-                        </button>
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <button type="submit" id="submit" class="btn btn-flat bg-purple pull-right">
+                                <i class="fa fa-save"></i> Simpan
+                            </button>
+                        </div>
                     </div>
                 </div>
             </form>

@@ -4,6 +4,7 @@
     <?= $parent_title ?>
     <small>list</small>
     </h1>
+    <?= d($unemployedUsers) ?>
 </section>
 
 <!-- Main content -->
@@ -68,7 +69,7 @@
                         <th class="col-action">Action</th>
                     </tr>
                     <?php
-                    foreach ($list_area as $row) :
+                    foreach ($list_employee as $row) :
                     ?>
                     <tr>
                         <td><?= $row->area_code ?></td>

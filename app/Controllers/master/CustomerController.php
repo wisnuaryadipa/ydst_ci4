@@ -35,8 +35,8 @@ class CustomerController extends BaseController
 
     public function create()
     {
-        $MCabang        = new CabangModel();
         helper('static_data_helper');
+        $MCabang        = new CabangModel();
         $this->data = [
             ...$this->data,
             'parent_title'  => 'Customer',
@@ -53,7 +53,7 @@ class CustomerController extends BaseController
         return render($this, 'master/customer/create', $this->data);
     }
 
-    public function createAction()
+    public function actionCreate()
     {
         $mCustomerModel = new MCustomerModel();
         $rules          = $this->getValidationRules();
@@ -69,24 +69,25 @@ class CustomerController extends BaseController
         }
         
         $data = [
-            "branch_code"   => $this->request->getPost('branch_code'),
-            'sales_code'    => $this->request->getPost('sales_code'),
-            'cust_code'     => $this->request->getPost('cust_code'),
-            'period_code'   => $this->request->getPost('period_code'),
-            'sp_code'       => $this->request->getPost('sp_code'),
-            'trans_date'    => $this->request->getPost('trans_date'),
-            'status'        => $this->request->getPost('status'),
-            'empl_code'     => $this->request->getPost('empl_code'),
-            'sp_note'       => $this->request->getPost('sp_note'),
-            'printed'       => $this->request->getPost('printed'),
-            'edit_date'     => $this->request->getPost('edit_date'),
-            'exp_date'      => $this->request->getPost('exp_date'),
-            'user_id'       => $this->request->getPost('user_id'),
-            'pay_month'     => $this->request->getPost('pay_month'),
-            'dana'          => $this->request->getPost('dana'),
-            'tipe'          => $this->request->getPost('tipe'),
-            'draft'         => $this->request->getPost('draft'),
-            'approved'      => $this->request->getPost('approved'),
+            "cust_code"             => $this->request->getPost('cust_code'),
+            'cust_name'             => $this->request->getPost('cust_name'),
+            'address'               => $this->request->getPost('address'),
+            'phone_no'              => $this->request->getPost('phone_no'),
+            'fax_no'                => $this->request->getPost('fax_no'),
+            'contact_person'        => $this->request->getPost('contact_person'),
+            'province'              => 1,
+            'city'                  => 2,
+            'camat_kode'            => 12,
+            'ans_code'              => $this->request->getPost('ans_code'),
+            'branch_code'           => $this->request->getPost('branch_code'),
+            'school_grade'          => $this->request->getPost('school_grade'),
+            'npsn'                  => $this->request->getPost('npsn'),
+            'reg_date'              => $this->request->getPost('reg_date'),
+            'npwp'                  => $this->request->getPost('npwp'),
+            'reason_deactivated'    => $this->request->getPost('reason_deactivated'),
+            'reason_deactivated'    => $this->request->getPost('reason_deactivated'),
+            'school_email'          => $this->request->getPost('school_email'),
+            'cp_email'              => $this->request->getPost('cp_email'),
         ];
         
 
@@ -98,6 +99,9 @@ class CustomerController extends BaseController
 
     public function edit($id = null)
     {
+        helper('static_data_helper');
+        $MCabang        = new CabangModel();
+        $MCustomer      = new MCustomerModel();
         $this->data = [
             ...$this->data,
             'parent_title'  => 'Customer',
@@ -106,11 +110,17 @@ class CustomerController extends BaseController
             'breadcrumb'    => [...self::PARENT_BREADCRUMB, 'edit']
 
         ];
+
+        $this->data['list_tingkat']     = tingkatCustomer();
+        $this->data['list_status']      = statusCustomer();
+        $this->data['list_peringkat']   = peringkatSekolah();
+        $this->data['list_cabang']      = $MCabang->getAll();
+        $this->data['customer']         = $MCustomer->where('cust_code', $id)->first();
         
         return render($this, 'master/customer/edit', $this->data);
     }
 
-    public function editAction($id = null)
+    public function actionEdit($id = null)
     {
         $mCustomerModel = new MCustomerModel();
         $rules          = $this->getValidationRules();
@@ -126,24 +136,25 @@ class CustomerController extends BaseController
         }
 
         $data = [
-            "branch_code"   => $this->request->getPost('branch_code'),
-            'sales_code'    => $this->request->getPost('sales_code'),
-            'cust_code'     => $this->request->getPost('cust_code'),
-            'period_code'   => $this->request->getPost('period_code'),
-            'sp_code'       => $this->request->getPost('sp_code'),
-            'trans_date'    => $this->request->getPost('trans_date'),
-            'status'        => $this->request->getPost('status'),
-            'empl_code'     => $this->request->getPost('empl_code'),
-            'sp_note'       => $this->request->getPost('sp_note'),
-            'printed'       => $this->request->getPost('printed'),
-            'edit_date'     => $this->request->getPost('edit_date'),
-            'exp_date'      => $this->request->getPost('exp_date'),
-            'user_id'       => $this->request->getPost('user_id'),
-            'pay_month'     => $this->request->getPost('pay_month'),
-            'dana'          => $this->request->getPost('dana'),
-            'tipe'          => $this->request->getPost('tipe'),
-            'draft'         => $this->request->getPost('draft'),
-            'approved'      => $this->request->getPost('approved'),
+            "cust_code"             => $this->request->getPost('cust_code'),
+            'cust_name'             => $this->request->getPost('cust_name'),
+            'address'               => $this->request->getPost('address'),
+            'phone_no'              => $this->request->getPost('phone_no'),
+            'fax_no'                => $this->request->getPost('fax_no'),
+            'contact_person'        => $this->request->getPost('contact_person'),
+            'province'              => 1,
+            'city'                  => 2,
+            'camat_kode'            => 12,
+            'ans_code'              => $this->request->getPost('ans_code'),
+            'branch_code'           => $this->request->getPost('branch_code'),
+            'school_grade'          => $this->request->getPost('school_grade'),
+            'npsn'                  => $this->request->getPost('npsn'),
+            'reg_date'              => $this->request->getPost('reg_date'),
+            'npwp'                  => $this->request->getPost('npwp'),
+            'reason_deactivated'    => $this->request->getPost('reason_deactivated'),
+            'active'                => $this->request->getPost('active'),
+            'school_email'          => $this->request->getPost('school_email'),
+            'cp_email'              => $this->request->getPost('cp_email'),
         ];
 
         $saved = $mCustomerModel->save($data);
@@ -167,6 +178,7 @@ class CustomerController extends BaseController
     function getValidationRules() 
     {
         return [
+            'cust_code' => 'required'
         ];
     }
 

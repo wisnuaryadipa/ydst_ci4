@@ -56,9 +56,9 @@ $routes->group('', ['filter' => 'auth'] ,function($routes) {
         $routes->group('roles', function($routes){
             $routes->get('/', 'master\RoleController::index');
             $routes->get('create', 'master\RoleController::create'); 
-            $routes->post('create', 'master\RoleController::post');
+            $routes->post('create', 'master\RoleController::actionCreate');
             $routes->get('edit/(:alphanum)', 'master\RoleController::edit/$1');
-            $routes->put('edit/(:alphanum)', 'master\RoleController::edit/$1');
+            $routes->put('edit/(:alphanum)', 'master\RoleController::actionEdit/$1');
             $routes->get('(:alphanum)', 'master\RoleController::detail/$1');
             $routes->delete('detele/(:alphanum)', 'master\RoleController:delete/$1');
         });
@@ -76,10 +76,10 @@ $routes->group('', ['filter' => 'auth'] ,function($routes) {
         $routes->group('customer', function($routes){
             $routes->get('/', 'master\CustomerController::index');
             $routes->get('create', 'master\CustomerController::create'); 
-            $routes->post('create', 'master\CustomerController::post');
+            $routes->post('create', 'master\CustomerController::actionCreate');
             $routes->get('(:alphanum)', 'master\CustomerController::detail/$1');
             $routes->get('edit/(:alphanum)', 'master\CustomerController::edit/$1');
-            $routes->put('edit/(:alphanum)', 'master\CustomerController::edit/$1');
+            $routes->put('edit/(:alphanum)', 'master\CustomerController::actopmEdit/$1');
             $routes->delete('detele/(:alphanum)', 'master\CustomerController:delete/$1');
         });
     

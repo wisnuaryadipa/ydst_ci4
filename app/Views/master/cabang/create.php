@@ -9,7 +9,7 @@
 <section class="content" id="compact-form">
     <div class="row">
     <!-- left column -->
-    <div class="col-xs-12 col-md-12 col-lg-10">
+    <div class="col-xs-12 col-md-6 col-lg-10">
         <!-- general form elements -->
         <div class="box box-primary">
             <form action="<?= url_to('master/cabang/create') ?>" class="form-horizontal" method="post">
@@ -93,46 +93,6 @@
                                 <div class="col-xs-8">
                                     <input type="text" class="form-control" name="address" placeholder="Alamat <?= $parent_title ?>">
                                     <small class="help-block"></small>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    
-                                    <div class="form-group">
-                                        <label for="matkul" class="col-xs-2 control-label">Provinsi</label>
-                                        <div class="col-sm-6">
-                                            <select name="province" id="province" class="form-control select2" style="width: 100%!important">
-                                                <option value="" disabled selected>Prov</option>
-                                            </select>
-                                            <small class="help-block"></small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label for="matkul" class="col-xs-2 control-label">Kabupaten</label>
-                                        <div class="col-sm-6">
-                                            <select name="kabupaten" id="kabupaten" class="form-control select2" style="width: 100%!important">
-                                                <option value="" disabled selected>Kab</option>
-                                            </select>
-                                            <small class="help-block"></small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label for="matkul" class="col-xs-2 control-label">Kecamatan</label>
-                                        <div class="col-sm-6">
-                                            <select name="kecamatan" id="kecamatan" class="form-control select2" style="width: 100%!important">
-                                                <option value="" disabled selected>Kec</option>
-                                            </select>
-                                            <small class="help-block"></small>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="row">

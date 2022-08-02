@@ -8,6 +8,7 @@ use App\Models\master\CabangModel;
 use App\Models\master\AreaModel;
 use App\Models\master\UserModel;
 use App\Models\master\EmployeeModel;
+use App\Models\master\RoleModel;
 
 class EmployeeController extends BaseController
 {
@@ -29,15 +30,16 @@ class EmployeeController extends BaseController
             'breadcrumb'    => [...self::PARENT_BREADCRUMB, '']
         ];
         $this->data['unemployedUsers']  = $MUser->getUnemployeedUsers();
-        $this->data['employees']        = $employeeModel->paginate($perPage, '', $page);
+        $this->data['list_employee']        = $employeeModel->paginate($perPage, '', $page);
         $this->data['pager']            = $employeeModel->pager;
-        d($MUser->getUnemployeedUsers());
         return render($this, 'master/employee/index', $this->data);
     }
 
     public function create()
     {
-        $areaModel = new AreaModel();
+        $roleModel = new RoleModel();
+        $Cabang = new CabangModel();
+        $unattemptUsers = new UserModel();
         $this->data = [
             ...$this->data,
             'parent_title'  => 'Karyawan',
@@ -45,9 +47,10 @@ class EmployeeController extends BaseController
             'acc_signed'    => $this->acc_signed,
             'breadcrumb'    => [...self::PARENT_BREADCRUMB, 'create']
         ];
-        
-        $this->data['area_list'] = $areaModel->getAll();
-        return render($this, 'master/karyawan/create', $this->data);
+        $this->data['unattemptUsers']  = $unattemptUsers->getUnemployeedUsers();
+        $this->data['roles'] = $roleModel->findAll();
+        $this->data['branches'] = $Cabang->findAll();
+        return render($this, 'master/employee/create', $this->data);
     }
 
     public function actionCreate()
@@ -99,6 +102,9 @@ class EmployeeController extends BaseController
     {
         $areaModel = new AreaModel();
         $employeeModel = new EmployeeModel();
+        $roleModel = new RoleModel();
+        $Cabang = new CabangModel();
+
         $this->data = [
             ...$this->data,
             'parent_title'  => 'Karyawan',
@@ -112,6 +118,9 @@ class EmployeeController extends BaseController
         $this->data['employeeId']   = $id;
         $this->data['employees']    = $employeeModel->where('empl_code', $id)->first();
         
+        $this->data['roles']        = $roleModel->findAll();
+        $this->data['branches']     = $Cabang->findAll();
+
         return render($this, 'master/karyawan/edit', $this->data);
     }
 
@@ -145,6 +154,7 @@ class EmployeeController extends BaseController
             'phone_no'          => $this->request->getPost('phone_no'),
             'edu_background'    => $this->request->getPost('edu_background'),
             'active'            => $this->request->getPost('active'),
+            'user_id'           => $this->request->getPost('active'),
         ];
         
 

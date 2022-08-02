@@ -53,33 +53,32 @@
                         <th><div> <span>Nama Jabatan</span><i class="pull-right fa fa-sort-amount-asc"></i></div></th>
                         <th class="col-action">Action</th>
                     </tr>
+                    <?php
+                    foreach ($list_role as $row) :
+                    ?>
                     <tr>
-                        <td>R0001</td>
-                        <td>Sales</td>
+                        <td><?= $row->role_id ?></td>
+                        <td><?= $row->role_name ?></td>
                         <td class="col-action-val">
                         
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-info">Detail</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>K0002</td>
-                        <td>Manager Sales</td>
-                        <td class="col-action-val">
-                        
-                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/roles/edit/2" ?>">
+                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/roles/edit/".$row->role_id ?>">
                                 <div class="btn btn-warning"> Edit</div>
                             </a>
-                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/roles/2" ?>">
+                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/roles/".$row->role_id ?>">
                                 <div class="btn btn-info"> Detail</div>
                             </a>
-                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/roles/delete/2" ?>">
+                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/roles/delete/".$row->role_id ?>">
                                 <div class="btn btn-danger"> Delete</div>
                             </a>
                         </td>
                     </tr>
+                    <?php endforeach; ?>
                 </table>
+                <div class="box-body">
+                    <div class="pull-right">
+                        <?= $pager->links('', 'default_full'); ?>
+                    </div>
+                </div>
             </div>
         </form>
         </div><!-- /.box -->

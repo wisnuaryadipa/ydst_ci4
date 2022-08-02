@@ -69,46 +69,6 @@
                                     <small class="help-block"></small>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    
-                                    <div class="form-group">
-                                        <label for="matkul" class="col-md-2 control-label">Provinsi</label>
-                                        <div class="col-sm-6">
-                                            <select name="provinsi" id="provinsi" class="form-control select2" style="width: 100%!important">
-                                                <option value="" disabled selected>Prov</option>
-                                            </select>
-                                            <small class="help-block"></small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="matkul" class="col-md-2 control-label">Kabupaten</label>
-                                        <div class="col-sm-6">
-                                            <select name="kabupaten" id="kabupaten" class="form-control select2" style="width: 100%!important">
-                                                <option value="" disabled selected>Kab</option>
-                                            </select>
-                                            <small class="help-block"></small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="matkul" class="col-md-2 control-label">Kecamatan</label>
-                                        <div class="col-sm-6">
-                                            <select name="pendidikan" id="pendidikan" id="phone_no" class="form-control select2" style="width: 100%!important">
-                                                <option value="" disabled selected>Kec</option>
-                                            </select>
-                                            <small class="help-block"></small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             
                             <div class="row">
                                 <div class="col-md-12">
@@ -151,14 +111,15 @@
                     </div>
                     
                 </div>
-            <div class="box-footer">
-                
-                <div class="form-group pull-right">
-                    <button type="submit" id="submit" class="btn btn-flat bg-purple">
-                        <i class="fa fa-save"></i> Simpan
-                    </button>
+                <div class="box-footer">
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <button type="submit" id="submit" class="btn btn-flat bg-purple pull-right">
+                                <i class="fa fa-save"></i> Simpan
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
             </form>
         </div><!-- /.box -->
 

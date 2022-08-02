@@ -12,7 +12,7 @@
     <div class="col-xs-12 col-md-12 col-lg-10">
         <!-- general form elements -->
         <div class="box box-primary">
-            <form action="<?= url_to('master/area/create') ?>" class="form-horizontal" method="post">
+            <form action="<?= url_to('master/karyawan/create') ?>" class="form-horizontal" method="post">
             <div class="box-header with-border">
                 <h3 class="box-title"><?= $title ?></h3>
                 <div class="type-sp pull-right">
@@ -38,6 +38,17 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
+                                <label for="area_code" class="col-md-2 control-label">Username Akun</label>
+                                <div class="col-sm-6">
+                                    <select name="user_id" id="user_id" class="form-control select2" style="width: 100%!important">
+                                        <?php foreach($unattemptUsers as $key => $user): ?>
+                                        <option value="<?= $user->id ?>"><?= $user->username ?></option>
+                                        <?php endforeach ?>
+                                    </select>
+                                    <small class="help-block"></small>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label for="area_code" class="col-md-2 control-label">Kode <?= $parent_title ?></label>
                                 <div class="col-sm-10">
                                     <input autofocus="autofocus" onfocus="this.select()" type="text" id="area_code" class="form-control" name="area_code" placeholder="Kode <?= $parent_title ?>">
@@ -51,32 +62,106 @@
                                     <small class="help-block"></small>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="matkul" class="col-md-2 control-label">Jenis Kelamin</label>
+                                        <div class="col-sm-6">
+                                            <select name="gender_id" id="gender_id" class="form-control select2" style="width: 100%!important">
+                                                <option value="1" >Pria</option>
+                                                <option value="2" >Wanita</option>
+                                            </select>
+                                            <small class="help-block"></small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="matkul" class="col-md-2 control-label">Tanggal Lahir</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control datepicker" id="birth_date" name="birth_date" placeholder="Tanggal Lahir">
+                                            <small class="help-block"></small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="matkul" class="col-md-2 control-label">Status Nikah</label>
+                                        <div class="col-sm-6">
+                                            <select name="marital_id" id="marital_id" class="form-control select2" style="width: 100%!important">
+                                                <option value="1" >Single, 0 Tanggungan</option>
+                                                <option value="2" >Single, 1 Tanggungan</option>
+                                                <option value="3" >Single, 2 Tanggungan</option>
+                                                <option value="4" >Single, 3 Tanggungan</option>
+                                                <option value="5" >Menikah, 0 Tanggungan</option>
+                                                <option value="6" >Menikah, 1 Tanggungan</option>
+                                                <option value="7" >Menikah, 2 Tanggungan</option>
+                                                <option value="8" >Menikah, 3 Tanggungan</option>
+                                            </select>
+                                            <small class="help-block"></small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="matkul" class="col-md-2 control-label">Agama</label>
+                                        <div class="col-sm-6">
+                                            <select name="religion_id" id="religion_id" class="form-control select2" style="width: 100%!important">
+                                                <option value="1" >Islam</option>
+                                                <option value="2" >Katolik</option>
+                                                <option value="3" >Budha</option>
+                                                <option value="4" >Hindu</option>
+                                                <option value="5" >Protestan</option>
+                                                <option value="6" >Lain-lain</option>
+                                            </select>
+                                            <small class="help-block"></small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-group">
-                                <label for="area_head" class="col-md-2 control-label">Kepala Area</label>
-
+                                <label for="address" class="col-md-2 control-label">Telephone</label>
                                 <div class="col-sm-10">
-
-                                    <select name="area_head" id="area_head" class="form-control select2" style="width: 100%!important">
-                                        <option value="" disabled selected>Kepala Area</option>
-                                    </select>
+                                    <input type="text" class="form-control" id="phone_no" name="phone_no" placeholder="Telephone">
                                     <small class="help-block"></small>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="address" class="col-md-2 control-label">Alamat Area</label>
+                                <label for="address" class="col-md-2 control-label">Kota</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="address" name="address" placeholder="Alamat Area">
+                                    <input type="text" class="form-control" id="city" name="city" placeholder="Kota">
+                                    <small class="help-block"></small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address" class="col-md-2 control-label">Kd. Pos</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="zip_code" name="zip_code" placeholder="Kd. Pos">
+                                    <small class="help-block"></small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address" class="col-md-2 control-label">Alamat</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="address" name="address" placeholder="Alamat">
                                     <small class="help-block"></small>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    
                                     <div class="form-group">
-                                        <label for="matkul" class="col-md-2 control-label">Provinsi</label>
+                                        <label for="matkul" class="col-md-2 control-label">Lokasi / Cabang</label>
                                         <div class="col-sm-6">
-                                            <select name="provinsi" id="provinsi" class="form-control select2" style="width: 100%!important">
-                                                <option value="" disabled selected>Prov</option>
+                                            <select name="branch_code" id="branch_code" class="form-control select2" style="width: 100%!important">
+                                                <?php foreach($branches as $key => $branch): ?>
+                                                <option value="<?= $branch->branch_code ?>" ><?= $branch->branch_name ?></option>
+                                                <?php endforeach ?>
                                             </select>
                                             <small class="help-block"></small>
                                         </div>
@@ -86,10 +171,12 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="matkul" class="col-md-2 control-label">Kabupaten</label>
+                                        <label for="matkul" class="col-md-2 control-label">Jabatan</label>
                                         <div class="col-sm-6">
-                                            <select name="kabupaten" id="kabupaten" class="form-control select2" style="width: 100%!important">
-                                                <option value="" disabled selected>Kab</option>
+                                            <select name="role_id" id="role_id" class="form-control select2" style="width: 100%!important">
+                                                <?php foreach($roles as $key => $role): ?>
+                                                <option value="<?= $role->role_id ?>" ><?= $role->role_name ?></option>
+                                                <?php endforeach ?>
                                             </select>
                                             <small class="help-block"></small>
                                         </div>
@@ -99,66 +186,62 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="matkul" class="col-md-2 control-label">Kecamatan</label>
+                                        <label for="matkul" class="col-md-2 control-label">Pendidikan</label>
                                         <div class="col-sm-6">
-                                            <select name="pendidikan" id="pendidikan" id="phone_no" class="form-control select2" style="width: 100%!important">
-                                                <option value="" disabled selected>Kec</option>
+                                            <select name="edu_background" id="edu_background" class="form-control select2" style="width: 100%!important">
+                                                <option value="1" >SD</option>
+                                                <option value="2" >SMP</option>
+                                                <option value="3" >SMA</option>
+                                                <option value="4" >S1</option>
+                                                <option value="5" >S2</option>
+                                                <option value="6" >S3</option>
+                                                <option value="7" >D1</option>
+                                                <option value="8" >D2</option>
+                                                <option value="9" >D3</option>
+                                                <option value="10" >D4</option>
                                             </select>
                                             <small class="help-block"></small>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="matkul" class="col-md-4 control-label">Bergabung</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control datepicker" id="join_date" name="join_date" placeholder="Bergabung">
+                                            <small class="help-block"></small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="matkul" class="col-md-4 control-label">Berhenti</label>
+                                        <div class="col-sm-8"> 
+                                            <input type="text" class="form-control datepicker" id="resign_date" name="resign_date" placeholder="Berhenti">
+                                            <small class="help-block"></small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
                             </div>
                             
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="email_address" class="col-md-2 control-label">E-mail</label>
-                                        <div class="col-sm-10">
-                                            <input autofocus="autofocus" onfocus="this.select()" type="text" id="email_address" class="form-control" name="email_address" placeholder="E-mail">
-                                            <small class="help-block"></small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </row>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="col-xs-6">
-                                        <div class="form-group">
-                                            <label for="phone_no" class="col-md-4 control-label">No. Telp</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="phone_no" name="phone_no" placeholder="No. Telp">
-                                                <small class="help-block"></small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <div class="form-group">
-                                            <label for="fax_no" class="col-md-2 control-label">No. Fax.</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="fax_no" name="fax_no" placeholder="No. Fax.">
-                                                <small class="help-block"></small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class="row">
-                                
-                            </div>
+                            
                         </div>
                     </div>
                     
                 </div>
-            <div class="box-footer">
-                
-                <div class="form-group pull-right">
-                    <button type="submit" id="submit" class="btn btn-flat bg-purple">
-                        <i class="fa fa-save"></i> Simpan
-                    </button>
+                <div class="box-footer">
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <button type="submit" id="submit" class="btn btn-flat bg-purple pull-right">
+                                <i class="fa fa-save"></i> Simpan
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
             </form>
         </div><!-- /.box -->
 

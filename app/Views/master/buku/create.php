@@ -40,7 +40,7 @@
                             <div class="form-group">
                                 <label  class="col-md-2" for="nip">Kode <?= $parent_title ?></label>
                                 <div class="col-md-8">
-                                    <input autofocus="autofocus" onfocus="this.select()" type="number" id="book_code" class="form-control" name="book_code" placeholder="ID <?= $parent_title ?>">
+                                    <input autofocus="autofocus" onfocus="this.select()" type="text" id="book_code" class="form-control" name="book_code" placeholder="ID <?= $parent_title ?>">
                                     <small class="help-block"></small>
                                 </div>
                             </div>
@@ -70,10 +70,12 @@
                 </div>
                 
                 <div class="box-footer">
-                    <div class="form-group pull-right" style="margin-right: 0px">
-                        <button type="submit" id="submit" class="btn btn-flat bg-purple">
-                            <i class="fa fa-save"></i> Simpan
-                        </button>
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <button type="submit" id="submit" class="btn btn-flat bg-purple pull-right">
+                                <i class="fa fa-save"></i> Simpan
+                            </button>
+                        </div>
                     </div>
                 </div>
             </form>

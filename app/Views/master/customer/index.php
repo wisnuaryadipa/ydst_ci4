@@ -94,20 +94,20 @@
                     <tr>
                         <td><?= $row->cust_code ?></td>
                         <td><?= $row->cust_name ?></td>
-                        <td><?= $row->area_code ?></td>
+                        <td><?= $row->city ?></td>
                         <td><?= $row->city ?></td>
                         <td><?= $row->npsn ?></td>
-                        <td><?= $row->jenjang ?></td>
+                        <td></td>
                         <td><?= $row->school_grade ?></td>
                         <td class="col-action-val">
                         
-                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/edit/".$row->branch_code ?>">
+                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/edit/".$row->cust_code ?>">
                                 <div class="btn btn-warning"> Edit</div>
                             </a>
-                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/".$row->branch_code ?>">
+                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/".$row->cust_code ?>">
                                 <div class="btn btn-info"> Detail</div>
                             </a>
-                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/delete/".$row->branch_code ?>">
+                            <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/delete/".$row->cust_code ?>">
                                 <div class="btn btn-danger"> Delete</div>
                             </a>
                         </td>

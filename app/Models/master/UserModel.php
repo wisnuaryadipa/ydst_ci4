@@ -231,9 +231,11 @@ class UserModel extends Model
 
     public function getUnemployeedUsers()
     {
-        $users = $this->select('*')
-        ->join('m_employee', 'users.id', '=', 'm_employee.user_id', 'outer')
-        ->get();
+        $users = $this
+        ->select('*')
+        ->join('m_employee', 'm_employee.user_id = users.id', 'left outer')
+        ->get()
+        ->getResultObject();;
 
         return $users;
     }

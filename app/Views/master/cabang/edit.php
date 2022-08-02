@@ -98,46 +98,6 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-xs-12">
-                                    
-                                    <div class="form-group">
-                                        <label for="matkul" class="col-xs-2 control-label">Provinsi</label>
-                                        <div class="col-sm-6">
-                                            <select name="provinsi" id="provinsi" class="form-control select2" style="width: 100%!important" value="<?= $cabang->branch_code ?>">
-                                                <option value="" disabled selected>Prov</option>
-                                            </select>
-                                            <small class="help-block"></small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label for="matkul" class="col-xs-2 control-label">Kabupaten</label>
-                                        <div class="col-sm-6">
-                                            <select name="kabupaten" id="kabupaten" class="form-control select2" style="width: 100%!important" value="<?= $cabang->branch_code ?>">
-                                                <option value="" disabled selected>Kab</option>
-                                            </select>
-                                            <small class="help-block"></small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label for="matkul" class="col-xs-2 control-label">Kecamatan</label>
-                                        <div class="col-sm-6">
-                                            <select name="pendidikan" id="pendidikan" class="form-control select2" style="width: 100%!important" value="<?= $cabang->branch_code ?>">
-                                                <option value="" disabled selected>Kec</option>
-                                            </select>
-                                            <small class="help-block"></small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-lg-12 col-xs-12">
                                     
                                     <div class="form-group">

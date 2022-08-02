@@ -72,6 +72,7 @@ class BukuController extends BaseController
 
     public function edit($id = null)
     {
+        $Book = new BukuModel();
         $this->data = [
             ...$this->data,
             'parent_title'  => 'Buku',
@@ -80,11 +81,15 @@ class BukuController extends BaseController
             'breadcrumb'    => [...self::PARENT_BREADCRUMB, 'edit']
 
         ];
+
+        $this->data['book_code']  = $id;
+        $this->data['book']       = $Book->where('book_code', $id)->first();
+        
         
         return render($this, 'master/buku/edit', $this->data);
     }
 
-    public function actionEdit()
+    public function actionEdit($id = null)
     {
         $bukuModel  = new BukuModel();
         $rules      = $this->getValidationRules();
@@ -117,6 +122,7 @@ class BukuController extends BaseController
 
     public function detail($id = null)
     {
+        $Book = new BukuModel();
         $this->data = [
             ...$this->data,
             'parent_title'  => 'Buku',
@@ -125,6 +131,7 @@ class BukuController extends BaseController
             'breadcrumb'    => [...self::PARENT_BREADCRUMB, 'edit']
         ];
         
+        $this->data['book'] = $Book->where('book_code', $id)->first();
         return render($this, 'master/buku/detail', $this->data);
     }
 

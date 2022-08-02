@@ -4,29 +4,17 @@ namespace App\Models\master;
 
 use CodeIgniter\Model;
 
-class CabangModel extends Model
+class RoleModel extends Model
 {
 
-    protected $table            = 'm_role';
+    protected $table            = 'm_roles';
     protected $useAutoIncrement = false;
     protected $returnType = 'object';
-    protected $primaryKey       = 'branch_code';
+    protected $primaryKey       = 'role_id';
     protected $allowedFields  = [
-        'branch_code',
-        'branch_name',
-        'address',
-        'phone_no',
-        'contact_person',
-        'fax_no',
-        'warehouse_head',
-        'city',
-        'email_address',
-        'area_code',
+        'role_id',
+        'role_name',
         'active',
-        'ans_code',
-        'branch_head',
-        'region',
-        'warehouse_code',
     ];
 
     public function getAll() 
