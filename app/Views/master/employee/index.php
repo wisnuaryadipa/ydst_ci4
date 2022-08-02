@@ -4,7 +4,6 @@
     <?= $parent_title ?>
     <small>list</small>
     </h1>
-    <?= d($unemployedUsers) ?>
 </section>
 
 <!-- Main content -->

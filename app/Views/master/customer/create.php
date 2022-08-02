@@ -77,7 +77,7 @@
                                     <div class="col-xs-8 col-lg-8">
                                         <select name="" id="" class="form-control select2" style="width: 100%!important">
                                             <?php foreach($list_tingkat as $key => $tingkat) : ?>
-                                                <option value="<?= $key ?>"><?= $tingkat ?></option>
+                                                <option value="<?= $key+1 ?>"><?= $tingkat ?></option>
                                             <?php endforeach ?>
                                         </select>
                                         <small class="help-block"></small>
@@ -92,7 +92,7 @@
                                     <div class="col-xs-8 col-lg-5">
                                         <select name="" id="" class="form-control select2" style="width: 100%!important">
                                             <?php foreach($list_status as $key => $status) : ?>
-                                                <option value="<?= $key ?>" ><?= $status ?></option>
+                                                <option value="<?= $key+1 ?>" ><?= $status ?></option>
                                             <?php endforeach ?>
                                             
                                         </select>
