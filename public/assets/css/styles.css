@@ -122,3 +122,17 @@
   padding-left: 0px;
   padding-right: 0px;
 }
+
+#compact-form>.row>div {
+  padding-left: 3px ; 
+  padding-right: 3px ;
+}
+#compact-form>.row>div:last-child {
+  padding-left: 6px ; 
+  padding-right: 10px ;
+}
+#compact-form>.row>div:first-child {
+  padding-right: 6px ;
+  padding-left: 10px ; 
+}
+

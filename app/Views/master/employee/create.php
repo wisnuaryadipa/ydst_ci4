@@ -1,4 +1,14 @@
 <style>
+    .border {
+        border: 1px solid black;
+        min-height: 100px;
+    }
+    section .content {
+        padding: 0px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
     section {
         font-size: 12px;
     }
@@ -83,107 +93,117 @@
                     </div>
                 <?php endif ?>
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-xs-12">
                                 <div class="form-group">
-                                    <label for="area_code" class="col-md-2 control-label">Kode <?= $parent_title ?></label>
+                                    <label for="area_code" class="col-xs-2 control-label">Kode <?= $parent_title ?></label>
                                     <div class="col-sm-10">
                                         <input autofocus="autofocus" onfocus="this.select()" type="text" id="area_code" class="form-control" name="area_code" placeholder="Kode <?= $parent_title ?>">
                                         <small class="help-block"></small>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="area_name" class="col-md-2 control-label">Nama <?= $parent_title ?></label>
+                                    <label for="area_name" class="col-xs-2 control-label">Nama <?= $parent_title ?></label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="area_name" name="area_name" placeholder="Nama <?= $parent_title ?>">
                                         <small class="help-block"></small>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="matkul" class="col-md-2 control-label">Jenis Kelamin</label>
-                                            <div class="col-sm-6">
-                                                <select name="gender_id" id="gender_id" class="form-control select2" style="width: 100%!important">
-                                                    <option value="1" >Pria</option>
-                                                    <option value="2" >Wanita</option>
-                                                </select>
-                                                <small class="help-block"></small>
+                                    <div class="col-xs-8">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="matkul" class="col-xs-3 control-label">Jenis Kelamin</label>
+                                                    <div class="col-sm-9">
+                                                        <select name="gender_id" id="gender_id" class="form-control select2" style="width: 100%!important">
+                                                            <option value="1" >Pria</option>
+                                                            <option value="2" >Wanita</option>
+                                                        </select>
+                                                        <small class="help-block"></small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="matkul" class="col-xs-3 control-label">Tanggal Lahir</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control datepicker" id="birth_date" name="birth_date" placeholder="Tanggal Lahir">
+                                                        <small class="help-block"></small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="matkul" class="col-xs-3 control-label">Status Nikah</label>
+                                                    <div class="col-sm-9">
+                                                        <select name="marital_id" id="marital_id" class="form-control select2" style="width: 100%!important">
+                                                            <option value="1" >Single, 0 Tanggungan</option>
+                                                            <option value="2" >Single, 1 Tanggungan</option>
+                                                            <option value="3" >Single, 2 Tanggungan</option>
+                                                            <option value="4" >Single, 3 Tanggungan</option>
+                                                            <option value="5" >Menikah, 0 Tanggungan</option>
+                                                            <option value="6" >Menikah, 1 Tanggungan</option>
+                                                            <option value="7" >Menikah, 2 Tanggungan</option>
+                                                            <option value="8" >Menikah, 3 Tanggungan</option>
+                                                        </select>
+                                                        <small class="help-block"></small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <div class="form-group">
+                                                    <label for="matkul" class="col-xs-3 control-label">Agama</label>
+                                                    <div class="col-xs-9">
+                                                        <select name="religion_id" id="religion_id" class="form-control select2" style="width: 100%!important">
+                                                            <option value="1" >Islam</option>
+                                                            <option value="2" >Katolik</option>
+                                                            <option value="3" >Budha</option>
+                                                            <option value="4" >Hindu</option>
+                                                            <option value="5" >Protestan</option>
+                                                            <option value="6" >Lain-lain</option>
+                                                        </select>
+                                                        <small class="help-block"></small>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="matkul" class="col-md-2 control-label">Tanggal Lahir</label>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control datepicker" id="birth_date" name="birth_date" placeholder="Tanggal Lahir">
-                                                <small class="help-block"></small>
-                                            </div>
+                                    <div class="col-xs-4">
+                                        <div class="border">
+                                            PICTURE
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="matkul" class="col-md-2 control-label">Status Nikah</label>
-                                            <div class="col-sm-6">
-                                                <select name="marital_id" id="marital_id" class="form-control select2" style="width: 100%!important">
-                                                    <option value="1" >Single, 0 Tanggungan</option>
-                                                    <option value="2" >Single, 1 Tanggungan</option>
-                                                    <option value="3" >Single, 2 Tanggungan</option>
-                                                    <option value="4" >Single, 3 Tanggungan</option>
-                                                    <option value="5" >Menikah, 0 Tanggungan</option>
-                                                    <option value="6" >Menikah, 1 Tanggungan</option>
-                                                    <option value="7" >Menikah, 2 Tanggungan</option>
-                                                    <option value="8" >Menikah, 3 Tanggungan</option>
-                                                </select>
-                                                <small class="help-block"></small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="matkul" class="col-md-2 control-label">Agama</label>
-                                            <div class="col-sm-6">
-                                                <select name="religion_id" id="religion_id" class="form-control select2" style="width: 100%!important">
-                                                    <option value="1" >Islam</option>
-                                                    <option value="2" >Katolik</option>
-                                                    <option value="3" >Budha</option>
-                                                    <option value="4" >Hindu</option>
-                                                    <option value="5" >Protestan</option>
-                                                    <option value="6" >Lain-lain</option>
-                                                </select>
-                                                <small class="help-block"></small>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                                 <div class="form-group">
-                                    <label for="address" class="col-md-2 control-label">Telephone</label>
+                                    <label for="address" class="col-xs-2 control-label">Telephone</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="phone_no" name="phone_no" placeholder="Telephone">
                                         <small class="help-block"></small>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="address" class="col-md-2 control-label">Kota</label>
+                                    <label for="address" class="col-xs-2 control-label">Kota</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="city" name="city" placeholder="Kota">
                                         <small class="help-block"></small>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="address" class="col-md-2 control-label">Kd. Pos</label>
+                                    <label for="address" class="col-xs-2 control-label">Kd. Pos</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="zip_code" name="zip_code" placeholder="Kd. Pos">
                                         <small class="help-block"></small>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="address" class="col-md-2 control-label">Alamat</label>
+                                    <label for="address" class="col-xs-2 control-label">Alamat</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="address" name="address" placeholder="Alamat">
                                         <small class="help-block"></small>
@@ -192,7 +212,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="matkul" class="col-md-2 control-label">Lokasi / Cabang</label>
+                                            <label for="matkul" class="col-xs-2 control-label">Lokasi / Cabang</label>
                                             <div class="col-sm-6">
                                                 <select name="branch_code" id="branch_code" class="form-control select2" style="width: 100%!important">
                                                     <?php foreach($branches as $key => $branch): ?>
@@ -207,7 +227,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="matkul" class="col-md-2 control-label">Bagian</label>
+                                            <label for="matkul" class="col-xs-2 control-label">Bagian</label>
                                             <div class="col-sm-6">
                                                 <select name="bagian" id="bagian" class="form-control select2" style="width: 100%!important">
                                                     <?php foreach($departements as $key => $dept): ?>
@@ -222,7 +242,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="matkul" class="col-md-2 control-label">Jabatan</label>
+                                            <label for="matkul" class="col-xs-2 control-label">Jabatan</label>
                                             <div class="col-sm-6">
                                                 <select name="role_id" id="role_id" class="form-control select2" style="width: 100%!important">
                                                     <?php foreach($roles as $key => $role): ?>
@@ -237,7 +257,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="matkul" class="col-md-2 control-label">Pendidikan</label>
+                                            <label for="matkul" class="col-xs-2 control-label">Pendidikan</label>
                                             <div class="col-sm-6">
                                                 <select name="edu_background" id="edu_background" class="form-control select2" style="width: 100%!important">
                                                     <option value="1" >SD</option>
@@ -257,19 +277,19 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-xs-6">
                                         <div class="form-group">
-                                            <label for="matkul" class="col-md-4 control-label">Bergabung</label>
-                                            <div class="col-sm-8">
+                                            <label for="matkul" class="col-xs-4 control-label">Bergabung</label>
+                                            <div class="col-xs-8">
                                                 <input type="text" class="form-control datepicker" id="join_date" name="join_date" placeholder="Bergabung">
                                                 <small class="help-block"></small>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-xs-6">
                                         <div class="form-group">
-                                            <label for="matkul" class="col-md-4 control-label">Berhenti</label>
-                                            <div class="col-sm-8"> 
+                                            <label for="matkul" class="col-xs-4 control-label">Berhenti</label>
+                                            <div class="col-xs-8"> 
                                                 <input type="text" class="form-control datepicker" id="resign_date" name="resign_date" placeholder="Berhenti">
                                                 <small class="help-block"></small>
                                             </div>
@@ -301,7 +321,7 @@
 
 
         </div><!--/.col (left) -->
-        <div class="col-lg-6">
+        <div class="col-xs-12 col-md-12 col-lg-6">
                     <!-- general form elements -->
             <div class="box box-primary">
                 <div class="box-header with-border">
