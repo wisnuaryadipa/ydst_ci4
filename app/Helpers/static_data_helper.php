@@ -37,3 +37,26 @@ function peringkatSekolah()
         'Kurang'
     ];
 }
+
+function departements()
+{
+    return [
+        [
+            "id" => "IT",
+            "dept_name" => "Information Technology"
+        ],
+        [
+            "id" => "DT",
+            "dept_name" => "Distribusi"
+        ],
+        [
+            "id" => "OPR",
+            "dept_name" => "Operasional"
+        ],
+        [
+            "id" => "PCR",
+            "dept_name" => "Purchasing"
+        ],
+
+    ];
+}

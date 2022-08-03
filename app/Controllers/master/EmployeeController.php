@@ -37,9 +37,15 @@ class EmployeeController extends BaseController
 
     public function create()
     {
+        helper('static_data_helper');
+        $employeeModel  = new EmployeeModel();
         $roleModel = new RoleModel();
         $Cabang = new CabangModel();
         $unattemptUsers = new UserModel();
+        $page           = $this->request->getVar('page_') ?: '1';
+        $perPage        = 2;
+        $totalPage      = $employeeModel->countAll();
+
         $this->data = [
             ...$this->data,
             'parent_title'  => 'Karyawan',
@@ -47,9 +53,13 @@ class EmployeeController extends BaseController
             'acc_signed'    => $this->acc_signed,
             'breadcrumb'    => [...self::PARENT_BREADCRUMB, 'create']
         ];
+        $this->data['departements'] = departements();
         $this->data['unattemptUsers']  = $unattemptUsers->getUnemployeedUsers();
         $this->data['roles'] = $roleModel->findAll();
         $this->data['branches'] = $Cabang->findAll();
+        $this->data['unemployedUsers']  = $unattemptUsers->getUnemployeedUsers();
+        $this->data['list_employee']        = $employeeModel->paginate($perPage, '', $page);
+        $this->data['pager']            = $employeeModel->pager;
         return render($this, 'master/employee/create', $this->data);
     }
 
