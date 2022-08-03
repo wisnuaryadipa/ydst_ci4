@@ -8,7 +8,7 @@
     <?php if ($breadcrumb){ echo $v_breadcrumb; }; ?>
     <!-- Main content -->
     <section class="content" style="padding-top: 0px;">
-      <div class="container-fluid" style="padding: 0px;">
+      <div class="container-fluid">
         <?php echo view($mainPage); ?>
       </div><!-- /.container-fluid -->
     </section>
