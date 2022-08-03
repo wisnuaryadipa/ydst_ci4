@@ -53,7 +53,7 @@ class BukuController extends BaseController
         }
         
         $data = [
-            "book_code"     => $this->request->getPost('book_code'),
+            // "book_code"     => $this->request->getPost('book_code'),
             'book_title'    => $this->request->getPost('book_title'),
             'Pages'         => $this->request->getPost('Pages'),
             'Paper_size'    => $this->request->getPost('Paper_size'),
@@ -105,7 +105,7 @@ class BukuController extends BaseController
         }
 
         $data = [
-            "book_code"         => $this->request->getPost('book_code'),
+            // "book_code"         => $this->request->getPost('book_code'),
             'book_title'        => $this->request->getPost('book_title'),
             'Pages'             => $this->request->getPost('Pages'),
             'Paper_size'        => $this->request->getPost('Paper_size'),

@@ -16,8 +16,8 @@
         <div class="box-header with-border">
             <h3 class="box-title"><?= $title ?></h3>
                 <div class="type-sp pull-right">
-                    <a href="<?= $_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/create" ?>">
-                        <div class="btn bg-olive btn-flat"> Tambah <?= $parent_title ?></div>
+                    <a href="">
+                        <div class="btn bg-olive btn-flat"> Import <?= $parent_title ?></div>
                     </a> 
                 </div>
         </div><!-- /.box-header -->

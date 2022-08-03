@@ -76,9 +76,6 @@
                     <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "index") : ?>active<?php endif ?>">
                       <a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/buku"><i class="fa fa-circle-o"></i> List</a>
                     </li>
-                    <li class="<?php if( $uri->setSilent()->getSegment(3, 'index') == "create") : ?>active<?php endif ?>">
-                      <a href="<?= $_ENV['BASE_URL_FULL']; ?>/master/buku/create"><i class="fa fa-circle-o"></i> Buat Baru</a>
-                    </li>
                   </ul>
                 </li>
                 <li class="treeview <?php if($uri->setSilent()->getSegment(2) == "karyawan") : ?>active menu-open<?php endif ?>">

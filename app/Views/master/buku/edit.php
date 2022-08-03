@@ -42,7 +42,7 @@
                             <div class="form-group">
                                 <label  class="col-md-2" for="nip">Kode <?= $parent_title ?></label>
                                 <div class="col-md-8">
-                                    <input autofocus="autofocus" onfocus="this.select()" type="text" id="book_code" class="form-control" name="book_code" placeholder="ID <?= $parent_title ?>" value="<?= $book->book_code ?>">
+                                    <input autofocus="autofocus" onfocus="this.select()" type="text" id="book_code" class="form-control" name="book_code" placeholder="ID <?= $parent_title ?>" value="<?= $book->book_code ?>" disabled>
                                     <small class="help-block"></small>
                                 </div>
                             </div>
