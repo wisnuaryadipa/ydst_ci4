@@ -1,3 +1,57 @@
+<style>
+    section {
+        font-size: 12px;
+    }
+    .pointer {
+        cursor: pointer;
+    }
+
+    .table>tbody>tr>th, .table>tbody>tr>td {
+        padding: 3px 7px;
+    }
+    .table>tbody>tr>th>div, .table>tbody>tr>td>div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    
+    .table>tbody>tr>th {
+        border-left: 1px solid #fff;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #848484;
+        border-right: 1px solid #848484;
+        background-color: #d1e5d1;
+    }
+    .table>tbody>tr>th:hover {
+        outline: 0;
+    }
+    .pointer:active {
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        border-left: 1px solid #848484;
+        border-top: 1px solid #848484;
+    }
+
+    .btn-classic {
+        border-left: 1px solid #fff;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #848484;
+        border-right: 1px solid #848484;
+    }
+    .btn-classic:focus {
+        outline: 0 !important;
+    }
+    .btn-classic:active {
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        border-left: 1px solid #848484;
+        border-top: 1px solid #848484;
+    }
+
+</style>
+
+
 <!-- Main content -->
 <section class="content" id="compact-form">
     <div class="row">
@@ -233,8 +287,11 @@
                     <div class="box-footer">
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <button type="submit" id="submit" class="btn btn-flat bg-purple pull-right">
+                                <button type="submit" id="submit" class="btn btn-classic pull-right">
                                     <i class="fa fa-save"></i> Simpan
+                                </button>
+                                <button class="btn btn-classic pull-right" disabled>
+                                    <i class="fa fa-save"></i> New
                                 </button>
                             </div>
                         </div>
@@ -255,35 +312,33 @@
 
                 <div class="box box-solid">
                     <div class="box-filter">
-                        <div class="box-body">
-                            <div class="content" style="min-height: 130px;">
-                                <div class="form-group">
-
-                                    <div class="row">
-                                        <div class="col-lg-6 col-sm-4">
-                                            <div class="box-input-child">
-                                                <strong>Nama <?= $parent_title ?></strong>
-                                                <input type="text" class="form-control" placeholder="Nama">
-                                            </div>
+                        <div class="box-body" style="min-height: 80px;">
+                            <div class="row">
+                                <div class="col-lg-8 col-sm-8">
+                                    <div class="form-group">
+                                        <label class="col-lg-4">Nama <?= $parent_title ?></label>
+                                        <div class="col-sm-8"> 
+                                            <input type="text" class="form-control" placeholder="Nama">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row" style="min-height: 75px;">
-                                    <div class="col-lg-3 col-sm-4">
-                                        <div class="box-input-child">
-                                            <strong>Kode <?= $parent_title ?></strong>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-8 col-sm-8">
+                                    <div class="form-group">
+                                        <label class="col-lg-4">Kode <?= $parent_title ?></label>
+                                        <div class="col-sm-8"> 
                                             <select class="form-control select2">
                                                 <option>DIY</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
-                            
-                                <div class="box-input-child submit pull-right" style="margin-top: 10px">
-                                    <button class="btn btn-primary">Cari</button>
-                                </div>
                             </div>
-                                
+                        
+                            <div class="box-input-child submit pull-right" style="margin-top: 10px">
+                                <button class="btn btn-primary">Cari</button>
+                            </div>
                         </div><!-- /.box-body -->
                     </div>
                 </div><!-- /.box -->
@@ -292,20 +347,26 @@
                     <div class="box-body">
                         <table class="table-bordered table">
                             <tr>
-                                <th> <div> <span>Kode <?= $parent_title ?></span><i class="pull-right fa fa-sort-amount-asc"></i></div> </th>
-                                <th><div> <span>Nama <?= $parent_title ?></span><i class="pull-right fa fa-sort-amount-asc"></i></div></th>
-                                <th><div> <span>Kepala Area</span><i class="pull-right fa fa-sort-amount-asc"></i></div></th>
-                                <th>Kota</th>
+                                <th class="pointer"><div> <span>Kode <?= $parent_title ?></span><i class="pull-right fa fa-sort-amount-asc"></i></div> </th>
+                                <th class="pointer"><div> <span>Nama <?= $parent_title ?></span><i class="pull-right fa fa-sort-amount-asc"></i></div></th>
+                                <th>Cabang</th>
                                 <th class="col-action">Action</th>
                             </tr>
+                            
+                            <tr>
+                                <td class="pointer"><div> <span>Kode <?= $parent_title ?></span><i class="pull-right fa fa-sort-amount-asc"></i></div> </td>
+                                <td class="pointer"><div> <span>Nama <?= $parent_title ?></span><i class="pull-right fa fa-sort-amount-asc"></i></div></td>
+                                <td>Cabang</td>
+                                <td class="col-action">Action</td>
+                            </tr>
+                            
                             <?php
                             foreach ($list_employee as $row) :
                             ?>
                             <tr>
-                                <td><?= $row->area_code ?></td>
-                                <td><?= $row->area_name ?></td>
-                                <td><?= $row->area_head ?></td>
-                                <td><?= $row->city ?></td>
+                                <td><?= $row->empl_code ?></td>
+                                <td><?= $row->empl_name ?></td>
+                                <td><?= $row->branch_code ?></td>
                                 <td class="col-action-val">
                                 
                                     <a href="<?=$_ENV['BASE_URL_FULL']."/master/".strtolower($parent_title)."/edit/".$row->area_code ?>">
